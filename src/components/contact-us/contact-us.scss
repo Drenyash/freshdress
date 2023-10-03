@@ -1,0 +1,10 @@
+.contact-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__form {
+    align-self: center;
+    max-width: 630px;
+  }
+}

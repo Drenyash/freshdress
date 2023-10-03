@@ -1,0 +1,22 @@
+.color {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  &__item {
+    display: flex;
+    cursor: pointer;
+
+    input:checked ~ span {
+      background-color: red;
+    }
+
+    span {
+      display: flex;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: $gray;
+    }
+  }
+}

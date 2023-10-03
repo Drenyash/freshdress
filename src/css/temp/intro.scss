@@ -1,0 +1,55 @@
+.intro {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 104vh;
+  max-height: 980px;
+  padding-top: 222px;
+
+  &__picture {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 24px;
+
+    img {
+      display: block;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    width: 100%;
+    margin-left: 22px;
+    transform: translate3d(-50%, 0, 0);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__toolbox {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 273px;
+    z-index: 1;
+  }
+  &__text {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: $light;
+  }
+  &__button {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+  }
+}

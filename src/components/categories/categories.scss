@@ -1,0 +1,51 @@
+.categories {
+  display: grid;
+  grid-template-columns: repeat(9, 130px);
+  gap: 20px;
+  justify-content: space-between;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 131px;
+    cursor: pointer;
+
+    &:hover {
+      .categories__picture {
+        border-radius: 100px;
+        background: #F4F4F4;
+      }
+    }
+
+    &.active {
+      .categories__picture {
+        border-radius: 100px;
+        background: #F4F4F4;
+      }
+    }
+  }
+
+  &__picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 160px;
+    transition: .2s linear;
+
+    img {
+      mix-blend-mode: multiply;
+      background-color: transparent;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    color: $gray-light;
+  }
+}

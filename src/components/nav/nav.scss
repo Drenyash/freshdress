@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  &__link {
+    display: flex;
+    padding: 28px 14px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: $dark;
+  }
+}

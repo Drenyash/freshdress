@@ -1,0 +1,12 @@
+.add-favourite {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  cursor: pointer;
+
+  &__icon {
+    display: flex;
+    width: 26px;
+    height: 26px;
+  }
+}

@@ -1,0 +1,37 @@
+.features {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 34px 49px 32px;
+    max-width: 420px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(20px);
+    z-index: 1;
+  }
+
+  &__icon {
+    display: flex;
+    width: 53px;
+    height: 53px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $dark;
+  }
+}

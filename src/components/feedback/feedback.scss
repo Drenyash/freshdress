@@ -1,0 +1,53 @@
+.feedback {
+  width: 864px;
+  display: flex;
+  gap: 70px;
+  padding: 69px 94px 69px 49px;
+  border-radius: 10px;
+  background: $light;
+  box-shadow: 0 20px 60px 0 rgba(46, 33, 61, 0.16);
+
+  &__text {
+    margin-bottom: 16px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.32px;
+    color: $gray-dark;
+  }
+
+  &__picture {
+    position: relative;
+    display: flex;
+    width: 242px;
+    height: 242px;
+    flex-shrink: 0;
+    background-color: $gray-light;
+    border-radius: 15px;
+    img {
+      position: absolute;
+      left: 20px;
+       bottom: 20px;
+    }
+  }
+
+  &__line {
+    max-width: 230px;
+    margin-bottom: 10px;
+  }
+
+  &__author {
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: normal;
+    color: $dark-light;
+  }
+
+  &__occupation {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    color: $gray-light;
+  }
+}

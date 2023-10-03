@@ -1,0 +1,65 @@
+.stock {
+  position: relative;
+  display: flex;
+  width: 372px;
+  height: 486px;
+  transition: height .2s linear;
+
+  &__picture {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border-radius: 35px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__info {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 32px 38px 32px 26px;
+    background-color: $light;
+    border-radius: 35px;
+    backdrop-filter: blur(3.5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+  }
+
+  &__percent {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 120%;
+    color: $orange;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $outline;
+  }
+
+  &__line {
+    display: flex;
+    width: 27px;
+    height: 1px;
+    background-color: $outline;
+  }
+
+  &__label {
+    opacity: 0;
+  }
+}

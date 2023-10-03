@@ -1,0 +1,73 @@
+.showcase {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: $dark;
+  border-radius: 35px;
+  overflow: hidden;
+  transition: .2s linear;
+  &__picture {
+    display: flex;
+    width: 100%;
+    height: auto;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__element {
+    position: relative;
+  }
+  &__pin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    border: 1px solid $light;
+    cursor: pointer;
+    &:hover {
+      & ~ .showcase__toolbox {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &::before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      background-color: $light;
+      border-radius: 50%;
+      filter: blur(5px);
+    }
+  }
+  &__pickup {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+  }
+
+  &__toolbox {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 32px;
+    border-radius: 25px;
+    border: 1px solid #FFF;
+    background: rgba(217, 217, 217, 0.10);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+  }
+}

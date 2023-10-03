@@ -1,0 +1,16 @@
+.user-nav {
+  display: flex;
+  margin-left: auto;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__icon {
+    display: flex;
+    width: 28px;
+    height: 28px;
+    fill: $dark;
+  }
+}

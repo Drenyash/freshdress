@@ -1,0 +1,23 @@
+.decor {
+  &__star {
+    &-small {
+      position: absolute;
+      bottom: 189px;
+      right: 104px;
+    }
+    &-big {
+      position: absolute;
+      top: 162px;
+      left: 65px;
+    }
+  }
+  &__icon {
+    display: flex;
+    width: 76px;
+    height: 76px;
+    &--big {
+      width: 88px;
+      height: 88px;
+    }
+  }
+}

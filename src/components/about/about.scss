@@ -1,0 +1,35 @@
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+
+  &__text {
+    max-width: 750px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+    z-index: 1;
+  }
+
+  &__picture {
+    position: absolute;
+    right: -12%;
+    top: 0;
+    z-index: 0;
+    display: flex;
+    flex-shrink: 0;
+    width: 945px;
+    height: 680px;
+    border-radius: 282px 0 0 30px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

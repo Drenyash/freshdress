@@ -1,0 +1,12 @@
+.section {
+  &--purple {
+    background: $purple url('../../assets/images/intro-interference.png');
+    mix-blend-mode: multiply;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &--light {
+    background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
+  }
+}
