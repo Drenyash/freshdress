@@ -8,5 +8,9 @@
     font-weight: 400;
     line-height: normal;
     color: $dark;
+
+    &.active {
+      background-color: rgba($light, 0.2);
+    }
   }
 }

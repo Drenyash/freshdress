@@ -3,12 +3,22 @@
   gap: 238px;
   padding-top: 55px;
 
+  @include r(1529) {
+    padding: 0 24px;
+    gap: 36px;
+    flex-direction: column;
+  }
+
   &__title {
     margin-bottom: 14px;
     color: $dark;
     font-size: 50px;
     font-weight: 600;
     line-height: normal;
+
+    @include r(1529) {
+      font-size: 30px;
+    }
   }
 
   &__info {
@@ -23,11 +33,18 @@
     font-weight: 400;
     line-height: 26px;
     color: $gray;
+    @include r(1529) {
+      font-size: 14px;
+    }
   }
 
   &__intro {
     max-width: 452px;
     margin-bottom: 108px;
+
+    @include r(1529) {
+      margin-bottom: 30px;
+    }
   }
 
   &__button {
@@ -36,9 +53,12 @@
 
   &__slider {
     display: flex;
-    flex-shrink: 0;
-    width: 100%;
+    width: 1034px;
     height: 100%;
     position: relative;
+
+    @include r(1529) {
+      width: 100%;
+    }
   }
 }

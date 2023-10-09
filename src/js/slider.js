@@ -69,7 +69,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const swiper = new Swiper(slider, {
                 modules: [Navigation, Pagination],
                 slidesPerView: 'auto',
-                spaceBetween: 24,
+                spaceBetween: 16,
+                centeredSlides: false,
+                watchSlidesProgress: false,
                 slideClass: 'slider__item',
                 slideActiveClass: 'slider__item--active',
                 slideNextClass: 'slider__item--next',
@@ -85,6 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     el: '.slider__pagination',
                     bulletClass: 'slider__pagination-bullet',
                     bulletActiveClass: 'slider__pagination-bullet--active',
+                },
+                breakpoints: {
+                    1529: {
+                        spaceBetween: 24,
+                        centeredSlides: true,
+                        watchSlidesProgress: true,
+                    }
                 }
             })
         }

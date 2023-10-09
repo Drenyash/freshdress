@@ -7,10 +7,32 @@
     gap: 20px;
   }
 
+  &__link {
+    position: relative;
+  }
+
   &__icon {
     display: flex;
     width: 28px;
     height: 28px;
     fill: $dark;
+  }
+
+  &__count {
+    position: absolute;
+    top: -7px;
+    right: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: $light;
+    background-color: $orange;
+    border-radius: 50%;
   }
 }

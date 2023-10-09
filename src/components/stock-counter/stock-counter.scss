@@ -8,11 +8,19 @@
     font-weight: 500;
     line-height: normal;
     color: $dark-light;
+
+    @include r(1529) {
+      font-size: 18px;
+    }
   }
 
   &__list {
     display: flex;
     gap: 30px;
+
+    @include r(1529) {
+      gap: 16px;
+    }
   }
 
   &__item {
@@ -36,6 +44,12 @@
     font-weight: 400;
     line-height: 100%;
     color: $gray;
+
+    @include r(1529) {
+      width: 70px;
+      height: 62px;
+      font-size: 24px;
+    }
   }
 
   &__text {
@@ -44,5 +58,9 @@
     font-weight: 400;
     line-height: 120%;
     color: $outline;
+
+    @include r(1529) {
+      font-size: 16px;
+    }
   }
 }

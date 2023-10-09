@@ -159,9 +159,14 @@
   &--intro {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     gap: 24px;
     min-height: 582px;
+
+    @include r(1529) {
+      flex-direction: column;
+      height: 346px;
+      min-height: auto;
+    }
 
     .slider__wrapper {
       align-items: flex-start;
@@ -176,6 +181,10 @@
       .stock {
         width: 404px;
         height: 582px;
+        @include r(1529) {
+          width: 241px;
+          height: 346px;
+        }
       }
 
       .stock__info {
@@ -188,6 +197,15 @@
       }
     }
 
+    .slider__item--prev {
+      transform: translate3d(450px, 0, 0) scale(0.5);
+      transition: .2s linear;
+
+      @include r(1529) {
+        transform: none;
+      }
+    }
+
     .slider__controls {
       left: -136px;
       bottom: 0;
@@ -196,11 +214,29 @@
       width: auto;
       gap: 16px;
 
+      @include r(1529) {
+        left: initial;
+        right: 0;
+        bottom: -40px;
+      }
+
       button {
         position: static;
         box-shadow: 0 4px 14px 1px rgba(0, 0, 0, 0.16);
         background-color: $light;
         transform: none;
+
+        @include r(1529) {
+          width: 28px;
+          height: 28px;
+        }
+
+        svg {
+          @include r(1529) {
+            width: 20px;
+            height: 20px;
+          }
+        }
 
         &:hover {
           svg {
@@ -213,11 +249,14 @@
 
   &__pagination {
     position: absolute;
-    left: 428px;
     bottom: 0;
     display: flex;
     align-items: center;
     gap: 10px;
+
+    @include r(1529) {
+      margin-bottom: -40px;
+    }
 
     &-bullet {
       display: flex;
@@ -230,6 +269,11 @@
       border: 2px solid transparent;
       transition: .2s linear;
 
+      @include r(1529) {
+        width: 20px;
+        height: 20px;
+      }
+
       &::before {
         content: '';
         display: flex;
@@ -238,12 +282,21 @@
         background-color: $gray-light;
         border-radius: 50%;
         transition: .2s linear;
+
+        @include r(1529) {
+          width: 5px;
+          height: 5px;
+        }
       }
 
       &--active {
         border-color: $gray-light;
         background-color: $light;
         &::before {
+          @include r(1529) {
+            width: 8px;
+            height: 8px;
+          }
           background-color: $purple;
         }
       }

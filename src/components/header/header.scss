@@ -1,5 +1,11 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 5;
+  background: rgba(251, 251, 251, 0.10);
+  backdrop-filter: blur(50px);
   &__top {
     display: flex;
     align-items: center;
