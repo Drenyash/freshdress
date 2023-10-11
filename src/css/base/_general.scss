@@ -146,3 +146,10 @@ button {
 .hidden {
   display: none !important;
 }
+
+.mobile-only {
+  display: none;
+  @include r(1529) {
+    display: flex;
+  }
+}

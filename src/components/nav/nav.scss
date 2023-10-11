@@ -1,5 +1,8 @@
 .nav {
   display: flex;
+  @include r(1529) {
+    display: none;
+  }
   &__link {
     display: flex;
     padding: 28px 14px;

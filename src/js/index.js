@@ -3,3 +3,5 @@ import "../css/main.scss";
 
 import "./sprite";
 import "./slider";
+import "./menu-mobile";
+import "./dropdown";

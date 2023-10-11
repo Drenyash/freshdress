@@ -49,13 +49,17 @@
 
   &__button {
     box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.15);
+
+    @include r(1529) {
+      display: none;
+    }
   }
 
   &__slider {
+    position: relative;
     display: flex;
     width: 1034px;
     height: 100%;
-    position: relative;
 
     @include r(1529) {
       width: 100%;

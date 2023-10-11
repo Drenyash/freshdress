@@ -16,6 +16,18 @@
       height: 0;
     }
   }
+  @include r(1529) {
+    &:hover {
+      .card__properties {
+        display: none;
+      }
+      .card__info {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+      }
+    }
+  }
 
   &__picture {
     position: relative;
@@ -74,9 +86,10 @@
     opacity: 0;
     visibility: hidden;
     height: 0;
-  }
 
-  &__info {
+    @include r(1529) {
+      display: none;
+    }
   }
 
   &__button {

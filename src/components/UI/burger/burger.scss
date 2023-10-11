@@ -1,0 +1,32 @@
+.burger {
+  position: relative;
+  display: none;
+  width: 24px;
+  height: 9px;
+  z-index: 5;
+
+  @include r(1529) {
+    display: flex;
+  }
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $dark;
+  }
+
+  &::after {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    content: "";
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: $dark;
+  }
+}

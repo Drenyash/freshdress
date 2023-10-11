@@ -282,4 +282,9 @@
             padding-bottom: rem(100);
         }
     }
+    &-260 {
+        @include r(1529) {
+            padding-bottom: 260px;
+        }
+    }
 }

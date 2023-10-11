@@ -6,12 +6,35 @@
   z-index: 5;
   background: rgba(251, 251, 251, 0.10);
   backdrop-filter: blur(50px);
+
+  @include r(1529) {
+    background-color: $light;
+    backdrop-filter: none;
+  }
+  &__group {
+    position: relative;
+    @include r(1529) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 24px;
+      width: 100%;
+    }
+  }
   &__top {
     display: flex;
     align-items: center;
+
+    @include r(1529) {
+      flex-direction: column;
+    }
   }
 
   &__logo {
     margin-right: 130px;
+
+    @include r(1529) {
+      margin-right: 0;
+    }
   }
 }

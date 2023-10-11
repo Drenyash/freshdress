@@ -5,5 +5,10 @@
     width: 130px;
     height: 50px;
     fill: $dark;
+
+    @include r(1529) {
+      width: 86px;
+      height: 31px;
+    }
   }
 }

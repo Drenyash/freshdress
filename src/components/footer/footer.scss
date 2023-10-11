@@ -5,6 +5,11 @@
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: 230px 1fr 360px;
+
+    @include r(1529) {
+      padding: 0 24px;
+      grid-template-columns: 100%;
+    }
   }
 
   &__item {
@@ -13,38 +18,73 @@
     justify-content: center;
     padding: 20px 30px;
 
+    @include r(1529) {
+      padding: 10px 10px 20px 10px;
+    }
+
     &:nth-child(1) {
       border-left: 1px solid $outline;
       border-right: 1px solid $outline;
+      @include r(1529) {
+        border-bottom: 1px solid $outline;
+      }
     }
 
     &:nth-child(2) {
       border-right: 1px solid $outline;
+
+      @include r(1529) {
+        border-left: 1px solid $outline;
+      }
     }
 
     &:nth-child(3) {
       border-right: 1px solid $outline;
+      @include r(1529) {
+        border-left: 1px solid $outline;
+      }
     }
 
     &:nth-child(4) {
       border-top: 1px solid $outline;
       border-left: 1px solid $outline;
       border-right: 1px solid $outline;
+      @include r(1529) {
+        justify-content: flex-start;
+        padding-bottom: 7px;
+        border-left: 1px solid $outline;
+      }
     }
 
     &:nth-child(5) {
       border-top: 1px solid $outline;
       border-right: 1px solid $outline;
+      @include r(1529) {
+        padding-top: 0;
+        justify-content: flex-start;
+        padding-bottom: 7px;
+        border-top: none;
+        border-left: 1px solid $outline;
+      }
     }
 
     &:nth-child(6) {
       border-top: 1px solid $outline;
       border-right: 1px solid $outline;
+      @include r(1529) {
+        justify-content: flex-start;
+        border-top: none;
+        border-left: 1px solid $outline;
+      }
     }
 
     &--bg {
       position: relative;
       background: url('../assets/images/footer-bg.jpg');
+
+      @include r(1529) {
+        height: 300px;
+      }
 
       &::before {
         position: absolute;
@@ -74,6 +114,12 @@
   &__list {
     display: flex;
     gap: 62px;
+
+    @include r(1529) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 38px ;
+    }
   }
 
   &__element {
@@ -90,6 +136,10 @@
     line-height: normal;
     text-transform: uppercase;
     color: $gray;
+
+    @include r(1529) {
+      margin-bottom: 4px;
+    }
   }
 
   &__link {

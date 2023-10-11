@@ -1,3 +1,6 @@
+// UI
+@import "UI/ui";
+
 @import "body/body";
 @import "columns/columns";
 @import "container/container";
@@ -27,6 +30,5 @@
 @import "stock/stock";
 @import "dropdown/dropdown";
 @import "search/search";
-
-// UI
-@import "UI/ui";
+@import "all-category/all-category";
+@import "header-menu/header-menu";

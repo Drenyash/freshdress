@@ -21,6 +21,11 @@ import star from "../assets/sprite/icon-star.svg"
 import starBorder from "../assets/sprite/icon-star-border.svg"
 import trash from "../assets/sprite/icon-trash.svg"
 import clip from "../assets/sprite/icon-clip.svg"
+import clarity from "../assets/sprite/icon-clarity.svg"
+import wallet from "../assets/sprite/icon-wallet.svg"
+import tShirt from "../assets/sprite/icon-t-shirt.svg"
+import shop from "../assets/sprite/icon-shop.svg"
+import smile2 from "../assets/sprite/icon-smile-2.svg"
 export default {
     arrow,
     arrowPointer,
@@ -45,4 +50,9 @@ export default {
     starBorder,
     trash,
     clip,
+    clarity,
+    wallet,
+    tShirt,
+    shop,
+    smile2,
 }

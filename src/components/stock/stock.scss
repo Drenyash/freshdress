@@ -6,6 +6,7 @@
   transition: height .2s linear;
 
   @include r(1529) {
+    position: static;
     width: 241px;
     height: 346px;
   }
@@ -38,6 +39,12 @@
     opacity: 0;
     visibility: hidden;
     transition: .2s linear;
+
+    @include r(1529) {
+      left: initial;
+      right: 0;
+      bottom: 8px;
+    }
   }
 
   &__percent {

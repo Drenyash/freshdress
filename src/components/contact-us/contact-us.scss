@@ -3,8 +3,39 @@
   justify-content: space-between;
   align-items: flex-end;
 
+  @include r(1529) {
+    flex-direction: column;
+  }
+
   &__form {
     align-self: center;
     max-width: 630px;
+    @include r(1529) {
+      order: -1;
+    }
+  }
+
+  &__picture {
+    &:first-child {
+      @include r(1529) {
+        width: 327px;
+        height: 476px;
+        margin-right: auto;
+        margin-top: 100px;
+        z-index: 1;
+        pointer-events: none;
+      }
+    }
+    &:last-child {
+      @include r(1529) {
+        position: absolute;
+        top: 59%;
+        right: 0;
+        width: 225px;
+        height: 503px;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    }
   }
 }

@@ -2,4 +2,8 @@
   flex-grow: 1;
   overflow: hidden;
   padding-top: 77px;
+
+  @include r(1529) {
+    padding-top: 140px;
+  }
 }

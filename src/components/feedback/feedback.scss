@@ -7,6 +7,39 @@
   background: $light;
   box-shadow: 0 20px 60px 0 rgba(46, 33, 61, 0.16);
 
+  @include r(1529) {
+    flex-direction: column;
+    width: 327px;
+    margin: 0 auto;
+    gap: 18px;
+    padding: 32px 18px 24px;
+  }
+
+  &__top {
+    @include r(1529) {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .feedback__author {
+      @include r(1529) {
+        display: flex;
+      }
+    }
+
+    .feedback__occupation {
+      @include r(1529) {
+        display: flex;
+      }
+    }
+
+    .feedback__line {
+      @include r(1529) {
+        display: flex;
+      }
+    }
+  }
+
   &__text {
     margin-bottom: 16px;
     font-size: 16px;
@@ -14,6 +47,10 @@
     line-height: 24px;
     letter-spacing: 0.32px;
     color: $gray-dark;
+
+    @include r(1529) {
+      font-size: 14px;
+    }
   }
 
   &__picture {
@@ -24,16 +61,31 @@
     flex-shrink: 0;
     background-color: $gray-light;
     border-radius: 15px;
+
+    @include r(1529) {
+      width: 106px;
+      height: 106px;
+    }
+
     img {
       position: absolute;
       left: 20px;
-       bottom: 20px;
+      bottom: 20px;
+      @include r(1529) {
+        left: 8px;
+        bottom: 8px;
+        border-radius: 15px;
+      }
     }
   }
 
   &__line {
     max-width: 230px;
     margin-bottom: 10px;
+
+    @include r(1529) {
+      display: none;
+    }
   }
 
   &__author {
@@ -42,6 +94,11 @@
     font-weight: 400;
     line-height: normal;
     color: $dark-light;
+
+    @include r(1529) {
+      display: none;
+      font-size: 18px;
+    }
   }
 
   &__occupation {
@@ -49,5 +106,19 @@
     font-weight: 400;
     line-height: normal;
     color: $gray-light;
+
+    @include r(1529) {
+      margin-bottom: 10px;
+      display: none;
+      font-size: 14px;
+    }
+  }
+
+  &__about {
+    display: none;
+    @include r(1529) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

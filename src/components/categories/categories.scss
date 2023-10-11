@@ -1,8 +1,11 @@
 .categories {
-  display: grid;
-  grid-template-columns: repeat(9, 130px);
+  display: flex;
   gap: 20px;
   justify-content: space-between;
+
+  @include r(1529) {
+    padding: 0 24px;
+  }
 
   &__item {
     display: flex;
@@ -34,9 +37,20 @@
     height: 160px;
     transition: .2s linear;
 
+    @include r(1529) {
+      width: 70px;
+      height: 85px;
+    }
+
     img {
       mix-blend-mode: multiply;
       background-color: transparent;
+
+      @include r(1529) {
+        display: block;
+        width: auto;
+        height: 100%;
+      }
     }
   }
 
@@ -47,5 +61,11 @@
     font-weight: 700;
     line-height: 150%;
     color: $gray-light;
+
+    @include r(1529) {
+      font-size: 11px;
+      line-height: normal;
+      color: $black;
+    }
   }
 }

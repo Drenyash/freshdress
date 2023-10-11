@@ -4,6 +4,49 @@
   flex-direction: column;
   gap: 75px;
 
+  &::before {
+    position: absolute;
+    top: 287px;
+    left: 326px;
+    content: '';
+    display: flex;
+    width: 181px;
+    height: 216px;
+    background: linear-gradient(180deg, #8082FF 0%, #FD80FF 100%);
+    filter: blur(100px);
+
+    @include r(1529) {
+      top: 259px;
+      left: 73px;
+      z-index: -1;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 42px;
+    left: 796px;
+    content: '';
+    display: flex;
+    width: 181px;
+    height: 216px;
+    background: linear-gradient(180deg, #8082FF 0%, #FD80FF 100%);
+    filter: blur(100px);
+    z-index: -2;
+
+    @include r(1529) {
+      top: initial;
+      left: initial;
+      bottom: -155px;
+      right: -79px;
+    }
+  }
+
+  @include r(1529) {
+    align-items: center;
+    gap: 28px;
+  }
+
   &__text {
     max-width: 750px;
     font-size: 30px;
@@ -11,13 +54,19 @@
     line-height: 150%;
     color: $dark;
     z-index: 1;
+
+    @include r(1529) {
+      padding: 0 24px;
+      font-size: 18px;
+      text-align: center;
+    }
   }
 
   &__picture {
     position: absolute;
     right: -12%;
     top: 0;
-    z-index: 0;
+    z-index: -1;
     display: flex;
     flex-shrink: 0;
     width: 945px;
@@ -25,11 +74,40 @@
     border-radius: 282px 0 0 30px;
     overflow: hidden;
 
+    @include r(1529) {
+      position: static;
+      width: 100%;
+      height: 483px;
+    }
+
     img {
       display: block;
       width: 100%;
       object-fit: cover;
       object-position: center;
+    }
+  }
+
+  &__star {
+    position: absolute;
+    display: flex;
+    width: 76px;
+    height: 76px;
+
+    @include r(1529) {
+      display: none;
+    }
+
+    &--first {
+      left: -27px;
+      bottom: 45px;
+      z-index: -1;
+    }
+
+    &--second {
+      left: 730px;
+      bottom: 379px;
+      z-index: -1;
     }
   }
 }
