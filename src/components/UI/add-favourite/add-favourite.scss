@@ -4,9 +4,19 @@
   bottom: 16px;
   cursor: pointer;
 
+  &.active {
+    .add-favourite__icon {
+      fill: $red;
+      stroke: none;
+    }
+  }
+
   &__icon {
     display: flex;
     width: 26px;
     height: 26px;
+    fill: none;
+    stroke: $dark;
+    stroke-width: 1.5px;
   }
 }

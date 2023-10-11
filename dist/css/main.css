@@ -1677,6 +1677,10 @@ button {
   bottom: 16px;
   cursor: pointer;
 }
+.add-favourite.active .add-favourite__icon {
+  fill: #C60000;
+  stroke: none;
+}
 .add-favourite__icon {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1684,6 +1688,9 @@ button {
   display: flex;
   width: 26px;
   height: 26px;
+  fill: none;
+  stroke: #181818;
+  stroke-width: 1.5px;
 }
 
 .color {
@@ -1916,10 +1923,11 @@ button {
     display: flex;
   }
 }
-.burger__item {
+.burger::before {
   position: absolute;
   top: 0;
   left: 0;
+  content: "";
   display: block;
   width: 24px;
   height: 2px;

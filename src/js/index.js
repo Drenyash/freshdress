@@ -5,3 +5,6 @@ import "./sprite";
 import "./slider";
 import "./menu-mobile";
 import "./dropdown";
+import "./phoneMask";
+import "./form";
+import "./addFavourite";
