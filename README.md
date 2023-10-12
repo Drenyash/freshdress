@@ -2,7 +2,7 @@
 <p  align="center">Версии сайта: <b>1920px, 375px</b></p>
 <p  align="center">Используемая версия NodeJS: <b>20.2.0</b></p>
 <p  align="center">Система управления сайтом: <b>1С Битрикс</b></p>
-<p align="center"><a href="https://drenyash.github.io/freshdress/dist/"><b>Вёрстка проекта</b></a></p>
+<p align="center"><a href="https://drenyash.github.io/freshdress/dist/" target="_blank"><b>Вёрстка проекта</b></a></p>
 <hr>
 <h3>Структура проекта</h3>
 
