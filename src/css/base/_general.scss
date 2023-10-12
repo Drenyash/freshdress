@@ -33,7 +33,7 @@ button {
 }
 
 .mob-hidden {
-  @include r(1229) {
+  @include r(1529) {
     visibility: hidden !important;
     display: none !important;
   }
@@ -42,7 +42,7 @@ button {
 .desktop-hidden {
   display: none;
   visibility: hidden;
-  @include r(1229) {
+  @include r(1529) {
     display: block;
     visibility: visible;
   }

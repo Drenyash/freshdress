@@ -9,3 +9,6 @@ import "./phoneMask";
 import "./form";
 import "./addFavourite";
 import "./addBasket";
+import "./range";
+import "./filter";
+import "./open";

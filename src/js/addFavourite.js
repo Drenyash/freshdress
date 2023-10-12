@@ -4,7 +4,7 @@
         cards.forEach(card => {
             const addFavoriteButton = card.querySelector('.add-favourite');
             addFavoriteButton.addEventListener('click', () => {
-                addFavoriteButton.classList.add('active');
+                addFavoriteButton.classList.toggle('active');
             })
         })
     })

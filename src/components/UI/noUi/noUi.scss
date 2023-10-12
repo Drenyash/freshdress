@@ -1,0 +1,77 @@
+#range {
+  margin-bottom: 14px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 12px;
+  height: 12px;
+  right: -10px;
+  top: -4px;
+  border-radius: 10px;
+  outline: 0;
+  cursor: pointer;
+  background-color: $purple-light;
+}
+
+.noUi-horizontal .noUi-origin {
+  height: 0;
+}
+
+.noUi-horizontal {
+  height: 4px;
+}
+
+.noUi-target {
+  position: relative;
+  background: $light-blink;
+}
+
+.noUi-connect, .noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  transform-origin: 0 0;
+  transform-style: flat;
+}
+
+.noUi-base, .noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.noUi-handle {
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.noUi-touch-area {
+  height: 100%;
+  width: 100%;
+}
+
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 3px;
+}
+
+.noUi-origin {
+  height: 10%;
+  width: 100%;
+}
+
+.noUi-connect {
+  height: 100%;
+  width: 100%;
+  background-color: $purple-light;
+}
+
+.noUi-target, .noUi-target * {
+  touch-action: none;
+  user-select: none;
+  box-sizing: border-box;
+}

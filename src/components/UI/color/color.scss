@@ -1,22 +1,27 @@
 .color {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 8px;
+  width: 21px;
+  height: 18px;
+  border-radius: 4px;
+  cursor: pointer;
 
-  &__item {
-    display: flex;
-    cursor: pointer;
-
-    input:checked ~ span {
-      background-color: red;
+  &:hover {
+    input {
+      height: 12px;
     }
+  }
 
-    span {
-      display: flex;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: $gray;
+  input {
+    display: flex;
+    width: 21px;
+    height: 8px;
+    background-color: $gray-light;
+    border-radius: 4px;
+    transition: .2s ease-in-out;
+    &:checked {
+      height: 18px;
     }
   }
 }

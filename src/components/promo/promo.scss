@@ -1,0 +1,46 @@
+.promo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 57px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 15px;
+  overflow: hidden;
+
+  @include r(1529) {
+    width: auto;
+    margin: 0 24px;
+    padding: 54px 32px 30px;
+  }
+
+  &__title {
+    font-size: 130px;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    color: $dark;
+
+    @include r(1529) {
+      font-size: 65px;
+    }
+  }
+
+  &__text {
+    margin-top: -12px;
+    margin-bottom: 32px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $light;
+
+    @include r(1529) {
+      margin-top: 0;
+      margin-bottom: 60px;
+    }
+  }
+}
