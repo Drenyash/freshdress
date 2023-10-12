@@ -1,0 +1,88 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item--more &__link {
+    color: $purple-light;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &--offset {
+      gap: 8px;
+    }
+  }
+
+  &__section.active &__element {
+    background-color: $light-button;
+  }
+
+  &__section.active &__text {
+    color: $purple-light;
+  }
+
+  &__section.active &__icon {
+    fill: $purple-light;
+    transform: rotate(270deg);
+  }
+
+  &__icon {
+    display: flex;
+    width: 12px;
+    height: 12px;
+    transform: rotate(90deg);
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__count {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $gray-light;
+  }
+
+  &__link {
+    display: flex;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+    cursor: pointer;
+
+    &:hover {
+      color: $purple-light;
+    }
+  }
+}
