@@ -1,4 +1,4 @@
-import Swiper, {EffectCards, EffectCoverflow, EffectCreative, Navigation, Pagination} from "swiper";
+import Swiper, {EffectCards, EffectCoverflow, EffectCreative, EffectFade, Navigation, Pagination, Thumbs} from "swiper";
 
 document.addEventListener('DOMContentLoaded', () => {
     const sliders = document.querySelectorAll('[data-slider]');
@@ -29,9 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
+
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -53,9 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slideNextClass: 'slider__item--next',
                 slidePrevClass: 'slider__item--prev',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
+
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -76,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidesPerView: 'auto',
                 coverflowEffect: {
                     rotate: 0,
-                    stretch: 0,
-                    depth: 830,
+                    stretch: 255,
+                    depth: 430,
                     modifier: 1,
                     slideShadows: true
                 },
@@ -89,9 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
+
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -104,8 +98,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
             })
         } else if (slider.dataset.slider === 'stock') {
+            const swiperThumbs = new Swiper('.slider--info', {
+                slidesPerView: 1,
+                slideClass: 'slider__item',
+                slideActiveClass: 'slider__item--active',
+                slideNextClass: 'slider__item--next',
+                slidePrevClass: 'slider__item--prev',
+                slideVisibleClass: 'slider__item--visible',
+                wrapperClass: 'slider__wrapper',
+            })
             const swiper = new Swiper(slider, {
-                modules: [Navigation, Pagination],
+                modules: [Navigation, Pagination, Thumbs],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 centeredSlides: false,
@@ -116,9 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -135,6 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         centeredSlides: true,
                         watchSlidesProgress: true,
                     }
+                },
+                thumbs: {
+                    swiper: swiperThumbs,
                 }
             })
         } else if (slider.dataset.slider === 'categories') {
@@ -150,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
+                keyboard: {enabled: false, onlyInViewport: false,}, mousewheel: {invert: true,},
                 edgeSwipeDetection: true,
                 nested: true,
                 breakpoints: {
@@ -170,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
+                keyboard: {enabled: false, onlyInViewport: false,}, mousewheel: {invert: true,},
                 edgeSwipeDetection: true,
                 nested: true,
                 breakpoints: {

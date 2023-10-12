@@ -6995,6 +6995,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/sprite/icon-buy.svg":
+/*!****************************************!*\
+  !*** ./src/assets/sprite/icon-buy.svg ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-buy-usage",
+      viewBox: "0 0 30 31",
+      url: "/assets/sprite/" + "sprite.svg#icon-buy-usage",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
 /***/ "./src/assets/sprite/icon-cart.svg":
 /*!*****************************************!*\
   !*** ./src/assets/sprite/icon-cart.svg ***!
@@ -7024,7 +7043,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
       id: "icon-check-usage",
-      viewBox: "0 0 11 11",
+      viewBox: "0 0 24 24",
       url: "/assets/sprite/" + "sprite.svg#icon-check-usage",
       toString: function () {
         return this.url;
@@ -7451,6 +7470,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/addBasket.js":
+/*!*****************************!*\
+  !*** ./src/js/addBasket.js ***!
+  \*****************************/
+/***/ (function() {
+
+(function addBasket() {
+    const cards = document.querySelectorAll('.card')
+    const buyMessage = document.querySelector('[data-message-buy]')
+
+    cards.forEach(card => {
+        const size = card.querySelector('.size');
+        const sizeItems = size.querySelectorAll('.size__item');
+        const addButton = card.querySelector('.card__button');
+
+        sizeItems.forEach(item => {
+            item.addEventListener('click', () => {
+                addButton.classList.add('active')
+            })
+        })
+
+        addButton.addEventListener('click', () => {
+            //     Сбор данных для отправки
+            buyMessage.classList.add('active')
+            setTimeout(() => {
+                buyMessage.classList.remove('active')
+            }, 3000)
+        })
+    })
+})()
+
+
+/***/ }),
+
 /***/ "./src/js/addFavourite.js":
 /*!********************************!*\
   !*** ./src/js/addFavourite.js ***!
@@ -7522,9 +7575,10 @@ __webpack_require__.r(__webpack_exports__);
 (function form() {
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelectorAll('[data-form]')
+        const els = [...document.querySelectorAll('input'), ...document.querySelectorAll('textarea')];
+        const customInput = document.querySelectorAll('.custom-input');
 
         const getData = () => {
-            const els = [...document.querySelectorAll('input'), ...document.querySelectorAll('textarea')];
             const data = new FormData;
 
             els.forEach(element => {
@@ -7532,11 +7586,41 @@ __webpack_require__.r(__webpack_exports__);
                     data.append(element.name, element.value);
                 } else {
                     data.append(element.name, element.value);
+                    element.value = '';
                 }
             })
 
             return data;
         }
+
+        const validate = (element, validEl, invalidEl) => {
+            element.addEventListener('change', () => {
+                if (element.validity.valid) {
+                    element.classList.add('valid')
+                    element.classList.remove('invalid')
+                    if (!validEl || !invalidEl) return
+                    invalidEl.classList.add('hidden')
+                    validEl.classList.remove('hidden')
+                } else {
+                    element.classList.remove('valid')
+                    element.classList.add('invalid')
+                    if (!validEl || !invalidEl) return
+                    invalidEl.classList.remove('hidden')
+                    validEl.classList.add('hidden')
+                }
+            })
+        }
+
+        els.forEach(element => {
+            validate(element)
+        })
+
+        customInput.forEach(el => {
+            const input = el.querySelector('input')
+            const validEl = el.querySelector('.custom-input__valid');
+            const invalidEl = el.querySelector('.custom-input__invalid');
+            validate(input, validEl, invalidEl)
+        })
 
         const sendData = (url, form) => {
             axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, getData())
@@ -7545,6 +7629,7 @@ __webpack_require__.r(__webpack_exports__);
                     form.querySelectorAll('input').value = '';
                 })
                 .catch(error => console.error(error))
+
             const formEls = form.querySelectorAll('input');
             formEls.forEach(el => {
                 el.value = '';
@@ -7679,9 +7764,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
+
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -7703,9 +7786,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slideNextClass: 'slider__item--next',
                 slidePrevClass: 'slider__item--prev',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
+
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -7726,8 +7807,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidesPerView: 'auto',
                 coverflowEffect: {
                     rotate: 0,
-                    stretch: 0,
-                    depth: 830,
+                    stretch: 255,
+                    depth: 430,
                     modifier: 1,
                     slideShadows: true
                 },
@@ -7739,9 +7820,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
+
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -7754,8 +7833,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
             })
         } else if (slider.dataset.slider === 'stock') {
+            const swiperThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider--info', {
+                slidesPerView: 1,
+                slideClass: 'slider__item',
+                slideActiveClass: 'slider__item--active',
+                slideNextClass: 'slider__item--next',
+                slidePrevClass: 'slider__item--prev',
+                slideVisibleClass: 'slider__item--visible',
+                wrapperClass: 'slider__wrapper',
+            })
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 centeredSlides: false,
@@ -7766,9 +7854,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
-               tedgeSwipeDetection: true,
-                nested: true,
                 navigation: {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
@@ -7785,6 +7870,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         centeredSlides: true,
                         watchSlidesProgress: true,
                     }
+                },
+                thumbs: {
+                    swiper: swiperThumbs,
                 }
             })
         } else if (slider.dataset.slider === 'categories') {
@@ -7800,7 +7888,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
+                keyboard: {enabled: false, onlyInViewport: false,}, mousewheel: {invert: true,},
                 edgeSwipeDetection: true,
                 nested: true,
                 breakpoints: {
@@ -7820,7 +7908,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
-                keyboard: { enabled: false, onlyInViewport: false, }, mousewheel: { invert: true, },
+                keyboard: {enabled: false, onlyInViewport: false,}, mousewheel: {invert: true,},
                 edgeSwipeDetection: true,
                 nested: true,
                 breakpoints: {
@@ -7873,6 +7961,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_sprite_icon_t_shirt_svg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../assets/sprite/icon-t-shirt.svg */ "./src/assets/sprite/icon-t-shirt.svg");
 /* harmony import */ var _assets_sprite_icon_shop_svg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../assets/sprite/icon-shop.svg */ "./src/assets/sprite/icon-shop.svg");
 /* harmony import */ var _assets_sprite_icon_smile_2_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../assets/sprite/icon-smile-2.svg */ "./src/assets/sprite/icon-smile-2.svg");
+/* harmony import */ var _assets_sprite_icon_buy_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../assets/sprite/icon-buy.svg */ "./src/assets/sprite/icon-buy.svg");
+
 
 
 
@@ -7930,6 +8020,7 @@ __webpack_require__.r(__webpack_exports__);
     tShirt: _assets_sprite_icon_t_shirt_svg__WEBPACK_IMPORTED_MODULE_25__["default"],
     shop: _assets_sprite_icon_shop_svg__WEBPACK_IMPORTED_MODULE_26__["default"],
     smile2: _assets_sprite_icon_smile_2_svg__WEBPACK_IMPORTED_MODULE_27__["default"],
+    buy: _assets_sprite_icon_buy_svg__WEBPACK_IMPORTED_MODULE_28__["default"],
 });
 
 
@@ -20928,6 +21019,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
 /* harmony import */ var _addFavourite__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./addFavourite */ "./src/js/addFavourite.js");
 /* harmony import */ var _addFavourite__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_addFavourite__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _addBasket__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./addBasket */ "./src/js/addBasket.js");
+/* harmony import */ var _addBasket__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_addBasket__WEBPACK_IMPORTED_MODULE_9__);
+
 
 
 

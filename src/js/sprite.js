@@ -26,6 +26,7 @@ import wallet from "../assets/sprite/icon-wallet.svg"
 import tShirt from "../assets/sprite/icon-t-shirt.svg"
 import shop from "../assets/sprite/icon-shop.svg"
 import smile2 from "../assets/sprite/icon-smile-2.svg"
+import buy from "../assets/sprite/icon-buy.svg"
 export default {
     arrow,
     arrowPointer,
@@ -55,4 +56,5 @@ export default {
     tShirt,
     shop,
     smile2,
+    buy,
 }

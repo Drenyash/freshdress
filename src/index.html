@@ -73,7 +73,7 @@
                 <div class="intro__info">
                     <div class="intro__intro">
                         <h1 class="intro__title">Fashion & branding</h1>
-                        <p class="intro__text">FRESH DRESS - это российский бренд лаконичной женской одежды, который
+                        <p class="intro__text">FRESH DRESS - это российский бренд лаконичной<br> женской одежды, который
                             стал
                             одним из самых быстрорастущих и динамичных брендов на рынке.</p>
                         <button class="intro__button button">Каталог</button>
@@ -197,6 +197,58 @@
                             </button>
                         </div>
                         <div class="slider__pagination"></div>
+                    </div>
+                    <div class="slider slider--info" data-slider="fade">
+                        <div class="slider__wrapper">
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>01</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>02</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>03</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>04</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1668,7 +1720,7 @@
                     </button>
                 </div>
             </div>
-            <button class="button button--center">Смотреть хиты одежды</button>
+            <button class="button button--center">Перейти в каталог</button>
         </div>
     </section>
     <section class="section pb-150 pbm-80">
@@ -1863,7 +1915,17 @@
                             Оставьте ваши данные и наш менеджер свяжется с вами в ближайшее время.
                         </p>
                     </div>
-                    <input type="tel" class="input" placeholder="Номер телефона" required>
+                    <div class="custom-input">
+                        <input type="tel" class="input" placeholder="Номер телефона" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
+                        <div class="custom-input__valid hidden">
+                            <svg>
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
+                            </svg>
+                        </div>
+                        <div class="custom-input__invalid hidden">
+                            <span>Телефон введен неверно!</span>
+                        </div>
+                    </div>
                     <button class="button" type="submit">Отправить</button>
                 </form>
                 <picture class="contact-us__picture">
@@ -1874,86 +1936,8 @@
     </section>
 </main>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer__container">
-            <div class="footer__item">
-                <a class="footer__logo" href="/">
-                    <svg>
-                        <use xlink:href="./assets/sprite/sprite.svg#icon-logo"></use>
-                    </svg>
-                </a>
-            </div>
-            <div class="footer__item">
-                <nav class="footer__nav">
-                    <ul class="footer__list">
-                        <li class="footer__element">
-                            <h3 class="footer__title">покупателям</h3>
-                            <a class="footer__link" href="#">Доставка и оплата</a>
-                            <a class="footer__link" href="#">Самовывоз</a>
-                            <a class="footer__link" href="#">Возврат</a>
-                            <a class="footer__link" href="#">ОПТ</a>
-                            <a class="footer__link" href="#">Система лояльности</a>
-                            <a class="footer__link" href="#">Уход</a>
-                            <a class="footer__link" href="#">Гарантия</a>
-                            <a class="footer__link" href="#">Таблица размеров</a>
-                        </li>
-                        <li class="footer__element">
-                            <h3 class="footer__title">о компании</h3>
-                            <a class="footer__link" href="#">О бренде</a>
-                            <a class="footer__link" href="#">Контакты</a>
-                            <a class="footer__link" href="#">Отзывы</a>
-                            <a class="footer__link" href="#">Новости</a>
-                            <a class="footer__link" href="#">Вакансии</a>
-                            <a class="footer__link" href="#">ОПТ</a>
-                        </li>
-                        <li class="footer__element">
-                            <h3 class="footer__title">социальные сети</h3>
-                            <a class="footer__link" href="#">Telegram</a>
-                            <a class="footer__link" href="#">WhatsApp</a>
-                        </li>
-                        <li class="footer__element">
-                            <h3 class="footer__title">партнерам</h3>
-                            <a class="footer__link" href="#">Публичная оферта</a>
-                            <ul class="contacts">
-                                <li class="contacts__item">
-                                    <h3 class="contacts__title">Номер:</h3>
-                                    <a class="contacts__text" href="mailto: opt@freshdress-shop.ru">opt@freshdress-shop.ru</a>
-                                </li>
-                                <li class="contacts__item">
-                                    <h3 class="contacts__title">Телефон:</h3>
-                                    <a class="contacts__text" href="tel: +7 (929) 694-44-56">+7 (929) 694-44-56</a>
-                                </li>
-                                <li class="contacts__item">
-                                    <p class="contacts__address">
-                                        Котельническая набережная 31,<br>
-                                        с 11:00 до 21:00 без выходных
-                                    </p>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer__item footer__item--bg">
-                <form class="form-news" action="#" data-form>
-                    <h3 class="form-news__title">Подпишитесь на новости:</h3>
-                    <input type="email" class="form-news__input" placeholder="Ваш E-mail" required>
-                    <button class="button">Подписаться</button>
-                </form>
-            </div>
-            <div class="footer__item">
-                <p class="footer__meta">© 2014–2023 Fresh Dress</p>
-            </div>
-            <div class="footer__item">
-                <a href="#" class="footer__meta">Пользовательское соглашение</a>
-            </div>
-            <div class="footer__item">
-                <a href="#" class="footer__meta">Разработано <span>#DIEZTECH</span></a>
-            </div>
-        </div>
-    </div>
-</footer>
+<%= htmlWebpackPlugin.options.sectionFooter %>
 <%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
 </body>
 </html>

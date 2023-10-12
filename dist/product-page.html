@@ -879,7 +879,7 @@
 </main>
 <footer class="footer"></footer>
 
-<section class="section section--purple">
+<section class="section section--purple hidden">
     <div class="container">
         <div class="intro">
             <div class="intro__picture">
@@ -927,6 +927,24 @@
     </div>
 </section>
 
+<div class="message" data-message-login>
+    <div class="message__picture">
+        <svg class="message__icon">
+            <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
+        </svg>
+    </div>
+    <p class="message__text">Регистрация прошла успешно !</p>
+</div>
+
+<div class="message message--small" data-message-buy>
+    <div class="message__picture">
+        <svg class="message__icon">
+            <use xlink:href="./assets/sprite/sprite.svg#icon-buy"></use>
+        </svg>
+    </div>
+    <p class="message__text">Товар добавлен в корзину</p>
+</div>
+
 <!-- Это временная секция, здесь ссылки на все страницы. На продакшене ее не будет -->
 <section class="section">
     <div class="container">
@@ -949,6 +967,7 @@
         </style>
         <div class="temp">
             <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./catalog.html" class="temp__link">Каталог</a>
         </div>
     </div>
 </section>

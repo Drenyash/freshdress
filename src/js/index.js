@@ -8,3 +8,4 @@ import "./dropdown";
 import "./phoneMask";
 import "./form";
 import "./addFavourite";
+import "./addBasket";

@@ -1399,7 +1399,7 @@
                 <div class="intro__info">
                     <div class="intro__intro">
                         <h1 class="intro__title">Fashion & branding</h1>
-                        <p class="intro__text">FRESH DRESS - это российский бренд лаконичной женской одежды, который
+                        <p class="intro__text">FRESH DRESS - это российский бренд лаконичной<br> женской одежды, который
                             стал
                             одним из самых быстрорастущих и динамичных брендов на рынке.</p>
                         <button class="intro__button button">Каталог</button>
@@ -1523,6 +1523,58 @@
                             </button>
                         </div>
                         <div class="slider__pagination"></div>
+                    </div>
+                    <div class="slider slider--info" data-slider="fade">
+                        <div class="slider__wrapper">
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>01</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>02</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>03</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider__item">
+                                <div class="stock">
+                                    <div class="stock__info">
+                                        <p class="stock__title">
+                                            <span>04</span>
+                                            <span class="stock__line"></span>
+                                            <span class="stock__text">Распродажа</span>
+                                        </p>
+                                        <p class="stock__percent">30%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2994,7 +3046,7 @@
                     </button>
                 </div>
             </div>
-            <button class="button button--center">Смотреть хиты одежды</button>
+            <button class="button button--center">Перейти в каталог</button>
         </div>
     </section>
     <section class="section pb-150 pbm-80">
@@ -3189,7 +3241,17 @@
                             Оставьте ваши данные и наш менеджер свяжется с вами в ближайшее время.
                         </p>
                     </div>
-                    <input type="tel" class="input" placeholder="Номер телефона" required>
+                    <div class="custom-input">
+                        <input type="tel" class="input" placeholder="Номер телефона" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
+                        <div class="custom-input__valid hidden">
+                            <svg>
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
+                            </svg>
+                        </div>
+                        <div class="custom-input__invalid hidden">
+                            <span>Телефон введен неверно!</span>
+                        </div>
+                    </div>
                     <button class="button" type="submit">Отправить</button>
                 </form>
                 <picture class="contact-us__picture">
@@ -3280,6 +3342,7 @@
         </div>
     </div>
 </footer>
+
 <!-- Это временная секция, здесь ссылки на все страницы. На продакшене ее не будет -->
 <section class="section">
     <div class="container">
@@ -3302,9 +3365,76 @@
         </style>
         <div class="temp">
             <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./catalog.html" class="temp__link">Каталог</a>
         </div>
     </div>
 </section>
+
+<section class="section section--purple hidden">
+    <div class="container">
+        <div class="intro">
+            <div class="intro__picture">
+                <img src="./assets/images/fashion.png" alt="">
+                <img src="./assets/images/fashion-1.png" alt="">
+            </div>
+            <div class="intro__image">
+                <img src="./assets/images/index-girl.png" alt="">
+            </div>
+            <div class="intro__toolbox">
+                <p class="intro__text">
+                    Элегантность, женственность и совершенство во всем, даже в малейших деталях.
+                </p>
+                <button class="intro__button button button--purple button--outline">Каталог</button>
+            </div>
+            <div class="intro-decor">
+                <picture class="intro-decor__picture intro-decor__picture--first">
+                    <img src="" alt="">
+                </picture>
+                <picture class="intro-decor__picture intro-decor__picture--second">
+                    <img src="" alt="">
+                </picture>
+                <picture class="intro-decor__picture intro-decor__picture--third">
+                    <img src="" alt="">
+                </picture>
+                <div class="intro-decor__clip">
+                    <svg>
+                        <use xlink:href="./assets/sprite/sprite.svg#icon-clip"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="decor">
+            <div class="decor__star decor__star-small">
+                <svg class="decor__icon">
+                    <use xlink:href="./assets/sprite/sprite.svg#icon-star"></use>
+                </svg>
+            </div>
+            <div class="decor__star decor__star-big">
+                <svg class="decor__icon decor__icon--big">
+                    <use xlink:href="./assets/sprite/sprite.svg#icon-star"></use>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="message" data-message-login>
+    <div class="message__picture">
+        <svg class="message__icon">
+            <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
+        </svg>
+    </div>
+    <p class="message__text">Регистрация прошла успешно !</p>
+</div>
+
+<div class="message message--small" data-message-buy>
+    <div class="message__picture">
+        <svg class="message__icon">
+            <use xlink:href="./assets/sprite/sprite.svg#icon-buy"></use>
+        </svg>
+    </div>
+    <p class="message__text">Товар добавлен в корзину</p>
+</div>
 
 <script defer src="js/bundle.js"></script></body>
 </html>

@@ -8,10 +8,19 @@
   background: #FFF;
   box-shadow: 0 3.01852px 3.14815px 0 rgba(0, 0, 0, 0.01), 0 13.28148px 6.51852px 0 rgba(0, 0, 0, 0.02), 0 32.6px 13px 0 rgba(0, 0, 0, 0.02), 0 62.78519px 25.48148px 0 rgba(0, 0, 0, 0.02), 0 105.64815px 46.85185px 0 rgba(0, 0, 0, 0.03), 0 163px 80px 0 rgba(0, 0, 0, 0.04);
   text-align: center;
+  border: 2px solid;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
   color: $gray-light;
+
+  &--valid {
+    border-color: $green;
+  }
+
+  &--invalid {
+    border-color: $red;
+  }
 
   @include r(1529) {
     padding: 17px 28px;

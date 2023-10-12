@@ -27,6 +27,19 @@ module.exports = [
 		inject: "body",
 		title: "Карточка товара",
 		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/catalog.html",
+		filename: "catalog.html",
+		inject: "body",
+		title: "Каталог",
+		head,
+		sectionHeader,
+		sectionFooter,
 		temp,
 		hidden
 	}),

@@ -16,6 +16,7 @@
   }
 
   &__picture {
+    pointer-events: none;
     &:first-child {
       @include r(1529) {
         width: 327px;

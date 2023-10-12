@@ -1,0 +1,56 @@
+.message {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 34px 59px;
+  transform: translate3d(-50%, -50px, 0);
+  background-color: $light;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px 0 rgba(51, 51, 51, 0.08), 0 4px 4px 0 rgba(51, 51, 51, 0.04);
+  z-index: 5;
+  transition: .2s linear;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  &.active {
+    transform: translate3d(-50%, 0, 0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &--small {
+    padding: 17px 29px;
+  }
+
+  &__picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background-color: $green-transparent;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    fill: $green;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+    color: $dark;
+  }
+}

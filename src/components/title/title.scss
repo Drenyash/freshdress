@@ -6,6 +6,15 @@
   color: $dark;
   text-align: center;
 
+  &--small {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
   @include r(1529) {
     font-size: 24px;
   }
