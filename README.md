@@ -1,5 +1,6 @@
-<p>
-<img src="https://i.yapx.ru/WkT9u.png" alt="FreshDress" />
+<p align="center">
+
+![DiezTech](https://i.yapx.ru/WkT9u.png)
 </p>
 <h3 align="center">Проект: FreshDress</h3>
 <p  align="center">Версии сайта: <b>1920px, 375px</b></p>
