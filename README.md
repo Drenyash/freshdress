@@ -1,4 +1,4 @@
-<h1 align="center" style="text-transform: uppercase; font-size: 48px; font-weight: 700">FreshDress</h3>
+<h1 align="center" style="text-transform: uppercase; font-size: 48px; font-weight: 700">FreshDress</h1>
 <p  align="center">Версии сайта: <b>1920px, 375px</b></p>
 <p  align="center">Используемая версия NodeJS: <b>20.2.0</b></p>
 <p  align="center">Система управления сайтом: <b>1С Битрикс</b></p>
