@@ -16,6 +16,13 @@
     text-align: left;
   }
 
+  &--bold {
+    text-align: left;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: none;
+  }
+
   @include r(1529) {
     font-size: 24px;
   }

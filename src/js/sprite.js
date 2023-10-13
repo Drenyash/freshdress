@@ -27,6 +27,9 @@ import tShirt from "../assets/sprite/icon-t-shirt.svg"
 import shop from "../assets/sprite/icon-shop.svg"
 import smile2 from "../assets/sprite/icon-smile-2.svg"
 import buy from "../assets/sprite/icon-buy.svg"
+import home from "../assets/sprite/icon-home.svg"
+import pin from "../assets/sprite/icon-pin.svg"
+import car from "../assets/sprite/icon-car.svg"
 export default {
     arrow,
     arrowPointer,
@@ -57,4 +60,7 @@ export default {
     shop,
     smile2,
     buy,
+    home,
+    pin,
+    car,
 }

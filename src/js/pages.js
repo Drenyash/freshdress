@@ -43,4 +43,48 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/delivery-info.html",
+		filename: "delivery-info.html",
+		inject: "body",
+		title: "Доставка и оплата",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/return.html",
+		filename: "return.html",
+		inject: "body",
+		title: "Возврат",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/guarantee.html",
+		filename: "guarantee.html",
+		inject: "body",
+		title: "Гарантия",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/static-page-tabs.html",
+		filename: "static-page-tabs.html",
+		inject: "body",
+		title: "Уход",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];

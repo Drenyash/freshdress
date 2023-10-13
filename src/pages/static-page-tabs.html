@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-135">
+        <div class="container">
+            <div class="static static--full">
+                <div class="static__top static__top--620">
+                    <h1 class="title title--bold mb-15">Уход</h1>
+                    <p class="static__text">
+                        Мы создали руководство по уходу за материалами, которые требуют особого внимания, чтобы помочь
+                        вам
+                        правильно ухаживать за своей одеждой: так она прослужит дольше. Следуя приведенным здесь
+                        рекомендациям, вы сможете уменьшить износ одежды.
+                    </p>
+                </div>
+                <div class="tabs">
+                    <div class="tabs__item active">
+                        <picture class="tabs__picture">
+                            <img
+                                src="https://s3-alpha-sig.figma.com/img/b179/7c19/e99dcee316dcaaebe026b27f2cc24003?Expires=1698019200&Signature=npXaVDI63It1qCdOP56NmbQ~INEcgpwYfGSvAgs7FfQ~i5ThQCgkxfpMfAkp4crFafKedbkjR4NkwqX5a3LCT8YkfFjMk93Dg7QA9JE7d1WiSoKC0hN1JNC1bSJIe429bfU9-FdnoxjSV4dWwg3FLBhSkhky8iAZGHXy4qN4XotMQiNGtsnv8Ee3Q9ihSza0Pm6tFE2Z1--UTsPFY3v44zwimji1elOp4ERieVpRcoPoPGDGmTJoMEvOVw5pl3rmX~7fPIMFYr-PvwT8~dehG60kiIAWReeESCQOziWzjtLbU6TOmHx84Vi70FLej2htnnpjZvn0wqG736P6dOnSxg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                alt="">
+                        </picture>
+                        <button class="tabs__button">Изделия из экокожи</button>
+                    </div>
+                    <div class="tabs__item">
+                        <picture class="tabs__picture">
+                            <img
+                                src="https://s3-alpha-sig.figma.com/img/7b40/f1e1/966c800000584ca866bf89a7dd9f9a79?Expires=1698019200&Signature=OfwDy7PYSghsyvsA7ltfttWDWlNhVdxQkKhz81M8dgCgfbeXWUQy9Q~W-0wKgwxNsESV6raC5kTMq1R7--5JaR5BWtSatSaNNeo01smGCIveXlQkUy47YAejhmNqOqj99ok5kLgiTYxJcgzsgIEqVcLpMSUB-~ux2xhNze-DoQ21-1mApVc7t1oQ8y9xGbE~FpEMdEXuD94P4vJ4t~Z-d0w3qwYMgEFTgDsHN7KUwt1xxkvSYwA8yaL7hGFvsH5NpY5tW4thOVa~JKTr6jc~DAyW02sidPi2ueDSSTBDXltQLlQ3TfhevUw~vEdasPQvD1DhSZHLK2y~hATwJbUqOg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                alt="">
+                        </picture>
+                        <button class="tabs__button">Изделия из шёлка</button>
+                    </div>
+                    <div class="tabs__item">
+                        <picture class="tabs__picture">
+                            <img
+                                src="https://s3-alpha-sig.figma.com/img/72f6/011d/b8f6ce80058243c44d98c17b150d764f?Expires=1698019200&Signature=pl3i7YtPjCaNHgOzsrdf9xHoRb3iCBqQK0Y7WSl4kQM8aNV4qiHx1an4aod~khu8UIVCD9-trxsmUKIImNMcd1msWocbMHVFvU0Kcg7YXag0BrdyO01WYdmtZN~1yWxquX~yV0SwyCWmrmTe8-DJ93oGU3IQ9RR8C-QFmtkZiryC9-yr0y2026y9obWcNQVfcX8Ojal3vtfcGWG8WnGdzlA5N9JoTbGegF-g3be47rbNap4FidnmEscnMJbclnqB3XYiFevIuaebsG6qP3TTZ0pLeH0v5uJhLCIqaoJxOVY83lEsGOdjtK8MVu6zOxsA1INaKz9rsqP4xECa1glnuA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                alt="">
+                        </picture>
+                        <button class="tabs__button">Трикотажные изделия</button>
+                    </div>
+                </div>
+                <div class="static__content">
+                    <div class="static__item">
+                        <b>Изделия из экокожи</b>
+                        <p>
+                            Изделия из экокожи пользуются огромной популярностью и уход за изделиями из экокожи не
+                            представляет особенной сложности и заключается в их правильной эксплуатации, чистке и
+                            хранении. Чтобы этот материал как можно дольше сохранял свой первоначальный вид,
+                            потребуется соблюдать ряд правил.
+                        </p>
+                        <b>Стоит запомнить 8 основных правил.</b>
+                        <ul>
+                            <li>
+                                Регулярно очищать поверхность при помощи мягкой ткани.
+                            </li>
+                            <li>
+                                Удалять появившиеся пятна только поролоновой губкой или куском фланели, избегая
+                                использования щеток.
+                            </li>
+                            <li>
+                                Подбирать щадящие средства для чистки, не содержащие абразивных частиц и агрессивных
+                                компонентов.
+                            </li>
+                            <li>
+                                В процессе удаления грязи протирать материал легкими движениями, не прилагая больших
+                                механических усилий.
+                            </li>
+                            <li>
+                                Использовать специальные средства для защиты материала от влаги, предотвращения
+                                трещин и придания ему мягкости и блеска.
+                            </li>
+                            <li>
+                                Оберегать изделия из экокожи от воздействия прямых солнечных лучей.
+                            </li>
+                            <li>
+                                Сушить материал естественным путем, вдали от обогревательных приборов и батарей
+                                отопления.
+                            </li>
+                            <li>
+                                Не складывайте кожаную одежду. На поверхности ткани могут оставаться заломы, которые
+                                со временем трудно убрать. Поэтому лучше хранить одежду из кожи на вешалках с
+                                плотными плечиками. Помните, что эти вещи плохо переносят тесноту и они не должны
+                                соприкасаться с другими изделиями из экокожи.
+                            </li>
+                        </ul>
+                        <b>❗️ Совет ️</b>
+                        <p>Если вещь из экокожи сильно загрязнилась и на ней появились трудновыводимые пятна, не следует
+                            проводить эксперименты в домашних условиях. Лучше обратиться в химчистку, где специалисты
+                            точно знают, как привести в порядок такой материал.</p>
+                    </div>
+                    <div class="static__item">
+
+                    </div>
+                    <div class="static__item">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

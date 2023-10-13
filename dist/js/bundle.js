@@ -9305,6 +9305,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/sprite/icon-car.svg":
+/*!****************************************!*\
+  !*** ./src/assets/sprite/icon-car.svg ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-car-usage",
+      viewBox: "0 0 24 24",
+      url: "/assets/sprite/" + "sprite.svg#icon-car-usage",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
 /***/ "./src/assets/sprite/icon-cart.svg":
 /*!*****************************************!*\
   !*** ./src/assets/sprite/icon-cart.svg ***!
@@ -9514,6 +9533,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/sprite/icon-home.svg":
+/*!*****************************************!*\
+  !*** ./src/assets/sprite/icon-home.svg ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-home-usage",
+      viewBox: "0 0 24 24",
+      url: "/assets/sprite/" + "sprite.svg#icon-home-usage",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
 /***/ "./src/assets/sprite/icon-logo.svg":
 /*!*****************************************!*\
   !*** ./src/assets/sprite/icon-logo.svg ***!
@@ -9590,6 +9628,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/sprite/icon-pin.svg":
+/*!****************************************!*\
+  !*** ./src/assets/sprite/icon-pin.svg ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-pin-usage",
+      viewBox: "0 0 24 24",
+      url: "/assets/sprite/" + "sprite.svg#icon-pin-usage",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
 /***/ "./src/assets/sprite/icon-search.svg":
 /*!*******************************************!*\
   !*** ./src/assets/sprite/icon-search.svg ***!
@@ -9638,7 +9695,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
       id: "icon-smile-2-usage",
-      viewBox: "0 0 16 16",
+      viewBox: "0 0 20 20",
       url: "/assets/sprite/" + "sprite.svg#icon-smile-2-usage",
       toString: function () {
         return this.url;
@@ -9861,7 +9918,7 @@ __webpack_require__.r(__webpack_exports__);
     document.addEventListener('DOMContentLoaded', () => {
         const filterElement = document.querySelectorAll('.filter__section');
         filterElement.forEach(element => {
-            element.addEventListener('click', function() {
+            element.addEventListener('click', function(evt) {
                 this.classList.toggle('active')
             })
         })
@@ -10343,6 +10400,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_sprite_icon_shop_svg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../assets/sprite/icon-shop.svg */ "./src/assets/sprite/icon-shop.svg");
 /* harmony import */ var _assets_sprite_icon_smile_2_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../assets/sprite/icon-smile-2.svg */ "./src/assets/sprite/icon-smile-2.svg");
 /* harmony import */ var _assets_sprite_icon_buy_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../assets/sprite/icon-buy.svg */ "./src/assets/sprite/icon-buy.svg");
+/* harmony import */ var _assets_sprite_icon_home_svg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../assets/sprite/icon-home.svg */ "./src/assets/sprite/icon-home.svg");
+/* harmony import */ var _assets_sprite_icon_pin_svg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../assets/sprite/icon-pin.svg */ "./src/assets/sprite/icon-pin.svg");
+/* harmony import */ var _assets_sprite_icon_car_svg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../assets/sprite/icon-car.svg */ "./src/assets/sprite/icon-car.svg");
+
+
+
 
 
 
@@ -10402,6 +10465,9 @@ __webpack_require__.r(__webpack_exports__);
     shop: _assets_sprite_icon_shop_svg__WEBPACK_IMPORTED_MODULE_26__["default"],
     smile2: _assets_sprite_icon_smile_2_svg__WEBPACK_IMPORTED_MODULE_27__["default"],
     buy: _assets_sprite_icon_buy_svg__WEBPACK_IMPORTED_MODULE_28__["default"],
+    home: _assets_sprite_icon_home_svg__WEBPACK_IMPORTED_MODULE_29__["default"],
+    pin: _assets_sprite_icon_pin_svg__WEBPACK_IMPORTED_MODULE_30__["default"],
+    car: _assets_sprite_icon_car_svg__WEBPACK_IMPORTED_MODULE_31__["default"],
 });
 
 
