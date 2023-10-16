@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-150">
+        <div class="container">
+            <div class="cart">
+                <div class="cart__body">
+                    <div class="cart__top">
+                        <div class="cart__head">
+                            <h1 class="title">Корзина</h1>
+                            <div class="cart__count"><span data-cart-count>0</span> товара</div>
+                        </div>
+                        <div class="cart__control">
+                            <label class="cart__button">
+                                <input type="checkbox" class="check">
+                                <span>Выбрать всё</span>
+                            </label>
+                            <button class="cart__button" data-basket-removeAll>
+                                <svg class="cart__icon">
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-trash"></use>
+                                </svg>
+                                Удалить (<span data-cart-count>2</span>)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart__content">
+                        <div class="product-cart" data-cart>
+                            <input type="checkbox" class="check">
+                            <div class="product-cart__item">
+                                <picture class="product-cart__picture">
+                                    <img src="https://s3-alpha-sig.figma.com/img/7668/4fe8/73c3bffe83e96fdba3b8a3be5596ebe6?Expires=1698624000&Signature=CvRJUte~Jm5Po9W9hLR826rxeOvMLgO~uDjgJqcANj8UmKbSrWbfxi3Wh4lzUVNejWG-qeFWG6Un8iP46ok2CRzkNQTuVNkx3buzyVa3opD~pMHJI3LjpUSiUhOz5nnuPCvoE1tBYUlWOJaW8VpQMW2vnuMt9NgR4JJEkd9P5pTAGCC8IvyojjyfTQCwM78mUaBbY-7bM5ezDt7kt7dYK9xpl9xVPmnAbe06rzHqCHnTQWdEFpBndgYyM~hlj2x7~b9N7FRgLemq41~8E5zXUNNRFvEGinqSyzK0PjBr4sjpxiG-HuX0FA2RWQcYNmxxZiqY5qOqlDk5IuIJxBpMwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+                                </picture>
+                                <div class="product-cart__info">
+                                    <h2 class="product-cart__title">Шерстяное пальто</h2>
+                                    <p class="product-cart__text">M (46/48)</p>
+                                    <p class="product-cart__text">Черный</p>
+                                    <div class="counter" data-counter>
+                                        <button class="counter__button counter__button--minus" data-counter-minus>-</button>
+                                        <input type="number" class="counter__input" value="1" data-counter-input>
+                                        <button class="counter__button counter__button--plus" data-counter-plus>+</button>
+                                    </div>
+                                    <div class="product-cart__available">Последний</div>
+                                </div>
+                                <div class="product-cart__total">
+                                    <div class="product-price">
+                                        <div class="product-price__old">25 000 ₽</div>
+                                        <div class="product-price__current"><span data-cart-price>15 000</span> ₽</div>
+                                    </div>
+                                    <div class="product-cart__toolbox">
+                                        <button class="cart__button cart__button--red">
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+                                            </svg>
+                                            В избранном
+                                        </button>
+                                        <button class="cart__button" data-cart-remove>
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-trash"></use>
+                                            </svg>
+                                            Удалить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-cart" data-cart>
+                            <input type="checkbox" class="check">
+                            <div class="product-cart__item">
+                                <picture class="product-cart__picture">
+                                    <img src="https://s3-alpha-sig.figma.com/img/7668/4fe8/73c3bffe83e96fdba3b8a3be5596ebe6?Expires=1698624000&Signature=CvRJUte~Jm5Po9W9hLR826rxeOvMLgO~uDjgJqcANj8UmKbSrWbfxi3Wh4lzUVNejWG-qeFWG6Un8iP46ok2CRzkNQTuVNkx3buzyVa3opD~pMHJI3LjpUSiUhOz5nnuPCvoE1tBYUlWOJaW8VpQMW2vnuMt9NgR4JJEkd9P5pTAGCC8IvyojjyfTQCwM78mUaBbY-7bM5ezDt7kt7dYK9xpl9xVPmnAbe06rzHqCHnTQWdEFpBndgYyM~hlj2x7~b9N7FRgLemq41~8E5zXUNNRFvEGinqSyzK0PjBr4sjpxiG-HuX0FA2RWQcYNmxxZiqY5qOqlDk5IuIJxBpMwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+                                </picture>
+                                <div class="product-cart__info">
+                                    <h2 class="product-cart__title">Шерстяное пальто</h2>
+                                    <p class="product-cart__text">M (46/48)</p>
+                                    <p class="product-cart__text">Черный</p>
+                                    <div class="counter" data-counter>
+                                        <button class="counter__button counter__button--minus" data-counter-minus>-</button>
+                                        <input type="number" class="counter__input" value="1" data-counter-input>
+                                        <button class="counter__button counter__button--plus" data-counter-plus>+</button>
+                                    </div>
+                                    <div class="product-cart__available">Последний</div>
+                                </div>
+                                <div class="product-cart__total">
+                                    <div class="product-price">
+                                        <div class="product-price__old">25 000 ₽</div>
+                                        <div class="product-price__current"><span data-cart-price>15 000</span> ₽</div>
+                                    </div>
+                                    <div class="product-cart__toolbox">
+                                        <button class="cart__button cart__button--red">
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+                                            </svg>
+                                            В избранном
+                                        </button>
+                                        <button class="cart__button" data-cart-remove>
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-trash"></use>
+                                            </svg>
+                                            Удалить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <div class="total__body">
+                        <h2 class="total__title">Сумма заказа</h2>
+                        <div class="total__info">
+                            <div class="total__el">
+                                <p class="total__text"><span data-cart-count>2</span> товара на сумму</p>
+                                <p class="total__price" data-cart-total><span>10 647</span> ₽</p>
+                            </div>
+                            <div class="total__el">
+                                <p class="total__text">Скидка</p>
+                                <p class="total__price total__price--red"><span>- 5 647</span> ₽</p>
+                            </div>
+                        </div>
+                        <div class="total__total">
+                            <h3 class="total__text total__text--big">Итого</h3>
+                            <p class="total__price total__price--big"><span data-basket-total>5 000</span> ₽</p>
+                        </div>
+                        <div class="code">
+                            <input type="text" placeholder="Ввести промокод">
+                        </div>
+                        <button class="button button--orange">Оформить заказ</button>
+                    </div>
+                    <div class="total__bonus">2000 ₽  бонусных после первого заказа</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

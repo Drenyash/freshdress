@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Доставка и оплата</title>
+    <title>Корзина</title>
 <link href="./css/main.css" rel="stylesheet"></head>
 
 <body class="body">
@@ -1349,156 +1349,132 @@
             </div>
         </div>
     </section>
-    <section class="section pb-135">
+    <section class="section pb-150">
         <div class="container">
-            <div class="static">
-                <h1 class="title title--bold mb-40">Доставка и оплата</h1>
-                <div class="static__top">
-                    <strong>Способы получения заказа:</strong>
-                    <p>Самовывоз из одного из наших бутиков</p>
-                    <p>Курьерская доставка с примеркой по г. Москва, Санкт-Петербург и Краснодар</p>
-                    <p>Транспортная компания СДЭК или Почта России по всей России, а так же DHL в любую точку мира.</p>
-                </div>
-                <div class="static__block">
-                    <div class="static__list">
-                        <h3 class="static__title">
-                            <svg>
-                                <use xlink:href="./assets/sprite/sprite.svg#icon-pin"></use>
-                            </svg>
-                            Самовывоз
-                        </h3>
-                        <p>
-                            Самовывоз - это оплаченный заказ, который можно забрать из бутика на следующий после оплаты
-                            день
-                            при наличии его в городе покупателя. Изделия, заказанные для пермещения в бутик между
-                            городами
-                            Москва, Санкт-Петербург или Краснодар, доставляются только по 100% оплате.
-                        </p>
-                        <p>
-                            При оформлении заказа можно оформить самовывоз из бутика Москвы, Санкт-Петербурга или
-                            Краснодара. Максимальное количество изделий для самовывоза - 7 изделий.
-                        </p>
-                        <p>
-                            После подтверждения изделия для заказа откладываются ровно на сутки. При истечении срока
-                            бронь
-                            снимается.
-                        </p>
+            <div class="cart">
+                <div class="cart__body">
+                    <div class="cart__top">
+                        <div class="cart__head">
+                            <h1 class="title">Корзина</h1>
+                            <div class="cart__count"><span data-cart-count>0</span> товара</div>
+                        </div>
+                        <div class="cart__control">
+                            <label class="cart__button">
+                                <input type="checkbox" class="check">
+                                <span>Выбрать всё</span>
+                            </label>
+                            <button class="cart__button" data-basket-removeAll>
+                                <svg class="cart__icon">
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-trash"></use>
+                                </svg>
+                                Удалить (<span data-cart-count>2</span>)
+                            </button>
+                        </div>
                     </div>
-                    <div class="static__list">
-                        <h3 class="static__title">
-                            <svg>
-                                <use xlink:href="./assets/sprite/sprite.svg#icon-home"></use>
-                            </svg>
-                            Курьерская доставка по Москве, Санкт-Петербургу и Краснодару
-                        </h3>
-                        <p>
-                            Доставка производится штатной курьерской службой компании по адресу, указанному при
-                            оформлении
-                            заказа. Стоимость стандартной доставки:
-                        </p>
-                        <p>
-                            Москва - 400руб.<br>
-                            до 5 км от МКАД 600руб.<br>
-                            до 10 км от МКАД 1100руб.<br>
-                            до 15 км от МКАД 1700руб.<br>
-                            При покупке на сумму от 9000 руб.-стоимость доставки уменьшается на 50%
-                        </p>
-                        <p>
-                            Тариф доставки по Санкт-Петербургу - 400 руб.<br>
-                            в пределах КАД + 35 руб. за каждый км от КАДа.<br>
-                            Мурино, Кудрово, Парголово - 500 руб.
-                        </p>
-                        <p>
-                            Тариф доставки по Краснодару - 400 руб.
-                        </p>
-                    </div>
-                    <div class="static__section">
-                        <p>
-                            Уважаемые гости!Обращаем внимание: на примерку до 7 изделий предоставляется 20-25 минут.
-                            Ожидание
-                            свыше 30 минут оплачивается дополнительно в размере 350 руб.
-                        </p>
-                        <p>
-                            Доставка оформленная день в день оплачивается по двойному тарифу. Стоимость доставки по Москве,
-                            по
-                            Санкт-Петербургу и по Краснодару 800 руб.
-                        </p>
-                        <p>
-                            При покупкe изделий от 9 000 руб., стоимость доставки уменьшается на 50%.
-                            При отсутствие покупок после примерки, стоимость услуг доставки оплачивается покупателем.
-                        </p>
-                        <p>
-                            Курьерская доставка/доставка с примеркой осуществляется 7 дней в неделю в выбранный временной
-                            интервал: с 12:00 - 15:00, 15:00 - 18:00, 18:00 - 21:00.
-                            При выборе времени до 12:00 и после 21:00, а также при доставке свыше 7 вещей - стоимость
-                            доставки
-                            800 руб.Курьер свяжется с вами за час до его визита.
-                        </p>
-                        <p>
-                            *Бесплатная доставка при выигрыше на сайте в Колесе фортуны осуществляется в пределах г. Москва
-                            внутри МКАД. А также Почтой России при отправке в города России.
-                        </p>
-                    </div>
-                    <div class="static__list">
-                        <h3 class="static__title">
-                            <svg>
-                                <use xlink:href="./assets/sprite/sprite.svg#icon-home"></use>
-                            </svg>
-                            Доставка по России
-                        </h3>
-                        <p>
-                            Срок формирования и отправки заказа 2-3 рабочих дня после оплаты. Стоимость и сроки доставки
-                            рассчитываются индивидуально для каждого города, с тарифами и сроками доставки можно
-                            ознакомиться при оформлении заказа или уточнить у наших менеджеров, либо рассчитать
-                            самостоятельно на нашем сайте при оформлении заказа.
-                        </p>
-                        <ol>
-                            <li>
-                                Транспортная компанией СДЕК (до двери или до пункта самовывоза) во все города России от
-                                2 до 10 рабочих дней.
-                            </li>
-                            <li>
-                                Доставка Почтой России БЕСПЛАТНО при заказе от 9000 руб. до любого удобного вам
-                                отделения.
-                            </li>
-                        </ol>
-                        <p>
-                            В период распродажи бесплатная доставка не действует.
-                        </p>
+                    <div class="cart__content">
+                        <div class="product-cart" data-cart>
+                            <input type="checkbox" class="check">
+                            <div class="product-cart__item">
+                                <picture class="product-cart__picture">
+                                    <img src="https://s3-alpha-sig.figma.com/img/7668/4fe8/73c3bffe83e96fdba3b8a3be5596ebe6?Expires=1698624000&Signature=CvRJUte~Jm5Po9W9hLR826rxeOvMLgO~uDjgJqcANj8UmKbSrWbfxi3Wh4lzUVNejWG-qeFWG6Un8iP46ok2CRzkNQTuVNkx3buzyVa3opD~pMHJI3LjpUSiUhOz5nnuPCvoE1tBYUlWOJaW8VpQMW2vnuMt9NgR4JJEkd9P5pTAGCC8IvyojjyfTQCwM78mUaBbY-7bM5ezDt7kt7dYK9xpl9xVPmnAbe06rzHqCHnTQWdEFpBndgYyM~hlj2x7~b9N7FRgLemq41~8E5zXUNNRFvEGinqSyzK0PjBr4sjpxiG-HuX0FA2RWQcYNmxxZiqY5qOqlDk5IuIJxBpMwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+                                </picture>
+                                <div class="product-cart__info">
+                                    <h2 class="product-cart__title">Шерстяное пальто</h2>
+                                    <p class="product-cart__text">M (46/48)</p>
+                                    <p class="product-cart__text">Черный</p>
+                                    <div class="counter" data-counter>
+                                        <button class="counter__button counter__button--minus" data-counter-minus>-</button>
+                                        <input type="number" class="counter__input" value="1" data-counter-input>
+                                        <button class="counter__button counter__button--plus" data-counter-plus>+</button>
+                                    </div>
+                                    <div class="product-cart__available">Последний</div>
+                                </div>
+                                <div class="product-cart__total">
+                                    <div class="product-price">
+                                        <div class="product-price__old">25 000 ₽</div>
+                                        <div class="product-price__current"><span data-cart-price>15 000</span> ₽</div>
+                                    </div>
+                                    <div class="product-cart__toolbox">
+                                        <button class="cart__button cart__button--red">
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+                                            </svg>
+                                            В избранном
+                                        </button>
+                                        <button class="cart__button" data-cart-remove>
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-trash"></use>
+                                            </svg>
+                                            Удалить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-cart" data-cart>
+                            <input type="checkbox" class="check">
+                            <div class="product-cart__item">
+                                <picture class="product-cart__picture">
+                                    <img src="https://s3-alpha-sig.figma.com/img/7668/4fe8/73c3bffe83e96fdba3b8a3be5596ebe6?Expires=1698624000&Signature=CvRJUte~Jm5Po9W9hLR826rxeOvMLgO~uDjgJqcANj8UmKbSrWbfxi3Wh4lzUVNejWG-qeFWG6Un8iP46ok2CRzkNQTuVNkx3buzyVa3opD~pMHJI3LjpUSiUhOz5nnuPCvoE1tBYUlWOJaW8VpQMW2vnuMt9NgR4JJEkd9P5pTAGCC8IvyojjyfTQCwM78mUaBbY-7bM5ezDt7kt7dYK9xpl9xVPmnAbe06rzHqCHnTQWdEFpBndgYyM~hlj2x7~b9N7FRgLemq41~8E5zXUNNRFvEGinqSyzK0PjBr4sjpxiG-HuX0FA2RWQcYNmxxZiqY5qOqlDk5IuIJxBpMwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+                                </picture>
+                                <div class="product-cart__info">
+                                    <h2 class="product-cart__title">Шерстяное пальто</h2>
+                                    <p class="product-cart__text">M (46/48)</p>
+                                    <p class="product-cart__text">Черный</p>
+                                    <div class="counter" data-counter>
+                                        <button class="counter__button counter__button--minus" data-counter-minus>-</button>
+                                        <input type="number" class="counter__input" value="1" data-counter-input>
+                                        <button class="counter__button counter__button--plus" data-counter-plus>+</button>
+                                    </div>
+                                    <div class="product-cart__available">Последний</div>
+                                </div>
+                                <div class="product-cart__total">
+                                    <div class="product-price">
+                                        <div class="product-price__old">25 000 ₽</div>
+                                        <div class="product-price__current"><span data-cart-price>15 000</span> ₽</div>
+                                    </div>
+                                    <div class="product-cart__toolbox">
+                                        <button class="cart__button cart__button--red">
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+                                            </svg>
+                                            В избранном
+                                        </button>
+                                        <button class="cart__button" data-cart-remove>
+                                            <svg class="cart__icon">
+                                                <use xlink:href="./assets/sprite/sprite.svg#icon-trash"></use>
+                                            </svg>
+                                            Удалить
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="static__block">
-                    <h2 class="static__title static__title--big">
-                        <svg>
-                            <use xlink:href="./assets/sprite/sprite.svg#icon-wallet"></use>
-                        </svg>
-                        Оплата
-                    </h2>
-                    <p>
-                        Покупки можно оплатить при помощи наличного или безналичного расчёта, в том числе пластиковыми
-                        картами онлайн (при оформлении заказа).
-                    </p>
-                    <ul>
-                        <li>
-                            Оплата курьеру наличными (только для городов: Москва, Санкт-Петербург и Краснодар)
-                        </li>
-                        <li>Для оплаты заказа наличными курьеру укажите способ оплаты «Оплата при получении». Все
-                            финансовые документы курьер вручит вам вместе с заказом.
-                        </li>
-                        <li>Оплата онлайн при оформлении заказа</li>
-                        <li>К оплате принимаются карты платёжных систем Visa, MasterCard и Мир.</li>
-                        <li>Чтобы оплатить заказ пластиковой картой онлайн, выберите соответствующий пункт. Вам будет
-                            предложено проверить введённые вами личные данные, адрес доставки и выбранные товары, а
-                            затем подтвердить их, нажав кнопку «Оформить заказ». Откроется страница, на которой
-                            необходимо будет ввести данные карты, проверить их и нажать кнопку «Оплатить».
-                        </li>
-                        <li>Оплата подарочной картой Fresh Dress или Сертификатом</li>
-                        <li>Если вы хотите оплатить весь заказ или его часть Подарочной картой или Сертификатом,
-                            предупредите об этом оператора при подтверждении заказа, а в магазине обратитесь к менеджеру
-                            на кассе. Если сумма покупки больше номинала Подарочной карты, недостающую часть можно
-                            доплатить наличными или банковской картой.
-                        </li>
-                    </ul>
+                <div class="total">
+                    <div class="total__body">
+                        <h2 class="total__title">Сумма заказа</h2>
+                        <div class="total__info">
+                            <div class="total__el">
+                                <p class="total__text"><span data-cart-count>2</span> товара на сумму</p>
+                                <p class="total__price" data-cart-total><span>10 647</span> ₽</p>
+                            </div>
+                            <div class="total__el">
+                                <p class="total__text">Скидка</p>
+                                <p class="total__price total__price--red"><span>- 5 647</span> ₽</p>
+                            </div>
+                        </div>
+                        <div class="total__total">
+                            <h3 class="total__text total__text--big">Итого</h3>
+                            <p class="total__price total__price--big"><span data-basket-total>5 000</span> ₽</p>
+                        </div>
+                        <div class="code">
+                            <input type="text" placeholder="Ввести промокод">
+                        </div>
+                        <button class="button button--orange">Оформить заказ</button>
+                    </div>
+                    <div class="total__bonus">2000 ₽  бонусных после первого заказа</div>
                 </div>
             </div>
         </div>

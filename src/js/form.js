@@ -3,7 +3,7 @@ import axios from "axios";
 (function form() {
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelectorAll('[data-form]')
-        const els = [...document.querySelectorAll('input'), ...document.querySelectorAll('textarea')];
+        const els = [...document.querySelectorAll('[data-validate]')];
         const customInput = document.querySelectorAll('.custom-input');
 
         const getData = () => {

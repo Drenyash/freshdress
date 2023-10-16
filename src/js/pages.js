@@ -87,4 +87,15 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/cart.html",
+		filename: "cart.html",
+		inject: "body",
+		title: "Корзина",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];

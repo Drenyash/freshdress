@@ -13,3 +13,5 @@ import "./range";
 import "./filter";
 import "./tabs";
 import "./open";
+import "./counter";
+import "./updateBasket";

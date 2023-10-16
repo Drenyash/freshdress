@@ -9873,6 +9873,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/counter.js":
+/*!***************************!*\
+  !*** ./src/js/counter.js ***!
+  \***************************/
+/***/ (function() {
+
+(function counter() {
+   document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('[data-counter]');
+
+        counters.forEach(counter => {
+            const plus = counter.querySelector('[data-counter-plus]');
+            const minus = counter.querySelector('[data-counter-minus]');
+            const input = counter.querySelector('[data-counter-input]');
+            let value = 1;
+
+            plus.addEventListener('click', () => {
+                value++
+                input.value = value;
+            })
+
+            minus.addEventListener('click', () => {
+                if (value > 1) {
+                    value--;
+                    input.value = value;
+                }
+            })
+
+            input.addEventListener('change', (evt) => {
+                if (value >= 1) {
+                    value = input.value;
+                }
+                input.value = value;
+            })
+        })
+   })
+})()
+
+
+/***/ }),
+
 /***/ "./src/js/dropdown.js":
 /*!****************************!*\
   !*** ./src/js/dropdown.js ***!
@@ -9943,7 +9984,7 @@ __webpack_require__.r(__webpack_exports__);
 (function form() {
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelectorAll('[data-form]')
-        const els = [...document.querySelectorAll('input'), ...document.querySelectorAll('textarea')];
+        const els = [...document.querySelectorAll('[data-validate]')];
         const customInput = document.querySelectorAll('.custom-input');
 
         const getData = () => {
@@ -10496,6 +10537,58 @@ __webpack_require__.r(__webpack_exports__);
            })
        })
    })
+})()
+
+
+/***/ }),
+
+/***/ "./src/js/updateBasket.js":
+/*!********************************!*\
+  !*** ./src/js/updateBasket.js ***!
+  \********************************/
+/***/ (function() {
+
+(function updateBasket() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const carts = document.querySelectorAll('[data-cart]');
+        let cartItems = document.querySelectorAll('[data-cart-count]')
+        const totalPrice = document.querySelector('[data-cart-total]')
+        let count = 0;
+
+        carts.forEach(cart => {
+            const counterBtnMinus = cart.querySelector('[data-counter-minus]')
+            const counterBtnPlus = cart.querySelector('[data-counter-plus]')
+            const input = cart.querySelector('[data-counter-input]')
+            const cartPrice = cart.querySelector('[data-cart-price]')
+            const removeBtn = cart.querySelector('[data-cart-remove]')
+            let value = 1;
+
+            counterBtnPlus.addEventListener('click', (evt) => {
+                value += 1;
+                updateValues(value);
+            });
+
+            counterBtnMinus.addEventListener('click', (evt) => {
+                if (value > 1) {
+                    value -= 1;
+                    updateValues(value);
+                }
+            });
+
+            removeBtn.addEventListener('click', () => {
+                cart.remove();
+                updateValues(value);
+            })
+        })
+
+        const updateValues = (value) => {
+            count = value;
+            cartItems.forEach(el => {
+                el.textContent = `${count}`;
+            })
+        }
+        updateValues()
+    })
 })()
 
 
@@ -23503,6 +23596,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_tabs__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _open__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./open */ "./src/js/open.js");
 /* harmony import */ var _open__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_open__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./counter */ "./src/js/counter.js");
+/* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_counter__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _updateBasket__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./updateBasket */ "./src/js/updateBasket.js");
+/* harmony import */ var _updateBasket__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_updateBasket__WEBPACK_IMPORTED_MODULE_15__);
+
+
 
 
 

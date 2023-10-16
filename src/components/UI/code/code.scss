@@ -1,0 +1,20 @@
+.code {
+  display: flex;
+  margin-bottom: 14px;
+
+  input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    color: $gray-light;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    border-radius: 58px;
+    border: 2px solid #F4F4F4;
+    background: #FFF;
+  }
+}
