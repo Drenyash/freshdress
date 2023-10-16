@@ -3,17 +3,33 @@
   align-items: center;
   gap: 30px;
 
+  @include r(1529) {
+    gap: 14px;
+    overflow-x: auto;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    cursor: pointer;
+
+    @include r(1529) {
+      flex-shrink: 0;
+      width: auto;
+      height: auto;
+    }
   }
 
   &__item.active &__button {
     background-color: $orange;
     box-shadow: 0 20px 35px 0 rgba(193, 68, 29, 0.25);
     color: $light;
+
+    @include r(1529) {
+      box-shadow: none;
+    }
   }
 
   &__picture {
@@ -22,6 +38,10 @@
     height: 214px;
     overflow: hidden;
     border-radius: 30px;
+
+    @include r(1529) {
+      display: none;
+    }
 
     img {
       display: block;
@@ -49,5 +69,13 @@
     background: #FFF;
     box-shadow: 0 20px 35px 0 rgba(167, 167, 167, 0.25);
     cursor: pointer;
+
+    @include r(1529) {
+      padding: 12px 9px;
+      font-size: 16px;
+      width: auto;
+      margin-top: 0;
+      box-shadow: none;
+    }
   }
 }

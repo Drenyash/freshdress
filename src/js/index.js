@@ -11,4 +11,5 @@ import "./addFavourite";
 import "./addBasket";
 import "./range";
 import "./filter";
+import "./tabs";
 import "./open";

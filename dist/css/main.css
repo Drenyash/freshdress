@@ -2293,6 +2293,12 @@ button {
           align-items: center;
   gap: 30px;
 }
+@media only screen and (max-width: 1529px) {
+  .tabs {
+    gap: 14px;
+    overflow-x: auto;
+  }
+}
 .tabs__item {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2308,12 +2314,28 @@ button {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1529px) {
+  .tabs__item {
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    width: auto;
+    height: auto;
+  }
 }
 .tabs__item.active .tabs__button {
   background-color: #FF6431;
   -webkit-box-shadow: 0 20px 35px 0 rgba(193, 68, 29, 0.25);
           box-shadow: 0 20px 35px 0 rgba(193, 68, 29, 0.25);
   color: #FFFFFF;
+}
+@media only screen and (max-width: 1529px) {
+  .tabs__item.active .tabs__button {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 .tabs__picture {
   display: -webkit-box;
@@ -2324,6 +2346,11 @@ button {
   height: 214px;
   overflow: hidden;
   border-radius: 30px;
+}
+@media only screen and (max-width: 1529px) {
+  .tabs__picture {
+    display: none;
+  }
 }
 .tabs__picture img {
   display: block;
@@ -2367,6 +2394,16 @@ button {
   -webkit-box-shadow: 0 20px 35px 0 rgba(167, 167, 167, 0.25);
           box-shadow: 0 20px 35px 0 rgba(167, 167, 167, 0.25);
   cursor: pointer;
+}
+@media only screen and (max-width: 1529px) {
+  .tabs__button {
+    padding: 12px 9px;
+    font-size: 16px;
+    width: auto;
+    margin-top: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 
 .body {
@@ -2509,170 +2546,16 @@ button {
   display: block;
   width: 100%;
 }
-.editor > :last-child {
-  margin-bottom: 0;
-}
-.editor--16 {
-  font-size: 1rem;
-}
-.editor--18 {
-  font-size: 1.125rem;
-}
-.editor--center {
-  text-align: center;
-}
-@media only screen and (max-width: 1200px) {
-  .editor--center {
-    text-align: left;
-  }
-}
-.editor h1 {
-  font-size: 3.125rem;
-}
-@media only screen and (max-width: 1200px) {
-  .editor h1 {
-    font-size: 2.75rem;
-  }
-}
-.editor h2 {
-  font-size: 2.75rem;
-}
-@media only screen and (max-width: 1200px) {
-  .editor h2 {
-    font-size: 2.25rem;
-  }
-}
-.editor h3 {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: uppercase;
-}
-.editor h4 {
-  font-size: 1.5rem;
-}
-@media only screen and (max-width: 1200px) {
-  .editor h4 {
-    font-size: 1.25rem;
-  }
-}
-.editor h5 {
-  font-size: 1.25rem;
-}
-@media only screen and (max-width: 1200px) {
-  .editor h5 {
-    font-size: 1rem;
-  }
-}
-.editor h6 {
-  font-size: 1rem;
-}
-.editor p {
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.8px;
-  color: #333B42;
-}
-@media only screen and (max-width: 1229px) {
-  .editor p {
-    font-size: 14px;
-  }
-}
-.editor ul,
-.editor ol {
-  margin-bottom: 2rem;
-}
-@media only screen and (max-width: 1200px) {
-  .editor ul,
-.editor ol {
-    margin-bottom: 1.875rem;
-  }
-}
-.editor ul > :last-child,
-.editor ol > :last-child {
-  margin-bottom: 0;
-}
-.editor li {
-  margin-bottom: 1rem;
-  padding-left: 1.5625rem;
-}
-.editor ul li {
-  position: relative;
-  padding-left: 1.5625rem;
-}
-.editor blockquote {
-  font-weight: 300;
-  position: relative;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  padding: 2.0625rem 4.5rem;
-}
-@media only screen and (max-width: 1200px) {
-  .editor blockquote {
-    font-weight: 400;
-    font-size: 1.25rem;
-    margin-left: -0.9375rem;
-    margin-right: -0.9375rem;
-    margin-bottom: 1.875rem;
-    padding: 1.875rem 1.875rem 1.875rem 2.625rem;
-  }
-}
-.editor blockquote:before {
-  content: "";
-  top: 2.0625rem;
-  left: 3.125rem;
-  width: 0.125rem;
-  display: block;
-  bottom: 2.0625rem;
-  position: absolute;
-}
-@media only screen and (max-width: 1200px) {
-  .editor blockquote:before {
-    left: 1.875rem;
-    top: 1.875rem;
-    bottom: 1.875rem;
-  }
-}
-.editor figure {
-  display: block;
-  margin-bottom: 2rem;
-}
-@media only screen and (max-width: 1200px) {
-  .editor figure {
-    margin-bottom: 1.875rem;
-  }
-}
-.editor picture {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.editor img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.25rem;
-}
-.editor figcaption {
-  display: block;
-  font-weight: 400;
-}
-.editor strong,
-.editor b {
-  font-weight: 600;
-}
-.editor i {
-  font-style: italic;
-}
-.editor--sizes h3 {
-  margin-bottom: 10px;
-}
-.editor--sizes p:not(:last-of-type) {
-  margin-bottom: 30px;
+.editor--flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .section--purple {
@@ -6050,6 +5933,11 @@ button {
 .static__top:not(:last-of-type) {
   margin-bottom: 50px;
 }
+@media only screen and (max-width: 1529px) {
+  .static__top:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+}
 .static__top--620 {
   max-width: 620px;
 }
@@ -6169,6 +6057,54 @@ button {
 }
 .static__section b {
   margin-bottom: 18px;
+}
+.static__item {
+  display: none;
+  gap: 160px;
+}
+@media only screen and (max-width: 1529px) {
+  .static__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 24px;
+  }
+}
+.static__item.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.static__picture {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  width: 490px;
+  height: 725px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 1529px) {
+  .static__picture {
+    width: 100%;
+    height: 433px;
+  }
+}
+.static__picture img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .valid {
