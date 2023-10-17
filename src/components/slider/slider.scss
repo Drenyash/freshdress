@@ -52,6 +52,9 @@
         display: none;
       }
     }
+    .slider__item {
+      flex-shrink: 0;
+    }
   }
 
   &--product &__wrapper {

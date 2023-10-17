@@ -1,42 +1,114 @@
 (function updateBasket() {
     document.addEventListener('DOMContentLoaded', () => {
         const carts = document.querySelectorAll('[data-cart]');
-        let cartItems = document.querySelectorAll('[data-cart-count]')
-        const totalPrice = document.querySelector('[data-cart-total]')
-        let count = 0;
+        const cartCount = document.querySelector('[data-cart-count]')
+        const price = document.querySelector('[data-cart-total]')
+        const positions = document.querySelector('[data-cart-position]')
+        const removePosition = document.querySelectorAll('[data-cart-remove-position]')
+        let checkedItems = document.querySelectorAll('[data-cart-check]')
+        const selectAll = document.querySelector('[data-cart-select-all]')
+        const removeAll = document.querySelectorAll('[data-basket-removeAll]')
+        const discount = document.querySelector('[data-cart-discount]')
+        const total = document.querySelector('[data-basket-total]')
+        const openBtn = document.querySelector('[data-open-checkbox]')
+        const removeMobile = document.querySelector('[data-basket-remove-mobile]')
 
         carts.forEach(cart => {
-            const counterBtnMinus = cart.querySelector('[data-counter-minus]')
-            const counterBtnPlus = cart.querySelector('[data-counter-plus]')
-            const input = cart.querySelector('[data-counter-input]')
-            const cartPrice = cart.querySelector('[data-cart-price]')
+            const plusBtn = cart.querySelector('[data-counter-plus]')
+            const minusBtn = cart.querySelector('[data-counter-minus]')
             const removeBtn = cart.querySelector('[data-cart-remove]')
-            let value = 1;
+            const check = cart.querySelector('[data-cart-check]')
+            let currentCount = 1;
+            let checked = false;
 
-            counterBtnPlus.addEventListener('click', (evt) => {
-                value += 1;
-                updateValues(value);
-            });
-
-            counterBtnMinus.addEventListener('click', (evt) => {
-                if (value > 1) {
-                    value -= 1;
-                    updateValues(value);
+            plusBtn.addEventListener('click', () => {
+                currentCount++;
+                updateValues(carts)
+            })
+            minusBtn.addEventListener('click', () => {
+                if (currentCount > 1) {
+                    currentCount--;
+                    updateValues(carts)
                 }
-            });
-
+            })
             removeBtn.addEventListener('click', () => {
-                cart.remove();
-                updateValues(value);
+                cart.remove()
+                updateValues(carts)
+                removePositions(carts)
+            })
+            check.addEventListener('click', () => {
+                checked = !checked
+                removePositions(carts)
             })
         })
 
-        const updateValues = (value) => {
-            count = value;
-            cartItems.forEach(el => {
-                el.textContent = `${count}`;
+        selectAll.addEventListener('click', () => {
+            const selectInput = selectAll.querySelector('input');
+            checkedItems.forEach(el => {
+                el.checked = selectInput.checked;
+            })
+            removePositions(carts)
+        })
+
+        openBtn.addEventListener('click', () => {
+            if (openBtn.textContent === 'Выбрать') {
+                openBtn.textContent = 'Отменить'
+                removeMobile.classList.remove('hidden')
+            } else {
+                openBtn.textContent = 'Выбрать'
+                removeMobile.classList.add('hidden')
+            }
+            checkedItems.forEach(el => {
+                el.classList.toggle('active')
+            })
+        })
+
+        const updateValues = (carts) => {
+            carts = document.querySelectorAll('[data-cart]');
+            let count = 0;
+            let currentPrice = 0;
+            carts.forEach(el => {
+                const input = el.querySelector('[data-counter-input]')
+                const elPrice = el.querySelector('[data-cart-price]')
+                count += parseInt(input.value);
+                currentPrice += parseInt(input.value) * parseInt(elPrice.textContent.replace(" ", ''))
+            })
+            price.textContent = currentPrice;
+            cartCount.textContent = `${count}`
+            total.textContent = `${currentPrice - discount.textContent.replace(" ", '')}`
+            positions.textContent = carts.length;
+        }
+        updateValues(carts)
+
+        const removePositions = (carts) => {
+            carts = document.querySelectorAll('[data-cart]');
+            let checked = [];
+            carts.forEach(el => {
+                const checkedItem = el.querySelector('[data-cart-check]')
+                if (checkedItem.checked) {
+                    checked.push(el)
+                }
+            })
+            removePosition.forEach(el => {
+                el.textContent = checked.length;
             })
         }
-        updateValues()
+
+        removeAll.forEach(removeBtn => {
+            removeBtn.addEventListener('click', () => {
+                const selectInput = selectAll.querySelector('input');
+                let checked = document.querySelectorAll('[data-cart-check]:checked');
+
+                checked.forEach(el => {
+                    el.closest('[data-cart]').remove();
+                    updateValues(carts);
+                });
+                selectInput.checked = false;
+                checked = document.querySelectorAll('[data-cart-check]:checked');
+                removePosition.forEach(el => {
+                    el.textContent = checked.length;
+                })
+            })
+        })
     })
 })()

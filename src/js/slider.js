@@ -1,4 +1,4 @@
-import Swiper, {EffectCards, EffectCoverflow, EffectCreative, EffectFade, Navigation, Pagination, Thumbs} from "swiper";
+import Swiper, {EffectCoverflow, Navigation, Pagination, Thumbs} from "swiper";
 
 document.addEventListener('DOMContentLoaded', () => {
     const sliders = document.querySelectorAll('[data-slider]');

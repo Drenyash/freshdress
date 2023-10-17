@@ -1,7 +1,12 @@
 .cart {
+  position: sticky;
   display: grid;
   grid-template-columns: 1fr 490px;
   gap: 30px;
+
+  @include r(1529) {
+    grid-template-columns: 1fr;
+  }
 
   &__top {
     display: flex;
@@ -14,12 +19,21 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    @include r(1529) {
+      padding: 0 24px;
+    }
   }
 
   &__head {
     display: flex;
     gap: 24px;
     align-items: flex-end;
+
+    @include r(1529) {
+      align-items: center;
+      width: 100%;
+    }
   }
 
   &__icon {
@@ -33,19 +47,64 @@
     align-items: center;
     cursor: pointer;
     gap: 8px;
+    white-space: nowrap;
     font-size: 16px;
     font-weight: 500;
     line-height: 150%;
     color: $gray-light;
+
     &--red {
       color: $red;
+
       svg {
         fill: $red;
       }
     }
+
+    span {
+      @include r(1529) {
+        display: none;
+      }
+    }
   }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__control {
     display: flex;
     gap: 30px;
+
+    @include r(1529) {
+      display: none;
+    }
+  }
+
+  &__count {
+    padding-bottom: 9px;
+    color: $gray;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.72px;
+
+    @include r(1529) {
+      display: none;
+    }
+  }
+
+  &__select {
+    display: none;
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    text-decoration: underline;
+    color: $black;
+    @include r(1529) {
+      display: flex;
+    }
   }
 }
