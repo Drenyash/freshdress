@@ -98,4 +98,37 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/favorite.html",
+		filename: "favorite.html",
+		inject: "body",
+		title: "Избранное",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/order.html",
+		filename: "order.html",
+		inject: "body",
+		title: "Оформление заказа",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/about.html",
+		filename: "about.html",
+		inject: "body",
+		title: "О нас",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];

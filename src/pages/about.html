@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section section--relative pbm-400">
+        <div class="container">
+            <div class="about-us">
+                <div class="about-us__info">
+                    <h1 class="about-us__title">Как появился бренд?</h1>
+                    <p class="about-us__text">
+                        СОЗДАТЕЛЬ БРЕНДА - КСЕНИЯ ВЛАДЫКИНА, придумала и начала развивать марку в 2013 году, начиная с маленькой задумки, и поднимая планку качества и быстрого роста с каждым годом все выше.
+                    </p>
+                    <p class="about-us__text">
+                        В 2015 году, с первой командой из двух человек, Ксения открыла первый шоурум в бизнес-центре в Москве, площадью 32 квадратных метра, а на 2021 год у бренда три основных больших бутика в трёх городах России, отдельный аутлет-бутик в Москве, и мультиязычный сайт для обслуживания многотысячных запросов на доставку по всему миру.
+                    </p>
+                    <p class="about-us__text">
+                        Ксения сама любит сочетать образы бренда на каждый день, демонстрируя это в личном инстаграмм- аккаунте, и часто делясь закадровыми историями о жизни компании. Она так же близко к бренду - как и в самом начале: ее можно часто увидеть в бутиках, ведя прямые эфиры, общаясь с гостями или отвечая на комментарии в социальных сетях.
+                    </p>
+                    <p class="about-us__text">
+                        На данный момент - FRESH DRESS - это марка, которую выбирают и рекомендуют звёздные стилисты, блоггеры, селебрити и более 450 тысяч подписчиков в социальных сетях. Мы ценим каждого гостя, и открыты к обратной связи, с теплом реагируя на ваши отзывы.
+                    </p>
+                    <p class="about-us__welcome">С любовью, Fresh Dress</p>
+                </div>
+                <picture class="about-us__picture">
+                    <img src="./assets/images/index-girl.png" alt="">
+                </picture>
+            </div>
+        </div>
+    </section>
+    <section class="section section--relative pt-100 ptm-30 pb-185 pbm-260">
+        <div class="container">
+            <div class="head">
+                <h2 class="title">Немного о нас</h2>
+                <p class="subtitle">С любовью, Fresh Dress</p>
+            </div>
+            <div class="about">
+                <div class="about__text">
+                    Нас выбирают и рекомендуют звёздные стилисты, блоггеры, селебрити и более 450 тысяч подписчиков в
+                    социальных сетях. Мы ценим каждого гостя, и открыты к обратной связи, с теплом реагируя на ваши
+                    отзывы.
+                </div>
+                <div class="slider slider--features" data-slider="features">
+                    <div class="slider__wrapper">
+                        <div class="slider__item">
+                            <div class="features__item">
+                                <svg class="features__icon">
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-smile"></use>
+                                </svg>
+                                <h3 class="features__title">Философия бренда</h3>
+                                <p class="features__text">
+                                    В нашем ДНК читается женственность, функциональный подход и адаптация
+                                    всех мировых тенденций для одного идеального гардероба девушки, в котором можно найти
+                                    изделия от офисных вариантов, до вечерних случаев на «красную» дорожку.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slider__item">
+                            <div class="features__item">
+                                <svg class="features__icon">
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-smile"></use>
+                                </svg>
+                                <h3 class="features__title">Уникальность бренда</h3>
+                                <p class="features__text">
+                                    Мы выпускаем 4 основных, и больше 10 капсульных коллекций в год,
+                                    строго следя за качеством, чтобы сохранить «свежесть» выбора и поддерживать желание девушек
+                                    не бояться часто и доступно дополнять свой гардероб красивыми вещами.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="slider__item">
+                            <div class="features__item">
+                                <svg class="features__icon">
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-smile"></use>
+                                </svg>
+                                <h3 class="features__title">Преимущество бренда</h3>
+                                <p class="features__text">
+                                    FRESH DRESS - это российский бренд лаконичной женской одежды, который стал одним из самых
+                                    быстрорастущих и динамичных брендов на рынке.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__controls">
+                        <button class="slider__button slider__button--prev">
+                            <svg>
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
+                            </svg>
+                        </button>
+                        <button class="slider__button slider__button--next">
+                            <svg>
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <picture class="about__picture">
+                    <img src="./assets/images/58b9e444d545d64131911458ba2d0333.png" alt="">
+                </picture>
+                <div class="about__decor">
+                    <svg class="about__star about__star--first">
+                        <use xlink:href="./assets/sprite/sprite.svg#icon-star"></use>
+                    </svg>
+                    <svg class="about__star about__star--second">
+                        <use xlink:href="./assets/sprite/sprite.svg#icon-star"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-150 pbm-80">
+        <div class="container">
+            <div class="head">
+                <h2 class="title">Что клиенты говорят о нас</h2>
+                <p class="subtitle">Отзывы наших клиентов</p>
+            </div>
+            <div class="slider slider--reviews mb-50" data-slider="cards">
+                <div class="slider__wrapper">
+                    <div class="slider__item">
+                        <article class="feedback">
+                            <div class="feedback__top">
+                                <picture class="feedback__picture">
+                                    <img src="./assets/images/index-girl.png" alt="">
+                                </picture>
+                                <div class="feedback__about">
+                                    <h3 class="feedback__author">Анна Хилькевич</h3>
+                                    <div class="feedback__occupation">Актриса, блогер</div>
+                                    <hr class="feedback__line line">
+                                </div>
+                            </div>
+                            <div class="feedback__info">
+                                <p class="feedback__text">
+                                    Именно с Fresh Dress началась моя любовь к себе! Я долго следила за аккаунтом бренда
+                                    в инстаграм, но на покупку не решалась, пока однажды по воле случая не оказалась
+                                    рядом с магазином.
+                                </p>
+                                <hr class="feedback__line line">
+                                <h3 class="feedback__author">Анна Хилькевич</h3>
+                                <div class="feedback__occupation">Актриса, блогер</div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slider__item">
+                        <article class="feedback">
+                            <div class="feedback__top">
+                                <picture class="feedback__picture">
+                                    <img src="./assets/images/image.png" alt="">
+                                </picture>
+                                <div class="feedback__about">
+                                    <h3 class="feedback__author">Анна Хилькевич</h3>
+                                    <div class="feedback__occupation">Актриса, блогер</div>
+                                    <hr class="feedback__line line">
+                                </div>
+                            </div>
+                            <div class="feedback__info">
+                                <p class="feedback__text">
+                                    Именно с Fresh Dress началась моя любовь к себе! Я долго следила за аккаунтом бренда
+                                    в инстаграм, но на покупку не решалась, пока однажды по воле случая не оказалась
+                                    рядом с магазином.
+                                </p>
+                                <hr class="feedback__line line">
+                                <h3 class="feedback__author">Анна Хилькевич</h3>
+                                <div class="feedback__occupation">Актриса, блогер</div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="slider__item">
+                        <article class="feedback">
+                            <div class="feedback__top">
+                                <picture class="feedback__picture">
+                                    <img src="./assets/images/man.png" alt="">
+                                </picture>
+                                <div class="feedback__about">
+                                    <h3 class="feedback__author">Анна Хилькевич</h3>
+                                    <div class="feedback__occupation">Актриса, блогер</div>
+                                    <hr class="feedback__line line">
+                                </div>
+                            </div>
+                            <div class="feedback__info">
+                                <p class="feedback__text">
+                                    Именно с Fresh Dress началась моя любовь к себе! Я долго следила за аккаунтом бренда
+                                    в инстаграм, но на покупку не решалась, пока однажды по воле случая не оказалась
+                                    рядом с магазином.
+                                </p>
+                                <hr class="feedback__line line">
+                                <h3 class="feedback__author">Анна Хилькевич</h3>
+                                <div class="feedback__occupation">Актриса, блогер</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="slider__controls">
+                    <button class="slider__button slider__button--prev">
+                        <svg>
+                            <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
+                        </svg>
+                    </button>
+                    <button class="slider__button slider__button--next">
+                        <svg>
+                            <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="slider__pagination"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

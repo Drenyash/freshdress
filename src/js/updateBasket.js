@@ -12,6 +12,9 @@
         const total = document.querySelector('[data-basket-total]')
         const openBtn = document.querySelector('[data-open-checkbox]')
         const removeMobile = document.querySelector('[data-basket-remove-mobile]')
+        const cartBody = document.querySelector('.cart__body')
+        const cartTotal = document.querySelector('.total')
+        const cartEmpty = document.querySelector('[data-empty]')
 
         carts.forEach(cart => {
             const plusBtn = cart.querySelector('[data-counter-plus]')
@@ -92,6 +95,11 @@
             removePosition.forEach(el => {
                 el.textContent = checked.length;
             })
+            if (carts.length <= 0) {
+                cartBody.classList.add('hidden')
+                cartTotal.classList.add('hidden')
+                cartEmpty.classList.add('active')
+            }
         }
 
         removeAll.forEach(removeBtn => {
@@ -108,6 +116,11 @@
                 removePosition.forEach(el => {
                     el.textContent = checked.length;
                 })
+                if (checked.length <= 0) {
+                    cartBody.classList.add('hidden')
+                    cartTotal.classList.add('hidden')
+                    cartEmpty.classList.add('active')
+                }
             })
         })
     })
