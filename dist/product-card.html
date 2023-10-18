@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Часто задаваемые вопросы</title>
+    <title>Карточка товара</title>
 <link href="./css/main.css" rel="stylesheet"></head>
 
-<body class="body body--gray-light">
+<body class="body">
 <header class="header">
     <div class="container">
         <div class="header__top">
@@ -1349,87 +1349,649 @@
             </div>
         </div>
     </section>
-    <section class="section pb-100 pbm-35">
+    <section class="section pb-100">
         <div class="container">
-            <div class="faq">
-                <h1 class="title">Часто задаваемые вопросы</h1>
-                <div class="faq__wrapper">
-                    <div class="faq__item" data-show>
-                        <h2 class="faq__title">Как оформить доставку?</h2>
-                        <p class="faq__text" >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
-                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
+            <div class="product-card">
+                <div class="product-card__content">
+                    <div class="product-card__slider"></div>
+                    <div class="product-card__info">
+                        <div class="product-card__top">
+                            <h1 class="product-card__title">Шерстяное пальто</h1>
+                            <p class="product-card__article">арт. 2304353</p>
+                        </div>
+                        <div class="card__price">
+                            <p class="card__current-price">15 000 ₽</p>
+                            <p class="card__previous-price">25 000 ₽</p>
+                        </div>
+                        <p class="product-card__text mb-35">
+                            Экошуба с элегантным воротником и аккуратными боковыми карманами в бежевом оттенке. Шуба
+                            выполнена из мягкого искусственного меха. Он не пропускает влагу, держит форму, не
+                            скатывается. используется утеплитель Термофинн. Выдерживает до -25 градусов.
                         </p>
-                        <svg class="faq__icon">
-                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
-                        </svg>
-                    </div>
-                    <div class="faq__item" data-show>
-                        <h2 class="faq__title">Как оформить доставку?</h2>
-                        <p class="faq__text" >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
-                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
-                        </p>
-                        <svg class="faq__icon">
-                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
-                        </svg>
-                    </div>
-                    <div class="faq__item" data-show>
-                        <h2 class="faq__title">Как оформить доставку?</h2>
-                        <p class="faq__text" >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
-                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
-                        </p>
-                        <svg class="faq__icon">
-                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
-                        </svg>
-                    </div>
-                    <div class="faq__item" data-show>
-                        <h2 class="faq__title">Как оформить доставку?</h2>
-                        <p class="faq__text" >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
-                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
-                        </p>
-                        <svg class="faq__icon">
-                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
-                        </svg>
+						<div class="product-card__element mb-35">
+							<div class="product-card__top">
+								<h2 class="product-card__head product-card__head--bold">Цвет:</h2>
+								<p class="product-card__head">Бежевый</p>
+							</div>
+							<div class="colors">
+								<label class="color active">
+									<input type="checkbox" style="background-color: #828282" name="color" value="1">
+								</label>
+								<label class="color">
+									<input type="checkbox" style="background-color: #E0E0E0" name="color" value="1">
+								</label>
+								<label class="color">
+									<input type="checkbox" style="background-color: #2F80ED" name="color" value="1">
+								</label>
+							</div>
+						</div>
+						<div class="product-card__element">
+							<div class="product-card__top product-card__top--small">
+								<h2 class="product-card__head product-card__head--bold">Выберите размер</h2>
+								<a href="#" class="size-table-button">
+									<svg class="product-card__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-table"></use>
+									</svg>
+									<span>Таблица размеров</span>
+								</a>
+							</div>
+							<div class="product-card__size size">
+								<label class="size__item size__item--disabled">
+									<input class="checkbox" disabled type="radio" name="size">
+									<span>XS</span>
+								</label>
+								<label class="size__item">
+									<input class="checkbox" type="radio" name="size">
+									<span>S</span>
+								</label>
+								<label class="size__item">
+									<input class="checkbox" type="radio" name="size">
+									<span>M</span>
+								</label>
+								<label class="size__item">
+									<input class="checkbox" type="radio" name="size">
+									<span>L</span>
+								</label>
+								<label class="size__item">
+									<input class="checkbox" type="radio" name="size">
+									<span>XL</span>
+								</label>
+							</div>
+							<span class="product-card__text product-card__text--small">Последний экземпляр</span>
+						</div>
                     </div>
                 </div>
+                <div class="product-card__about"></div>
             </div>
         </div>
     </section>
-    <section class="section section--bg pt-315 ptm-35 pb-315 pbm-100" style="background-image: url('./assets/images/faq-bg.png')">
-        <div class="container">
-            <div class="contact-us contact-us--center">
-                <form action="#" class="contact-us__form form form--center" data-form>
-                    <div class="form__info">
-                        <h2 class="form__title">
-                            Не нашли нужного ответа?
-                        </h2>
-                        <p class="form__text">
-                            Свяжитесь с нами! Оставьте ваши данные и наш менеджер перезвонит вам в ближайшее время.
-                        </p>
-                    </div>
-                    <div class="custom-input">
-                        <input data-validate type="tel" class="input" placeholder="Номер телефона" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
-                        <div class="custom-input__valid hidden">
-                            <svg>
-                                <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
-                            </svg>
-                        </div>
-                        <div class="custom-input__invalid hidden">
-                            <span>Телефон введен неверно!</span>
-                        </div>
-                    </div>
-                    <button class="button" type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </section>
+	<section class="section pb-100">
+		<div class="container">
+			<div class="head">
+				<h2 class="title">добавьте к образу</h2>
+			</div>
+			<div class="slider slider--product mb-50" data-slider="slider">
+				<div class="slider__wrapper">
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="slider__item">
+						<article class="card">
+							<div class="card__picture">
+								<div class="label label--small label--orange">
+									<svg class="label__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-persent"></use>
+									</svg>
+								</div>
+								<img src="./assets/images/image%2032.png" alt="">
+								<button class="add-favourite">
+									<svg class="add-favourite__icon">
+										<use xlink:href="./assets/sprite/sprite.svg#icon-heart-fill"></use>
+									</svg>
+								</button>
+							</div>
+							<div class="card__info">
+								<a href="#" class="card__title">Лонгслив из смесового хлопка</a>
+								<div class="card__price">
+									<p class="card__current-price">6 800 ₽</p>
+									<p class="card__previous-price">10 800 ₽</p>
+								</div>
+								<div class="card__properties">
+									<div class="card-color">
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #272727" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #543427" name="color">
+											<span></span>
+										</label>
+										<label class="card-color__item">
+											<input type="radio" style="background-color: #D8C392" name="color">
+											<span></span>
+										</label>
+									</div>
+									<div class="size">
+										<label class="size__item size__item--disabled">
+											<input class="checkbox" disabled type="radio" name="size">
+											<span>XS</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>S</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>M</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>L</span>
+										</label>
+										<label class="size__item">
+											<input class="checkbox" type="radio" name="size">
+											<span>XL</span>
+										</label>
+									</div>
+									<button class="card__button">
+										Добавить в корзину
+										<svg>
+											<use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+				<div class="slider__controls">
+					<button class="slider__button slider__button--prev">
+						<svg>
+							<use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
+						</svg>
+					</button>
+					<button class="slider__button slider__button--next">
+						<svg>
+							<use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
 </main>
 
 <footer class="footer">

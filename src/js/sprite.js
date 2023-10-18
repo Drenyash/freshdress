@@ -33,6 +33,7 @@ import car from "../assets/sprite/icon-car.svg"
 import plus from "../assets/sprite/icon-plus.svg"
 import call from "../assets/sprite/icon-call.svg"
 import mail from "../assets/sprite/icon-mail.svg"
+import table from "../assets/sprite/icon-table.svg"
 
 export default {
     arrow,
@@ -70,4 +71,5 @@ export default {
     plus,
     call,
     mail,
+    table,
 }

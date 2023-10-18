@@ -2541,6 +2541,21 @@ button {
   background: #FFF;
 }
 
+.size-table-button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.size-table-button span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  color: #5D3A8E;
+  border-bottom: 1px dashed #5D3A8E;
+}
+
 .body {
   display: -webkit-box;
   display: -webkit-flex;
@@ -7510,6 +7525,87 @@ button {
 }
 .contacts-page__links a {
   color: #FF6431;
+}
+
+.product-card__content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 130px;
+}
+.product-card__slider {
+  width: 620px;
+}
+.product-card__top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+.product-card__top--small {
+  max-width: 520px;
+}
+.product-card__title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 150%;
+  color: #181818;
+}
+.product-card__article {
+  margin-left: auto;
+  text-shadow: 0 4px 9px rgba(31, 39, 83, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.28px;
+  color: #C7CBCC;
+}
+.product-card__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: #898989;
+}
+.product-card__text--small {
+  font-size: 12px;
+  line-height: 150%;
+  color: #181818;
+}
+.product-card__head {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 150%;
+  color: #898989;
+}
+.product-card__head--bold {
+  color: #181818;
+  font-weight: 700;
+}
+.product-card__icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 24px;
+  height: 24px;
+}
+.product-card__size {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .valid {

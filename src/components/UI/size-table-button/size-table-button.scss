@@ -1,0 +1,12 @@
+.size-table-button {
+  display: flex;
+  gap: 10px;
+
+  span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $purple-light;
+    border-bottom: 1px dashed $purple-light;
+  }
+}

@@ -22,8 +22,8 @@ module.exports = [
 		hidden
 	}),
 	new HtmlWebpackPlugin({
-		template: "./src/pages/product-page.html",
-		filename: "product-page.html",
+		template: "./src/pages/product-card.html",
+		filename: "product-card.html",
 		inject: "body",
 		title: "Карточка товара",
 		head,
