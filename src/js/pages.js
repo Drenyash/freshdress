@@ -164,4 +164,15 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/contacts.html",
+		filename: "contacts.html",
+		inject: "body",
+		title: "Контакты",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];

@@ -22,26 +22,33 @@
   &--purple {
     background-color: $purple-dark;
   }
+
   &--outline {
     border: 1px solid $light;
   }
+
   &--center {
     margin: 0 auto;
   }
+
   &--light {
     color: $purple-light;
     background-color: $light-button;
+
     &:hover {
       background-color: $purple-light;
       color: $light;
     }
   }
+
   &--light &__icon {
     fill: $purple-light;
   }
+
   &--light:hover &__icon {
     fill: $light;
   }
+
   &--orange {
     background-color: $orange;
   }
@@ -50,5 +57,10 @@
     display: flex;
     width: 24px;
     height: 24px;
+  }
+
+  &--small {
+    padding: 14px 35px;
+    min-width: auto;
   }
 }

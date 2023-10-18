@@ -9305,6 +9305,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/assets/sprite/icon-call.svg":
+/*!*****************************************!*\
+  !*** ./src/assets/sprite/icon-call.svg ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-call-usage",
+      viewBox: "0 0 24 24",
+      url: "/assets/sprite/" + "sprite.svg#icon-call-usage",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
 /***/ "./src/assets/sprite/icon-car.svg":
 /*!****************************************!*\
   !*** ./src/assets/sprite/icon-car.svg ***!
@@ -9564,6 +9583,25 @@ __webpack_require__.r(__webpack_exports__);
       id: "icon-logo-usage",
       viewBox: "0 0 130 49",
       url: "/assets/sprite/" + "sprite.svg#icon-logo-usage",
+      toString: function () {
+        return this.url;
+      }
+    });
+
+/***/ }),
+
+/***/ "./src/assets/sprite/icon-mail.svg":
+/*!*****************************************!*\
+  !*** ./src/assets/sprite/icon-mail.svg ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+      id: "icon-mail-usage",
+      viewBox: "0 0 24 24",
+      url: "/assets/sprite/" + "sprite.svg#icon-mail-usage",
       toString: function () {
         return this.url;
       }
@@ -10500,6 +10538,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_sprite_icon_pin_svg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../assets/sprite/icon-pin.svg */ "./src/assets/sprite/icon-pin.svg");
 /* harmony import */ var _assets_sprite_icon_car_svg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../assets/sprite/icon-car.svg */ "./src/assets/sprite/icon-car.svg");
 /* harmony import */ var _assets_sprite_icon_plus_svg__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../assets/sprite/icon-plus.svg */ "./src/assets/sprite/icon-plus.svg");
+/* harmony import */ var _assets_sprite_icon_call_svg__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ../assets/sprite/icon-call.svg */ "./src/assets/sprite/icon-call.svg");
+/* harmony import */ var _assets_sprite_icon_mail_svg__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ../assets/sprite/icon-mail.svg */ "./src/assets/sprite/icon-mail.svg");
+
+
 
 
 
@@ -10568,6 +10610,8 @@ __webpack_require__.r(__webpack_exports__);
     pin: _assets_sprite_icon_pin_svg__WEBPACK_IMPORTED_MODULE_30__["default"],
     car: _assets_sprite_icon_car_svg__WEBPACK_IMPORTED_MODULE_31__["default"],
     plus: _assets_sprite_icon_plus_svg__WEBPACK_IMPORTED_MODULE_32__["default"],
+    call: _assets_sprite_icon_call_svg__WEBPACK_IMPORTED_MODULE_33__["default"],
+    mail: _assets_sprite_icon_mail_svg__WEBPACK_IMPORTED_MODULE_34__["default"],
 });
 
 
