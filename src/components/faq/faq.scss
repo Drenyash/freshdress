@@ -1,0 +1,89 @@
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  @include r($mobile) {
+    gap: 30px;
+    padding: 0 24px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1270px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 30px 60px;
+    border-radius: 30px;
+    border: 1px solid #F0F0F2;
+    width: 100%;
+    cursor: pointer;
+
+    @include r($mobile) {
+      padding: 24px 20px;
+    }
+  }
+
+  &__item.active &__text {
+    display: block;
+  }
+
+  &__item.active &__title {
+    color: $purple-light;
+  }
+
+  &__item.active &__icon {
+    transform: translateY(-50%) rotate(-45deg);
+    fill: $purple-light;
+  }
+
+  &__title {
+    max-width: 925px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $dark;
+
+    @include r($mobile) {
+      max-width: 255px;
+    }
+  }
+
+  &__text {
+    display: none;
+    max-width: 810px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $dark;
+
+    @include r($mobile) {
+      max-width: 260px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    transition: .2s linear;
+    fill: $dark;
+
+    @include r($mobile) {
+      right: 20px;
+    }
+  }
+}

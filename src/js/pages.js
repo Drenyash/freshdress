@@ -153,4 +153,15 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/faq.html",
+		filename: "faq.html",
+		inject: "body",
+		title: "Часто задаваемые вопросы",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];

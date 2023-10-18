@@ -3,6 +3,10 @@
   justify-content: space-between;
   align-items: flex-end;
 
+  &--center {
+    justify-content: center;
+  }
+
   @include r(1529) {
     flex-direction: column;
   }

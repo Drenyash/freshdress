@@ -15,3 +15,4 @@ import "./tabs";
 import "./open";
 import "./counter";
 import "./updateBasket";
+import "./show";

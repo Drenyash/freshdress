@@ -45,6 +45,7 @@
             })
         })
 
+        if (!selectAll) return
         selectAll.addEventListener('click', () => {
             const selectInput = selectAll.querySelector('input');
             checkedItems.forEach(el => {
@@ -52,7 +53,7 @@
             })
             removePositions(carts)
         })
-
+        if (!openBtn) return
         openBtn.addEventListener('click', () => {
             if (openBtn.textContent === 'Выбрать') {
                 openBtn.textContent = 'Отменить'

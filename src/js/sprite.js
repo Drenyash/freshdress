@@ -30,6 +30,8 @@ import buy from "../assets/sprite/icon-buy.svg"
 import home from "../assets/sprite/icon-home.svg"
 import pin from "../assets/sprite/icon-pin.svg"
 import car from "../assets/sprite/icon-car.svg"
+import plus from "../assets/sprite/icon-plus.svg"
+
 export default {
     arrow,
     arrowPointer,
@@ -63,4 +65,5 @@ export default {
     home,
     pin,
     car,
+    plus,
 }
