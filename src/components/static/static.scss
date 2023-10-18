@@ -182,4 +182,29 @@
       object-position: center;
     }
   }
+
+  &--news {
+    margin-bottom: 40px;
+    max-width: 1100px;
+    @include r($mobile) {
+      padding: 0;
+    }
+    h1 {
+      margin-bottom: 30px;
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 150%;
+      color: $black;
+
+      @include r($mobile) {
+        margin-bottom: 24px;
+        font-size: 30px;
+      }
+    }
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
+      }
+    }
+  }
 }

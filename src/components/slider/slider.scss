@@ -427,6 +427,17 @@
       display: flex;
     }
   }
+
+  &--news {
+    .slider__item {
+      flex-shrink: 0;
+    }
+    .slider__controls {
+      @include r($mobile) {
+        display: none;
+      }
+    }
+  }
 }
 
 .swiper-3d {

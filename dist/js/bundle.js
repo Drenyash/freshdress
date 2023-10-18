@@ -10396,6 +10396,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             })
+        } else if (slider.dataset.slider === 'news') {
+            const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+                slidesPerView: 1,
+                slideClass: 'slider__item',
+                slideActiveClass: 'slider__item--active',
+                slideNextClass: 'slider__item--next',
+                slidePrevClass: 'slider__item--prev',
+                slideVisibleClass: 'slider__item--visible',
+                wrapperClass: 'slider__wrapper',
+                navigation: {
+                    nextEl: '.slider__button--next',
+                    prevEl: '.slider__button--prev',
+                    disabledClass: 'slider__button--disabled'
+                },
+            })
         }
     })
 })

@@ -131,4 +131,26 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/news.html",
+		filename: "news.html",
+		inject: "body",
+		title: "Новости",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/news-detail.html",
+		filename: "news-detail.html",
+		inject: "body",
+		title: "Новости - детальная",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];
