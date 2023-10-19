@@ -1,6 +1,8 @@
 .size-table-button {
   display: flex;
   gap: 10px;
+  cursor: pointer;
+  height: max-content;
 
   span {
     font-size: 14px;
@@ -8,5 +10,11 @@
     line-height: 150%;
     color: $purple-light;
     border-bottom: 1px dashed $purple-light;
+  }
+
+  &__icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
   }
 }

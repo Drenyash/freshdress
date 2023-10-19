@@ -1,0 +1,17 @@
+.price {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  &__text {
+    text-shadow: 0 4px 9px rgba(31, 39, 83, 0.10);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.36px;
+    color: $gray;
+
+    &--current {
+      color: $dark;
+    }
+  }
+}

@@ -10508,6 +10508,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     disabledClass: 'slider__button--disabled'
                 },
             })
+        } else if (slider.dataset.slider === 'picture') {
+            const swiperThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider--thumbs-pictures', {
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Mousewheel, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+                slidesPerView: 4,
+                spaceBetween: 14,
+                mousewheel: true,
+                direction: 'vertical',
+                slideClass: 'slider__item',
+                slideActiveClass: 'slider__item--active',
+                slideNextClass: 'slider__item--next',
+                slidePrevClass: 'slider__item--prev',
+                slideVisibleClass: 'slider__item--visible',
+                wrapperClass: 'slider__wrapper',
+                navigation: {
+                    nextEl: '.slider__button--next',
+                }
+            })
+            const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
+                slidesPerView: 1,
+                slideClass: 'slider__item',
+                slideActiveClass: 'slider__item--active',
+                slideNextClass: 'slider__item--next',
+                slidePrevClass: 'slider__item--prev',
+                slideVisibleClass: 'slider__item--visible',
+                wrapperClass: 'slider__wrapper',
+                thumbs: {
+                    swiper: swiperThumbs,
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.slider__pagination',
+                    type: 'bullets',
+                },
+            })
         }
     })
 })

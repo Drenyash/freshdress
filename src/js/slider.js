@@ -1,4 +1,4 @@
-import Swiper, {EffectCoverflow, Navigation, Pagination, Thumbs} from "swiper";
+import Swiper, {EffectCoverflow, EffectFade, Mousewheel, Navigation, Pagination, Thumbs} from "swiper";
 
 document.addEventListener('DOMContentLoaded', () => {
     const sliders = document.querySelectorAll('[data-slider]');
@@ -196,6 +196,41 @@ document.addEventListener('DOMContentLoaded', () => {
                     nextEl: '.slider__button--next',
                     prevEl: '.slider__button--prev',
                     disabledClass: 'slider__button--disabled'
+                },
+            })
+        } else if (slider.dataset.slider === 'picture') {
+            const swiperThumbs = new Swiper('.slider--thumbs-pictures', {
+                modules: [Mousewheel, Navigation],
+                slidesPerView: 4,
+                spaceBetween: 14,
+                mousewheel: true,
+                direction: 'vertical',
+                slideClass: 'slider__item',
+                slideActiveClass: 'slider__item--active',
+                slideNextClass: 'slider__item--next',
+                slidePrevClass: 'slider__item--prev',
+                slideVisibleClass: 'slider__item--visible',
+                wrapperClass: 'slider__wrapper',
+                navigation: {
+                    nextEl: '.slider__button--next',
+                }
+            })
+            const swiper = new Swiper(slider, {
+                modules: [Thumbs, Pagination],
+                slidesPerView: 1,
+                slideClass: 'slider__item',
+                slideActiveClass: 'slider__item--active',
+                slideNextClass: 'slider__item--next',
+                slidePrevClass: 'slider__item--prev',
+                slideVisibleClass: 'slider__item--visible',
+                wrapperClass: 'slider__wrapper',
+                thumbs: {
+                    swiper: swiperThumbs,
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.slider__pagination',
+                    type: 'bullets',
                 },
             })
         }
