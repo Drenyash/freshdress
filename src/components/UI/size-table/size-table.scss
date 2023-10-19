@@ -1,0 +1,87 @@
+.size-table {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $light;
+  align-items: center;
+  max-width: 1010px;
+  border-radius: 10px;
+  padding: 40px 130px 70px;
+
+  @include r($mobile) {
+    max-width: 100%;
+    align-items: flex-start;
+    padding: 24px 20px 40px;
+    max-height: 80%;
+    overflow-y: auto;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $dark;
+
+    @include r($mobile) {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 150%;
+      color: $dark;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $gray;
+
+    @include r($mobile) {
+      text-align: left;
+      font-size: 14px;
+    }
+  }
+  &__table {
+    @include r($mobile) {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+    td,
+    th {
+      padding: 16px 26px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      text-align: center;
+      white-space: nowrap;
+      color: $dark;
+      border: 1px solid #DCDCDC;
+    }
+    th {
+      color: $orange;
+      background: #F8F8F8;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+    @include r($mobile) {
+      overflow-x: auto;
+    }
+  }
+}
