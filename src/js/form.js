@@ -4,7 +4,7 @@ import axios from "axios";
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelectorAll('[data-form]')
         const els = [...document.querySelectorAll('[data-validate]')];
-        const customInput = document.querySelectorAll('.custom-input');
+        const customInput = document.querySelectorAll('.validate');
 
         const getData = () => {
             const data = new FormData;
@@ -39,14 +39,10 @@ import axios from "axios";
             })
         }
 
-        els.forEach(element => {
-            validate(element)
-        })
-
         customInput.forEach(el => {
             const input = el.querySelector('input')
-            const validEl = el.querySelector('.custom-input__valid');
-            const invalidEl = el.querySelector('.custom-input__invalid');
+            const validEl = el.querySelector('.validate__valid');
+            const invalidEl = el.querySelector('.validate__invalid');
             validate(input, validEl, invalidEl)
         })
 

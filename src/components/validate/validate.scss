@@ -1,4 +1,4 @@
-.custom-input {
+.validate {
   position: relative;
   display: flex;
   width: 100%;
@@ -21,6 +21,10 @@
     }
   }
 
+  input {
+    border-radius: 58px;
+  }
+
   &__invalid {
     position: absolute;
     top: 50%;
@@ -28,12 +32,13 @@
     display: flex;
     padding: 16px 15px;
     width: max-content;
-    height: 58px;
+    max-width: 225px;
     border-radius: 16px;
+    text-align: left;
     background-color: $red-light;
     transform: translateY(-50%);
-    pointer-events: none;
     color: $light;
+
     &::before {
       position: absolute;
       top: 50%;
@@ -50,6 +55,7 @@
     }
 
     span {
+      width: 100%;
       flex-shrink: 0;
     }
   }

@@ -168,4 +168,20 @@
       fill: $purple-light;
     }
   }
+
+  &--small {
+    max-width: 90px;
+    max-height: 116px;
+
+    @include r($mobile) {
+      width: 70px;
+      height: 90px;
+    }
+  }
+
+  &--small &__picture {
+    width: 100%;
+    height: 100%;
+    padding: 11px 14px 8px;
+  }
 }

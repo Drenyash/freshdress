@@ -6,6 +6,10 @@
   color: $dark;
   text-align: center;
 
+  @include r(1529) {
+    font-size: 24px;
+  }
+
   &--small {
     font-size: 18px;
     font-weight: 700;
@@ -23,7 +27,8 @@
     text-transform: none;
   }
 
-  @include r(1529) {
-    font-size: 24px;
+  &--left {
+    text-align: left;
   }
+
 }

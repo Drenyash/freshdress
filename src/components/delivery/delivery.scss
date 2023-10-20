@@ -1,0 +1,49 @@
+.delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  @include r($mobile) {
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 29px 18px 24px;
+    flex-grow: 1;
+    border-radius: 15px;
+    background: $light-button;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    @include r($mobile) {
+      width: 100%;
+    }
+
+    &.active {
+      border: 2px solid $purple-light;
+      background: rgba(93, 58, 142, 0.05);
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__text {
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $gray;
+  }
+}

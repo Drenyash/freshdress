@@ -16,3 +16,6 @@ import "./open";
 import "./counter";
 import "./updateBasket";
 import "./show";
+import "./delivery";
+import "./toggle";
+import "./validateNumber";

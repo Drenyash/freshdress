@@ -4,8 +4,10 @@
 
     cards.forEach(card => {
         const size = card.querySelector('.size');
+        if (!size) return
         const sizeItems = size.querySelectorAll('.size__item');
         const addButton = card.querySelector('.card__button');
+
 
         sizeItems.forEach(item => {
             item.addEventListener('click', () => {

@@ -9906,8 +9906,10 @@ __webpack_require__.r(__webpack_exports__);
 
     cards.forEach(card => {
         const size = card.querySelector('.size');
+        if (!size) return
         const sizeItems = size.querySelectorAll('.size__item');
         const addButton = card.querySelector('.card__button');
+
 
         sizeItems.forEach(item => {
             item.addEventListener('click', () => {
@@ -9939,6 +9941,7 @@ __webpack_require__.r(__webpack_exports__);
         const cards = document.querySelectorAll('.card');
         cards.forEach(card => {
             const addFavoriteButton = card.querySelector('.add-favourite');
+            if (!addFavoriteButton) return
             addFavoriteButton.addEventListener('click', () => {
                 addFavoriteButton.classList.toggle('active');
             })
@@ -9986,6 +9989,28 @@ __webpack_require__.r(__webpack_exports__);
         })
    })
 })()
+
+
+/***/ }),
+
+/***/ "./src/js/delivery.js":
+/*!****************************!*\
+  !*** ./src/js/delivery.js ***!
+  \****************************/
+/***/ (function() {
+
+(function delivery(){
+    document.addEventListener('DOMContentLoaded', () => {
+        const deliveryItems = document.querySelectorAll('.delivery__item')
+
+        deliveryItems.forEach(el => {
+            el.addEventListener('click', () => {
+                deliveryItems.forEach(item => item.classList.remove('active'))
+                el.classList.add('active')
+            })
+        })
+    })
+})();
 
 
 /***/ }),
@@ -10061,7 +10086,7 @@ __webpack_require__.r(__webpack_exports__);
     document.addEventListener('DOMContentLoaded', () => {
         const form = document.querySelectorAll('[data-form]')
         const els = [...document.querySelectorAll('[data-validate]')];
-        const customInput = document.querySelectorAll('.custom-input');
+        const customInput = document.querySelectorAll('.validate');
 
         const getData = () => {
             const data = new FormData;
@@ -10096,14 +10121,10 @@ __webpack_require__.r(__webpack_exports__);
             })
         }
 
-        els.forEach(element => {
-            validate(element)
-        })
-
         customInput.forEach(el => {
             const input = el.querySelector('input')
-            const validEl = el.querySelector('.custom-input__valid');
-            const invalidEl = el.querySelector('.custom-input__invalid');
+            const validEl = el.querySelector('.validate__valid');
+            const invalidEl = el.querySelector('.validate__invalid');
             validate(input, validEl, invalidEl)
         })
 
@@ -10702,6 +10723,27 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/toggle.js":
+/*!**************************!*\
+  !*** ./src/js/toggle.js ***!
+  \**************************/
+/***/ (function() {
+
+(function toggle() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggleButton = document.querySelector('[data-toggle]');
+        const checkedInput = document.querySelector('.bonuses__check')
+
+        toggleButton.addEventListener('click', () => {
+            toggleButton.classList.toggle('active')
+            checkedInput.checked = !checkedInput.checked;
+        })
+    })
+})()
+
+
+/***/ }),
+
 /***/ "./src/js/updateBasket.js":
 /*!********************************!*\
   !*** ./src/js/updateBasket.js ***!
@@ -10831,6 +10873,34 @@ __webpack_require__.r(__webpack_exports__);
                     cartBody.classList.add('hidden')
                     cartTotal.classList.add('hidden')
                     cartEmpty.classList.add('active')
+                }
+            })
+        })
+    })
+})()
+
+
+/***/ }),
+
+/***/ "./src/js/validateNumber.js":
+/*!**********************************!*\
+  !*** ./src/js/validateNumber.js ***!
+  \**********************************/
+/***/ (function() {
+
+(function validateNumber() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            const maxValue = input.getAttribute('max');
+            const minValue = input.getAttribute('min');
+            if (!maxValue && !minValue) return
+            input.addEventListener('input', () => {
+                const numberValue = parseInt(input.value)
+                if (numberValue < minValue) {
+                    input.value = minValue
+                } else if (numberValue >= maxValue) {
+                    input.value = maxValue
                 }
             })
         })
@@ -23848,6 +23918,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _updateBasket__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_updateBasket__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./show */ "./src/js/show.js");
 /* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_show__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _delivery__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./delivery */ "./src/js/delivery.js");
+/* harmony import */ var _delivery__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_delivery__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _toggle__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./toggle */ "./src/js/toggle.js");
+/* harmony import */ var _toggle__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_toggle__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _validateNumber__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./validateNumber */ "./src/js/validateNumber.js");
+/* harmony import */ var _validateNumber__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_validateNumber__WEBPACK_IMPORTED_MODULE_19__);
+
+
+
 
 
 
