@@ -175,4 +175,15 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/lk-main.html",
+		filename: "lk-main.html",
+		inject: "body",
+		title: "Личный кабинет - главная",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];

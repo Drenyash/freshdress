@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="lk">
+                <nav class="lk-nav">
+                    <a href="#" class="lk-nav__link active">Главная</a>
+                    <a href="#" class="lk-nav__link">Личные данные</a>
+                    <a href="#" class="lk-nav__link">История заказов</a>
+                    <a href="#" class="lk-nav__link">Бонусные баллы</a>
+                    <a href="#" class="lk-nav__link">Обратная связь</a>
+                </nav>
+                <div class="lk-body">
+                    <div class="lk-body__info">
+                        <div class="coupon">
+                            <p class="coupon__price">2 700</p>
+                            <p class="coupon__text">бонусных баллов</p>
+                            <a href="#" class="coupon__button">Перейти к покупкам</a>
+                        </div>
+                        <div class="lk-body__item">
+                            <picture class="lk-body__picture">
+                                <img src="./assets/images/ticket-star.png" alt="">
+                            </picture>
+                            <p class="lk-body__text">Подарочные карты</p>
+                        </div>
+                        <div class="lk-body__item">
+                            <picture class="lk-body__picture">
+                                <img src="" alt="">
+                            </picture>
+                            <p class="lk-body__text">Оплата долями</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

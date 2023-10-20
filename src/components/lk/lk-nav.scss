@@ -1,0 +1,15 @@
+.lk-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__link {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 113.9%;
+    color: $dark;
+    &.active {
+      font-weight: 700;
+    }
+  }
+}

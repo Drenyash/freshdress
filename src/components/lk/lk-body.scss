@@ -1,0 +1,28 @@
+.lk-body {
+  flex-grow: 1;
+
+  &__info {
+    display: flex;
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $gray;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+    border-radius: 20px;
+    background: #FAFAFA;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 113.9%;
+    color: $dark;
+  }
+}
