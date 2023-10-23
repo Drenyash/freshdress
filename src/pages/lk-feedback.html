@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-100">
+        <div class="container">
+            <div class="lk">
+                <nav class="lk-nav">
+                    <a href="lk-main.html" class="lk-nav__link">Главная</a>
+                    <a href="#" class="lk-nav__link">Личные данные</a>
+                    <a href="#" class="lk-nav__link active">История заказов</a>
+                    <a href="#" class="lk-nav__link">Бонусные баллы</a>
+                    <a href="#" class="lk-nav__link">Обратная связь</a>
+                </nav>
+                <div class="lk-body">
+                    <form action="#" class="lk-form lk-form--single">
+                        <div class="lk-form__item">
+                            <span>Выберите заказ</span>
+                            <div class="select" data-select>
+                                <div class="select__current" data-select-current>
+                                    <h2 class="select__title">№ 456789334</h2>
+                                    <p class="select__text">Заказ от 10.10.2023</p>
+                                    <svg class="select__icon">
+                                        <use xlink:href="./assets/sprite/sprite.svg#icon-triangle"></use>
+                                    </svg>
+                                </div>
+                                <div class="select__dropdown" data-select-dropdown>
+                                    <div class="select__list">
+                                        <div class="select__item">
+                                            <h2 class="select__title">№ 456789334</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                        <div class="select__item select__item--current">
+                                            <h2 class="select__title">№ 456789334</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                        <div class="select__item">
+                                            <h2 class="select__title">№ 456789334</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                        <div class="select__item">
+                                            <h2 class="select__title">№ 456789334</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                        <div class="select__item">
+                                            <h2 class="select__title">№ 456789334</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                        <div class="select__item">
+                                            <h2 class="select__title">№ 456789334</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                        <div class="select__item">
+                                            <h2 class="select__title">№ 456789334</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="lk-form__item">
+                            <span>Телефон</span>
+                            <input class="lk-form__input" type="tel" placeholder="Номер телефона">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>E-mail</span>
+                            <input class="lk-form__input" type="text" placeholder="info@mail.ru">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Опишите свою проблему</span>
+                            <textarea class="lk-form__input lk-form__input--area" placeholder="Сообщение"></textarea>
+                        </label>
+                        <button type="submit" class="button">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

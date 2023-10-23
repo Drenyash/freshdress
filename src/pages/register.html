@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section pt-80 ptm-40 pb-150 pbm-100">
+        <div class="container">
+            <button class="go-back go-back--big">
+                <svg class="go-back__icon">
+                    <use xlink:href="./assets/sprite/sprite.svg#icon-arrow-pointer"></use>
+                </svg>
+            </button>
+            <div class="auth">
+                <h1 class="auth__title">Регистрация</h1>
+                <form action="#" class="auth__form">
+                    <label class="auth__item">
+                        <input class="auth__input" type="email" placeholder="Введите E-mail">
+                    </label>
+                    <label class="auth__item">
+                        <input class="auth__input" type="password" placeholder="Введите пароль">
+                    </label>
+                    <label class="auth__item">
+                        <input class="auth__input" type="password" placeholder="Подтвердите пароль">
+                    </label>
+                    <button class="auth__button button" type="submit">Войти</button>
+                    <label class="auth__item auth__item--small">
+                        <input type="checkbox" class="check">
+                        <span>
+                            Я согласен с политикой конфиденциальности <br> и с обработкой персональных данных
+                        </span>
+                    </label>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

@@ -34,6 +34,9 @@ import plus from "../assets/sprite/icon-plus.svg"
 import call from "../assets/sprite/icon-call.svg"
 import mail from "../assets/sprite/icon-mail.svg"
 import table from "../assets/sprite/icon-table.svg"
+import triangle from "../assets/sprite/icon-triangle.svg"
+import gift from "../assets/sprite/icon-gift.svg"
+import starAbstract from "../assets/sprite/icon-star-abstract.svg"
 
 export default {
     arrow,
@@ -72,4 +75,7 @@ export default {
     call,
     mail,
     table,
+    triangle,
+    gift,
+    starAbstract,
 }

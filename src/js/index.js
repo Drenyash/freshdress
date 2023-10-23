@@ -19,3 +19,6 @@ import "./show";
 import "./delivery";
 import "./toggle";
 import "./validateNumber";
+import "./show-password";
+import "./select";
+import "./filter-points";

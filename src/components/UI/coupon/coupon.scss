@@ -3,8 +3,16 @@
   flex-direction: column;
   width: 490px;
   padding: 30px 40px 24px;
-  background-image: url("../assets/images/coupon.png");
+  background-image: url("../assets/images/coupon-small.png"), url("../assets/images/coupon.svg");
   background-repeat: no-repeat;
+  background-position: top -25px right 50px, center;
+
+  @include r($mobile) {
+    width: 100%;
+    background-size: 81px auto, 100% 100%;
+    background-position: top -10px right 40px, center;
+    grid-column: span 2;
+  }
 
   &__price {
     margin-bottom: 4px;

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-100">
+        <div class="container">
+            <div class="lk">
+                <nav class="lk-nav">
+                    <a href="lk-main.html" class="lk-nav__link">Главная</a>
+                    <a href="#" class="lk-nav__link">Личные данные</a>
+                    <a href="#" class="lk-nav__link active">История заказов</a>
+                    <a href="#" class="lk-nav__link">Бонусные баллы</a>
+                    <a href="#" class="lk-nav__link">Обратная связь</a>
+                </nav>
+                <div class="lk-body">
+                    <form action="#" class="lk-form">
+                        <label class="lk-form__avatar">
+                            <svg>
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-cum"></use>
+                            </svg>
+                            <input type="file" class="hidden">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Имя</span>
+                            <input class="lk-form__input" type="text">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Фамилия</span>
+                            <input class="lk-form__input" type="text">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Пол</span>
+                            <label class="lk-form__radio">
+                                <input class="input-button active" type="radio" checked="" name="PAYMENT_TYPE" value="ukassa">
+                                <span>Женский</span>
+                            </label>
+                            <label class="lk-form__radio">
+                                <input class="input-button" type="radio" checked="" name="PAYMENT_TYPE" value="ukassa">
+                                <span>Мужской</span>
+                            </label>
+                        </label>
+                        <label class="lk-form__item">
+                            <span>E-mail</span>
+                            <input class="lk-form__input" type="text">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Телефон</span>
+                            <input class="lk-form__input" type="tel">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Дата рождения</span>
+                            <input class="lk-form__input" type="date">
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Ваш город</span>
+                            <input class="lk-form__input" type="text">
+                        </label>
+                        <button type="submit" class="button">Сохранить изменения</button>
+                    </form>
+                    <form action="#" class="lk-form">
+                        <h2 class="lk-form__title">Смена пароля</h2>
+                        <label class="lk-form__item">
+                            <span>Старый пароль</span>
+                            <span class="password" data-password>
+                                <input class="password__input" type="password" placeholder="Старый пароль">
+                                <svg data-password-view>
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-eye"></use>
+                                </svg>
+                            </span>
+                        </label>
+                        <label class="lk-form__item">
+                            <span>Новый пароль</span>
+                            <span class="password" data-password>
+                                <input class="password__input" type="password" placeholder="Старый пароль">
+                                <svg data-password-view>
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-eye"></use>
+                                </svg>
+                            </span>
+                        </label>
+                        <button type="submit" class="button">Сменить пароль</button>
+                    </form>
+                    <button class="button button--light">Удалить профиль</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

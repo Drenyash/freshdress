@@ -186,4 +186,103 @@ module.exports = [
 		temp,
 		hidden
 	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/lk-history.html",
+		filename: "lk-history.html",
+		inject: "body",
+		title: "Личный кабинет - история",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/lk-history-detail.html",
+		filename: "lk-history-detail.html",
+		inject: "body",
+		title: "Личный кабинет - история детальная",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/lk-personal.html",
+		filename: "lk-personal.html",
+		inject: "body",
+		title: "Личный кабинет - личная информация",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/lk-feedback.html",
+		filename: "lk-feedback.html",
+		inject: "body",
+		title: "Личный кабинет - обратная связь",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/lk-bonuses.html",
+		filename: "lk-bonuses.html",
+		inject: "body",
+		title: "Личный кабинет - бонусные баллы",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/login.html",
+		filename: "login.html",
+		inject: "body",
+		title: "FreshDress - Вход",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/register.html",
+		filename: "register.html",
+		inject: "body",
+		title: "FreshDress - Регистрация",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/password-recovery.html",
+		filename: "password-recovery.html",
+		inject: "body",
+		title: "FreshDress - Восстановление пароля",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
+	new HtmlWebpackPlugin({
+		template: "./src/pages/password-recovery-accept.html",
+		filename: "password-recovery-accept.html",
+		inject: "body",
+		title: "FreshDress - Восстановление пароля",
+		head,
+		sectionHeader,
+		sectionFooter,
+		temp,
+		hidden
+	}),
 ];

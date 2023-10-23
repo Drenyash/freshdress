@@ -1,4 +1,11 @@
 .lk {
   display: grid;
   grid-template-columns: auto 1270px;
+
+  @include r($mobile) {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 24px;
+  }
 }
