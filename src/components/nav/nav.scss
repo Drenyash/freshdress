@@ -1,6 +1,6 @@
 .nav {
   display: flex;
-  @include r(1529) {
+  @include r($mobile) {
     display: none;
   }
   &__link {

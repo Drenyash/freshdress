@@ -9,7 +9,7 @@
     line-height: normal;
     color: $dark-light;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 18px;
     }
   }
@@ -18,7 +18,7 @@
     display: flex;
     gap: 30px;
 
-    @include r(1529) {
+    @include r($mobile) {
       gap: 16px;
     }
   }
@@ -45,7 +45,7 @@
     line-height: 100%;
     color: $gray;
 
-    @include r(1529) {
+    @include r($mobile) {
       width: 70px;
       height: 62px;
       font-size: 24px;
@@ -59,7 +59,7 @@
     line-height: 120%;
     color: $outline;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 16px;
     }
   }

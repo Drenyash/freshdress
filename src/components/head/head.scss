@@ -6,7 +6,7 @@
   align-items: center;
   margin-bottom: 60px;
 
-  @include r(1529) {
+  @include r($mobile) {
     margin-bottom: 30px;
   }
 }

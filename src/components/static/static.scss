@@ -7,7 +7,7 @@
     max-width: 100%;
   }
 
-  @include r(1529) {
+  @include r($mobile) {
     padding: 0 24px;
   }
 
@@ -19,7 +19,7 @@
     &:not(:last-of-type) {
       margin-bottom: 50px;
 
-      @include r(1529) {
+      @include r($mobile) {
         margin-bottom: 30px;
       }
     }
@@ -79,6 +79,7 @@
   &__title {
     margin-bottom: 18px;
     display: flex;
+    align-items: center;
     gap: 12px;
     font-size: 18px;
     font-weight: 600;
@@ -152,7 +153,7 @@
     display: none;
     gap: 160px;
 
-    @include r(1529) {
+    @include r($mobile) {
       flex-direction: column;
       gap: 24px;
     }
@@ -169,7 +170,7 @@
     height: 725px;
     border-radius: 15px;
     overflow: hidden;
-    @include r(1529) {
+    @include r($mobile) {
       width: 100%;
       height: 433px;
     }

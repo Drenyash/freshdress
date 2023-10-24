@@ -943,12 +943,12 @@ button {
 }
 
 .desktop-hidden {
-  display: none;
+  display: none !important;
   visibility: hidden;
 }
 @media only screen and (max-width: 1529px) {
   .desktop-hidden {
-    display: block;
+    display: block !important;
     visibility: visible;
   }
 }
@@ -1723,6 +1723,12 @@ button {
     bottom: 10px;
   }
 }
+.add-favourite--static {
+  position: static;
+}
+.add-favourite--static .add-favourite__icon {
+  stroke: #C7CBCC;
+}
 .add-favourite.active .add-favourite__icon {
   fill: #C60000;
   stroke: none;
@@ -2106,7 +2112,7 @@ button {
 }
 
 .breadcrumbs {
-  margin: 32px 0 40px;
+  margin: 34px 0 25px;
 }
 .breadcrumbs__list {
   display: -webkit-box;
@@ -3288,6 +3294,7 @@ button {
   font-family: "Manrope", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  color: #181818;
   background-color: #FFFFFF;
   overflow-x: hidden;
   width: 100vw;
@@ -4769,7 +4776,7 @@ button {
   .card__picture {
     margin-bottom: 4px;
     padding: 5px 19px;
-    width: auto;
+    width: 100%;
     height: auto;
   }
 }
@@ -5465,6 +5472,7 @@ button {
       -ms-flex-item-align: center;
           align-self: center;
   max-width: 630px;
+  width: 100%;
 }
 @media only screen and (max-width: 1529px) {
   .contact-us__form {
@@ -5547,7 +5555,6 @@ button {
       -ms-flex-align: center;
           align-items: center;
   gap: 14px;
-  margin-bottom: 36px;
 }
 @media only screen and (max-width: 1529px) {
   .form__info {
@@ -7026,6 +7033,10 @@ button {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 12px;
   font-size: 18px;
   font-weight: 600;
@@ -7483,6 +7494,9 @@ button {
   .cart__button span {
     display: none;
   }
+}
+.cart__button.active span {
+  color: #C60000;
 }
 .cart__content {
   display: -webkit-box;

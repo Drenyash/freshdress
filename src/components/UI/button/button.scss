@@ -15,7 +15,7 @@
   text-align: center;
   cursor: pointer;
 
-  @include r(1529) {
+  @include r($mobile) {
     padding: 13px 35px;
   }
 

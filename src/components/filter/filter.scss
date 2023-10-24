@@ -4,7 +4,7 @@
   gap: 40px;
   background-color: $light;
 
-  @include r(1529) {
+  @include r($mobile) {
     position: relative;
     height: 100%;
     overflow-y: auto;
@@ -117,7 +117,7 @@
     color: $gray-light;
     cursor: pointer;
 
-    @include r(1529) {
+    @include r($mobile) {
       text-align: center;
     }
   }

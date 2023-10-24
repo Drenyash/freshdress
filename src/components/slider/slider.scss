@@ -5,7 +5,7 @@
   overflow: hidden;
   touch-action: pan-y;
 
-  @include r(1529) {
+  @include r($mobile) {
     overflow: visible;
     padding: 0 24px;
   }
@@ -41,7 +41,7 @@
     }
 
     .slider__button {
-      @include r(1529) {
+      @include r($mobile) {
         display: none;
       }
     }
@@ -49,7 +49,7 @@
 
   &--product {
     .slider__button {
-      @include r(1529) {
+      @include r($mobile) {
         display: none;
       }
     }
@@ -73,7 +73,7 @@
     width: 100%;
     pointer-events: none;
 
-    @include r(1529) {
+    @include r($mobile) {
       left: 0;
     }
   }
@@ -92,7 +92,7 @@
     pointer-events: auto;
     transition: .2s linear;
 
-    @include r(1529) {
+    @include r($mobile) {
       width: 30px;
       height: 30px;
     }
@@ -116,7 +116,7 @@
     &--prev {
       left: -88px;
       transform: translateY(-50%);
-      @include r(1529) {
+      @include r($mobile) {
         left: 10px;
       }
 
@@ -128,7 +128,7 @@
     &--next {
       right: -88px;
       transform: translateY(-50%);
-      @include r(1529) {
+      @include r($mobile) {
         right: 10px;
       }
     }
@@ -143,7 +143,7 @@
     perspective: 1200px;
     overflow: visible;
 
-    @include r(1529) {
+    @include r($mobile) {
       position: relative;
     }
 
@@ -157,14 +157,14 @@
     }
 
     .slider__controls {
-      @include r(1529) {
+      @include r($mobile) {
         left: 0;
         bottom: 0;
       }
     }
 
     .slider__button--next {
-      @include r(1529) {
+      @include r($mobile) {
         width: 30px;
         height: 30px;
         top: 24px;
@@ -173,7 +173,7 @@
     }
 
     .slider__button--prev {
-      @include r(1529) {
+      @include r($mobile) {
         width: 30px;
         height: 30px;
         top: 24px;
@@ -183,7 +183,7 @@
 
     .slider__pagination {
       display: none;
-      @include r(1529) {
+      @include r($mobile) {
         display: flex;
         left: 50%;
         bottom: 9px;
@@ -191,7 +191,7 @@
       }
 
       &-bullet {
-        @include r(1529) {
+        @include r($mobile) {
           width: 7px;
           height: 7px;
           background-color: $light;
@@ -227,7 +227,7 @@
       pointer-events: none;
     }
 
-    @include r(1529) {
+    @include r($mobile) {
       flex-direction: column;
       height: 346px;
       min-height: auto;
@@ -246,7 +246,7 @@
       .stock {
         width: 404px;
         height: 582px;
-        @include r(1529) {
+        @include r($mobile) {
           width: 241px;
           height: 346px;
         }
@@ -267,7 +267,7 @@
       transform: translate3d(450px, 0, 0) scale(0.5);
       transition: .2s linear;
 
-      @include r(1529) {
+      @include r($mobile) {
         transform: none;
       }
     }
@@ -280,7 +280,7 @@
       width: auto;
       gap: 16px;
 
-      @include r(1529) {
+      @include r($mobile) {
         left: initial;
         right: 0;
         bottom: -40px;
@@ -292,13 +292,13 @@
         background-color: $light;
         transform: none;
 
-        @include r(1529) {
+        @include r($mobile) {
           width: 28px;
           height: 28px;
         }
 
         svg {
-          @include r(1529) {
+          @include r($mobile) {
             width: 20px;
             height: 20px;
           }
@@ -324,7 +324,7 @@
     align-items: center;
     gap: 10px;
 
-    @include r(1529) {
+    @include r($mobile) {
       margin-bottom: -40px;
     }
 
@@ -339,7 +339,7 @@
       border: 2px solid transparent;
       transition: .2s linear;
 
-      @include r(1529) {
+      @include r($mobile) {
         width: 20px;
         height: 20px;
       }
@@ -353,7 +353,7 @@
         border-radius: 50%;
         transition: .2s linear;
 
-        @include r(1529) {
+        @include r($mobile) {
           width: 5px;
           height: 5px;
         }
@@ -364,7 +364,7 @@
         background-color: $light;
 
         &::before {
-          @include r(1529) {
+          @include r($mobile) {
             width: 8px;
             height: 8px;
           }
@@ -380,7 +380,7 @@
 
   &--features {
     max-width: 1320px;
-    @include r(1529) {
+    @include r($mobile) {
       position: absolute;
       left: 0;
       bottom: -25%;
@@ -398,7 +398,7 @@
 
     .slider__button {
       display: none;
-      @include r(1529) {
+      @include r($mobile) {
         display: flex;
       }
     }
@@ -432,7 +432,7 @@
       }
     }
 
-    @include r(1529) {
+    @include r($mobile) {
       display: flex;
     }
   }

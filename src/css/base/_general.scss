@@ -40,10 +40,10 @@ button {
 }
 
 .desktop-hidden {
-  display: none;
+  display: none !important;
   visibility: hidden;
   @include r(1529) {
-    display: block;
+    display: block !important;
     visibility: visible;
   }
 }

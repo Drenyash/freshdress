@@ -11,7 +11,7 @@
   border-radius: 15px;
   overflow: hidden;
 
-  @include r(1529) {
+  @include r($mobile) {
     width: auto;
     margin: 0 24px;
     padding: 54px 32px 30px;
@@ -24,7 +24,7 @@
     text-transform: uppercase;
     color: $dark;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 65px;
     }
   }
@@ -38,7 +38,7 @@
     line-height: 150%;
     color: $light;
 
-    @include r(1529) {
+    @include r($mobile) {
       margin-top: 0;
       margin-bottom: 60px;
     }

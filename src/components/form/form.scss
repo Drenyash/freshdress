@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 30px;
 
-  @include r(1529) {
+  @include r($mobile) {
     padding: 0 24px;
     gap: 14px;
   }
@@ -11,7 +11,7 @@
   &--center {
     align-items: center;
 
-    @include r(1529) {
+    @include r($mobile) {
       align-items: stretch;
     }
   }
@@ -21,9 +21,8 @@
     flex-direction: column;
     align-items: center;
     gap: 14px;
-    margin-bottom: 36px;
 
-    @include r(1529) {
+    @include r($mobile) {
       margin-bottom: 0;
     }
   }
@@ -35,7 +34,7 @@
     line-height: normal;
     color: $dark;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 23px;
     }
   }

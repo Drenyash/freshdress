@@ -15,7 +15,7 @@
     background: linear-gradient(180deg, #8082FF 0%, #FD80FF 100%);
     filter: blur(100px);
 
-    @include r(1529) {
+    @include r($mobile) {
       top: 259px;
       left: 73px;
       z-index: -1;
@@ -34,7 +34,7 @@
     filter: blur(100px);
     z-index: -2;
 
-    @include r(1529) {
+    @include r($mobile) {
       top: initial;
       left: initial;
       bottom: -155px;
@@ -42,7 +42,7 @@
     }
   }
 
-  @include r(1529) {
+  @include r($mobile) {
     align-items: center;
     gap: 28px;
   }
@@ -55,7 +55,7 @@
     color: $dark;
     z-index: 1;
 
-    @include r(1529) {
+    @include r($mobile) {
       padding: 0 24px;
       font-size: 18px;
       text-align: center;
@@ -74,7 +74,7 @@
     border-radius: 282px 0 0 30px;
     overflow: hidden;
 
-    @include r(1529) {
+    @include r($mobile) {
       position: static;
       width: 100%;
       height: 483px;
@@ -94,7 +94,7 @@
     width: 76px;
     height: 76px;
 
-    @include r(1529) {
+    @include r($mobile) {
       display: none;
     }
 

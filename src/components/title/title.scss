@@ -6,7 +6,7 @@
   color: $dark;
   text-align: center;
 
-  @include r(1529) {
+  @include r($mobile) {
     font-size: 24px;
   }
 

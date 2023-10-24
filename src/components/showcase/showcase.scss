@@ -8,7 +8,7 @@
   overflow: hidden;
   transition: .2s linear;
 
-  @include r(1529) {
+  @include r($mobile) {
     width: 287px;
     height: 417px;
   }

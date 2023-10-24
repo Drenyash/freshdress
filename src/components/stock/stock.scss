@@ -5,7 +5,7 @@
   height: 486px;
   transition: height .2s linear;
 
-  @include r(1529) {
+  @include r($mobile) {
     position: static;
     width: 241px;
     height: 346px;
@@ -40,7 +40,7 @@
     visibility: hidden;
     transition: .2s linear;
 
-    @include r(1529) {
+    @include r($mobile) {
       padding: 20px 25px 20px 15px;
       border-radius: 10px;
       visibility: visible;
@@ -64,7 +64,7 @@
     line-height: 150%;
     color: $outline;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 12px;
     }
   }
@@ -75,7 +75,7 @@
     height: 1px;
     background-color: $outline;
 
-    @include r(1529) {
+    @include r($mobile) {
       width: 15px;
     }
   }

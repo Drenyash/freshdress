@@ -4,9 +4,16 @@
   bottom: 16px;
   cursor: pointer;
 
-  @include r(1529) {
+  @include r($mobile) {
     right: 10px;
     bottom: 10px;
+  }
+
+  &--static {
+    position: static;
+    .add-favourite__icon {
+      stroke: $gray-light;
+    }
   }
 
   &.active {

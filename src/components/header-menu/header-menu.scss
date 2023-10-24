@@ -12,7 +12,7 @@
   transition: .2s linear;
 
   &.active {
-    @include r(1529) {
+    @include r($mobile) {
       display: flex;
     }
   }

@@ -3,7 +3,7 @@
   align-items: center;
   gap: 30px;
 
-  @include r(1529) {
+  @include r($mobile) {
     gap: 14px;
     overflow-x: auto;
   }
@@ -15,7 +15,7 @@
     width: 100%;
     cursor: pointer;
 
-    @include r(1529) {
+    @include r($mobile) {
       flex-shrink: 0;
       width: auto;
       height: auto;
@@ -27,7 +27,7 @@
     box-shadow: 0 20px 35px 0 rgba(193, 68, 29, 0.25);
     color: $light;
 
-    @include r(1529) {
+    @include r($mobile) {
       box-shadow: none;
     }
   }
@@ -39,7 +39,7 @@
     overflow: hidden;
     border-radius: 30px;
 
-    @include r(1529) {
+    @include r($mobile) {
       display: none;
     }
 
@@ -70,7 +70,7 @@
     box-shadow: 0 20px 35px 0 rgba(167, 167, 167, 0.25);
     cursor: pointer;
 
-    @include r(1529) {
+    @include r($mobile) {
       padding: 12px 9px;
       font-size: 16px;
       width: auto;

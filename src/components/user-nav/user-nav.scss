@@ -2,7 +2,7 @@
   display: flex;
   margin-left: auto;
 
-  @include r(1529) {
+  @include r($mobile) {
     width: 100%;
     padding: 19px 24px;
     background-color: #F6F6F6;
@@ -12,7 +12,7 @@
     display: flex;
     gap: 20px;
 
-    @include r(1529) {
+    @include r($mobile) {
       width: 100%;
       justify-content: space-between;
     }

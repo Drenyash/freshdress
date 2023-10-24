@@ -10003,6 +10003,20 @@ __webpack_require__.r(__webpack_exports__);
                 addFavoriteButton.classList.toggle('active');
             })
         })
+        const addFavorite = document.querySelectorAll('.add-favourite');
+
+        addFavorite.forEach(el => {
+            const text = el.querySelector('span');
+            if (!text) return
+            el.addEventListener('click', () => {
+                el.classList.toggle('active');
+                if (el.classList.contains('active')) {
+                    text.textContent = 'В избранном'
+                } else {
+                    text.textContent = 'В избранное'
+                }
+            })
+        })
     })
 })();
 

@@ -22,7 +22,7 @@
     border-color: $red;
   }
 
-  @include r(1529) {
+  @include r($mobile) {
     padding: 17px 28px;
     font-size: 16px;
   }

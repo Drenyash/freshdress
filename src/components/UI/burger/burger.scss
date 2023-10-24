@@ -5,7 +5,7 @@
   height: 9px;
   z-index: 5;
 
-  @include r(1529) {
+  @include r($mobile) {
     display: flex;
   }
 

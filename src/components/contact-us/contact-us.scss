@@ -7,14 +7,15 @@
     justify-content: center;
   }
 
-  @include r(1529) {
+  @include r($mobile) {
     flex-direction: column;
   }
 
   &__form {
     align-self: center;
     max-width: 630px;
-    @include r(1529) {
+    width: 100%;
+    @include r($mobile) {
       order: -1;
     }
   }
@@ -22,7 +23,7 @@
   &__picture {
     pointer-events: none;
     &:first-child {
-      @include r(1529) {
+      @include r($mobile) {
         width: 327px;
         height: 476px;
         margin-right: auto;
@@ -32,7 +33,7 @@
       }
     }
     &:last-child {
-      @include r(1529) {
+      @include r($mobile) {
         position: absolute;
         top: 59%;
         right: 0;

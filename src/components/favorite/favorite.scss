@@ -1,5 +1,5 @@
 .favorite {
-  @include r(1529) {
+  @include r($mobile) {
     padding: 0 24px;
   }
 
@@ -9,7 +9,7 @@
     align-items: flex-end;
     margin-bottom: 40px;
 
-    @include r(1529) {
+    @include r($mobile) {
       margin-bottom: 30px;
     }
   }
@@ -20,7 +20,7 @@
     grid-template-columns: repeat(6, 1fr);
     gap: 30px;
 
-    @include r(1529) {
+    @include r($mobile) {
       gap: 20px 16px;
       grid-template-columns: 1fr 1fr;
     }

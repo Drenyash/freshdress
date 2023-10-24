@@ -3,7 +3,7 @@
   align-items: flex-end;
   gap: 30px;
 
-  @include r(1529) {
+  @include r($mobile) {
     display: none;
   }
 
@@ -18,7 +18,7 @@
     backdrop-filter: blur(20px);
     z-index: 1;
 
-    @include r(1529) {
+    @include r($mobile) {
       padding: 30px;
       max-width: 100%;
     }
@@ -36,7 +36,7 @@
     line-height: 150%;
     color: $dark;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 16px;
     }
   }
@@ -47,7 +47,7 @@
     line-height: 150%;
     color: $dark;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 14px;
     }
   }

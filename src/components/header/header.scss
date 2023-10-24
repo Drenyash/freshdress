@@ -7,13 +7,13 @@
   background: rgba(251, 251, 251, 0.10);
   backdrop-filter: blur(50px);
 
-  @include r(1529) {
+  @include r($mobile) {
     background-color: $light;
     backdrop-filter: none;
   }
   &__group {
     position: relative;
-    @include r(1529) {
+    @include r($mobile) {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
 
-    @include r(1529) {
+    @include r($mobile) {
       flex-direction: column;
     }
   }
@@ -33,7 +33,7 @@
   &__logo {
     margin-right: 151px;
 
-    @include r(1529) {
+    @include r($mobile) {
       margin-right: 0;
     }
   }

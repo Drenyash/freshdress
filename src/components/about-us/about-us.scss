@@ -1,7 +1,7 @@
 .about-us {
   position: relative;
   padding-bottom: 150px;
-  @include r(1529) {
+  @include r($mobile) {
     padding: 0 24px 278px;
   }
   &__title {
@@ -10,7 +10,7 @@
     font-weight: 400;
     line-height: 150%;
     color: $black;
-    @include r(1529) {
+    @include r($mobile) {
       margin-bottom: 24px;
       font-size: 30px;
     }
@@ -38,7 +38,7 @@
     right: -19%;
     bottom: -57%;
     display: flex;
-    @include r(1529) {
+    @include r($mobile) {
       width: 370px;
       right: -11%;
       bottom: -12%;
@@ -53,7 +53,7 @@
     letter-spacing: 0.64px;
     color: $gray;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 14px;
       letter-spacing: 0.56px;
       margin-right: auto;

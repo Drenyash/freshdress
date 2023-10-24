@@ -8,7 +8,7 @@
     padding-left: rem(15);
     padding-right: rem(15);
 
-    @include r(1529) {
+    @include r($mobile) {
         max-width: rem(1260);
     }
 

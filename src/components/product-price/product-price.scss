@@ -3,7 +3,7 @@
   align-items: center;
   gap: 22px;
 
-  @include r(1529) {
+  @include r($mobile) {
     gap: 14px;
   }
 
@@ -16,7 +16,7 @@
     line-height: 100%;
     letter-spacing: 0.28px;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 12px;
     }
   }
@@ -29,7 +29,7 @@
     letter-spacing: 0.36px;
     word-break: break-all;
     color: $dark;
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 16px;
     }
   }

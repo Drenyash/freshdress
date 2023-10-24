@@ -3,7 +3,7 @@
   gap: 20px;
   justify-content: space-between;
 
-  @include r(1529) {
+  @include r($mobile) {
     padding: 0 24px;
   }
 
@@ -37,7 +37,7 @@
     height: 160px;
     transition: .2s linear;
 
-    @include r(1529) {
+    @include r($mobile) {
       width: 70px;
       height: 85px;
     }
@@ -46,7 +46,7 @@
       mix-blend-mode: multiply;
       background-color: transparent;
 
-      @include r(1529) {
+      @include r($mobile) {
         display: block;
         width: auto;
         height: 100%;
@@ -62,7 +62,7 @@
     line-height: 150%;
     color: $gray-light;
 
-    @include r(1529) {
+    @include r($mobile) {
       font-size: 11px;
       line-height: normal;
       color: $black;
