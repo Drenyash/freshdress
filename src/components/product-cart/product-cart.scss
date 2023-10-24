@@ -126,6 +126,7 @@
   }
 
   &__counter {
+    margin-left: -15px;
     @include r($mobile) {
       position: absolute;
       left: 0;

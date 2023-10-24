@@ -1,7 +1,7 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 77px;
+  gap: 63px;
 
   @include r($mobile) {
     gap: 40px;
@@ -82,6 +82,10 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 150%;
+
+    &--big {
+      font-size: 18px;
+    }
 
     span {
       color: $gray;
@@ -191,7 +195,7 @@
   &__column {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 43px;
   }
 
   &__item {

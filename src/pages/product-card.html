@@ -9,7 +9,7 @@
 <body class="body">
 <%= htmlWebpackPlugin.options.sectionHeader %>
 <main class="main">
-    <section class="section mob-hidden mb-60">
+    <section class="section mob-hidden mb-40">
         <div class="container">
             <div class="breadcrumbs">
                 <ul class="breadcrumbs__list">
@@ -139,39 +139,6 @@
                                 <label class="color">
                                     <input type="checkbox" style="background-color: #E0E0E0" name="color" value="1">
                                 </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #2F80ED" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #56CCF2" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #9B51E0" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #6802C7" name="color" value="1">
-                                </label>
-                                <label class="color active">
-                                    <input type="checkbox" style="background-color: #27AE60" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #6FCF97" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #F2C94C" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #F2994A" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #EB5757" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #C60000" name="color" value="1">
-                                </label>
-                                <label class="color">
-                                    <input type="checkbox" style="background-color: #750101" name="color" value="1">
-                                </label>
                             </div>
                         </div>
                         <div class="product-card__block product-card__block--custom">
@@ -207,26 +174,26 @@
                             </div>
                         </div>
                         <div class="product-card__toolbox">
-                            <button class="button button--medium button--light mob-hidden">
+                            <button class="button button--medium button--small button--light mob-hidden">
                                 Добавить в корзину
                                 <svg class="button__icon">
                                     <use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
                                 </svg>
                             </button>
-                            <button class="button button--medium button--orange mob-hidden">
+                            <button class="button button--medium button--small button--orange mob-hidden">
                                 В избранное
                                 <svg class="button__icon">
                                     <use xlink:href="./assets/sprite/sprite.svg#icon-heart"></use>
                                 </svg>
                             </button>
-                            <button class="button button--medium button--light">Купить в рассрочку</button>
+                            <button class="button button--medium button--small button--light">Купить в рассрочку</button>
                         </div>
                     </div>
                 </div>
                 <div class="product-card__detail">
                     <div class="product-card__column">
                         <div class="product-card__item">
-                            <h3 class="product-card__head">Описание товара</h3>
+                            <h3 class="product-card__head product-card__head--big">Описание товара</h3>
                             <p class="product-card__text">
                                 Экошуба с элегантным воротником и аккуратными боковыми карманами в бежевом оттенке. Шуба
                                 выполнена из мягкого искусственного меха. Он не пропускает влагу, держит форму, не
@@ -234,7 +201,7 @@
                             </p>
                         </div>
                         <div class="product-card__item">
-                            <h3 class="product-card__head">Параметры изделия:</h3>
+                            <h3 class="product-card__head product-card__head--big">Параметры изделия:</h3>
                             <p class="product-card__text">наполнитель Термофин<br>
                                 40 42 44 46<br>
                                 ОГ 114<br>
@@ -246,11 +213,11 @@
                     </div>
                     <div class="product-card__column">
                         <div class="product-card__item">
-                            <h3 class="product-card__head">Состав:</h3>
+                            <h3 class="product-card__head product-card__head--big">Состав:</h3>
                             <p class="product-card__text">70% шерсть, 30% полиамид, подклад 70% вискоза, 30% П/Э</p>
                         </div>
                         <div class="product-card__item">
-                            <h3 class="product-card__head">На модели:</h3>
+                            <h3 class="product-card__head product-card__head--big">На модели:</h3>
                             <p class="product-card__text">
                                 Рост 174<br>
                                 86/63/90<br>
@@ -258,7 +225,7 @@
                             </p>
                         </div>
                         <div class="product-card__item">
-                            <h3 class="product-card__head">Гарантия:</h3>
+                            <h3 class="product-card__head product-card__head--big">Гарантия:</h3>
                             <p class="product-card__text">Гарантия на изделие составляет 30 дней с момента покупки.</p>
                         </div>
                     </div>
@@ -266,12 +233,12 @@
             </div>
         </div>
     </section>
-    <section class="section pb-100">
+    <section class="section pb-60">
         <div class="container">
             <div class="head">
                 <h2 class="title">добавьте к образу</h2>
             </div>
-            <div class="slider slider--product mb-50" data-slider="slider">
+            <div class="slider slider--product" data-slider="slider">
                 <div class="slider__wrapper">
                     <div class="slider__item">
                         <article class="card">

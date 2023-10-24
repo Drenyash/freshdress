@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     stretch: 255,
                     depth: 430,
                     modifier: 1,
-                    slideShadows: true
+                    slideShadows: false
                 },
                 loop: true,
                 watchSlidesProgress: true,

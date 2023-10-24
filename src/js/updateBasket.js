@@ -107,6 +107,7 @@
             removeBtn.addEventListener('click', () => {
                 const selectInput = selectAll.querySelector('input');
                 let checked = document.querySelectorAll('[data-cart-check]:checked');
+                let checkedItems = document.querySelectorAll('[data-cart-check]');
 
                 checked.forEach(el => {
                     el.closest('[data-cart]').remove();
@@ -114,10 +115,11 @@
                 });
                 selectInput.checked = false;
                 checked = document.querySelectorAll('[data-cart-check]:checked');
+                checkedItems = document.querySelectorAll('[data-cart-check]');
                 removePosition.forEach(el => {
                     el.textContent = checked.length;
                 })
-                if (checked.length <= 0) {
+                if (checkedItems.length <= 0) {
                     cartBody.classList.add('hidden')
                     cartTotal.classList.add('hidden')
                     cartEmpty.classList.add('active')
