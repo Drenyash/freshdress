@@ -10,6 +10,12 @@
       visibility: visible;
       height: auto;
     }
+    .card__price {
+      opacity: 0;
+    }
+    .card__title {
+      opacity: 0;
+    }
   }
   @include r($mobile) {
     &:hover {
@@ -108,7 +114,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: $light;
     display: flex;
     flex-direction: column;
     gap: 14px;

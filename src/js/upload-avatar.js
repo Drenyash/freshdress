@@ -2,6 +2,7 @@
    document.addEventListener('DOMContentLoaded', () => {
        const avatar = document.querySelector('[data-avatar]');
        const avatarImage = document.querySelector('[data-avatar-image]');
+       if (!avatar) return
        const avatarInput = avatar.querySelector('input');
        const avatarIcon = avatar.querySelector('[data-avatar-icon]')
 

@@ -4746,6 +4746,12 @@ button {
   visibility: visible;
   height: auto;
 }
+.card:hover .card__price {
+  opacity: 0;
+}
+.card:hover .card__title {
+  opacity: 0;
+}
 @media only screen and (max-width: 1529px) {
   .card:hover .card__properties {
     display: none;
@@ -4861,7 +4867,6 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #FFFFFF;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

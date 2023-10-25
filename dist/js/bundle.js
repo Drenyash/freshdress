@@ -10097,6 +10097,7 @@ __webpack_require__.r(__webpack_exports__);
         const links = document.querySelectorAll('[data-open]')
         const elements = document.querySelectorAll('[data-dropdown]')
 
+
         links.forEach((el, idx) => {
             el.addEventListener('click', (evt) => {
                 evt.preventDefault()
@@ -10114,6 +10115,29 @@ __webpack_require__.r(__webpack_exports__);
                     currentItem[0].classList.remove('active');
                 }
             })
+        })
+
+        elements.forEach(el => {
+            const search = el.querySelector('.search__top')
+            const body = el.querySelector('.search__content')
+            const footer = el.querySelector('.search__footer')
+            el.addEventListener('click', (evt) => {
+                el.classList.remove('active')
+            })
+            if (!search || !body || !footer) return
+            search.addEventListener('click', evt => evt.stopPropagation())
+            body.addEventListener('click', evt => evt.stopPropagation())
+            footer.addEventListener('click', evt => evt.stopPropagation())
+        })
+
+        window.addEventListener('keydown', evt => {
+            evt.preventDefault()
+            console.log(evt.keyCode)
+            if (evt.keyCode === 27) {
+                elements.forEach(item => {
+                    item.classList.remove('active')
+                })
+            }
         })
     })
 })()
@@ -11078,6 +11102,7 @@ __webpack_require__.r(__webpack_exports__);
    document.addEventListener('DOMContentLoaded', () => {
        const avatar = document.querySelector('[data-avatar]');
        const avatarImage = document.querySelector('[data-avatar-image]');
+       if (!avatar) return
        const avatarInput = avatar.querySelector('input');
        const avatarIcon = avatar.querySelector('[data-avatar-icon]')
 
