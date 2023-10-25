@@ -21,6 +21,23 @@ import star from "../assets/sprite/icon-star.svg"
 import starBorder from "../assets/sprite/icon-star-border.svg"
 import trash from "../assets/sprite/icon-trash.svg"
 import clip from "../assets/sprite/icon-clip.svg"
+import clarity from "../assets/sprite/icon-clarity.svg"
+import wallet from "../assets/sprite/icon-wallet.svg"
+import tShirt from "../assets/sprite/icon-t-shirt.svg"
+import shop from "../assets/sprite/icon-shop.svg"
+import smile2 from "../assets/sprite/icon-smile-2.svg"
+import buy from "../assets/sprite/icon-buy.svg"
+import home from "../assets/sprite/icon-home.svg"
+import pin from "../assets/sprite/icon-pin.svg"
+import car from "../assets/sprite/icon-car.svg"
+import plus from "../assets/sprite/icon-plus.svg"
+import call from "../assets/sprite/icon-call.svg"
+import mail from "../assets/sprite/icon-mail.svg"
+import table from "../assets/sprite/icon-table.svg"
+import triangle from "../assets/sprite/icon-triangle.svg"
+import gift from "../assets/sprite/icon-gift.svg"
+import starAbstract from "../assets/sprite/icon-star-abstract.svg"
+
 export default {
     arrow,
     arrowPointer,
@@ -45,4 +62,20 @@ export default {
     starBorder,
     trash,
     clip,
+    clarity,
+    wallet,
+    tShirt,
+    shop,
+    smile2,
+    buy,
+    home,
+    pin,
+    car,
+    plus,
+    call,
+    mail,
+    table,
+    triangle,
+    gift,
+    starAbstract,
 }

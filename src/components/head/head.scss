@@ -5,4 +5,8 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 60px;
+
+  @include r($mobile) {
+    margin-bottom: 30px;
+  }
 }

@@ -1,0 +1,36 @@
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  @include r($mobile) {
+    gap: 14px;
+  }
+
+  &__old {
+    flex-shrink: 0;
+    color: $gray-light;
+    text-shadow: 0 4px 9px rgba(31, 39, 83, 0.10);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0.28px;
+
+    @include r($mobile) {
+      font-size: 12px;
+    }
+  }
+
+  &__current {
+    text-shadow: 0 4px 9px rgba(31, 39, 83, 0.10);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 0.36px;
+    word-break: break-all;
+    color: $dark;
+    @include r($mobile) {
+      font-size: 16px;
+    }
+  }
+}

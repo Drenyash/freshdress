@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-100">
+        <div class="container">
+            <div class="lk">
+                <nav class="lk-nav">
+                    <a href="lk-main.html" class="lk-nav__link">Главная</a>
+                    <a href="#" class="lk-nav__link">Личные данные</a>
+                    <a href="#" class="lk-nav__link active">История заказов</a>
+                    <a href="#" class="lk-nav__link">Бонусные баллы</a>
+                    <a href="#" class="lk-nav__link">Обратная связь</a>
+                </nav>
+                <div class="lk-body">
+                    <a href="#" class="go-back mb-15">
+                        <svg class="go-back__icon">
+                            <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
+                        </svg>
+                        <span>Назад к списку заказов</span>
+                    </a>
+                    <h1 class="lk-body__title mb-20">Заказ номер № 456789334</h1>
+                    <div class="order-history order-history--grid">
+                        <div class="order-history__item">
+                            <div class="order-history__body order-history__body--detail">
+                                <div class="order-history__status order-history__status--fit order-history__status--accepted">
+                                    <p>Заказ выкуплен</p>
+                                </div>
+                                <div class="order-history__block">
+                                    <h3 class="order-history__text order-history__text--bold">Адрес выдачи</h3>
+                                    <p class="order-history__text">Москва, Котельническая набережная 31, 21:40</p>
+                                </div>
+                                <div class="order-history__block">
+                                    <h3 class="order-history__text order-history__text--bold">Как добраться?</h3>
+                                    <p class="order-history__text">1 этаж, левое крыло, секция 45</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-history__item">
+                            <div class="order-history__body order-history__body--detail">
+                                <div class="order-history__block">
+                                    <h3 class="order-history__text order-history__text--bold">Ваш заказ</h3>
+                                    <ul class="order-history__list">
+                                        <li class="order-history__element">
+                                            <p class="order-history__text">Общая стоимость</p>
+                                            <p class="order-history__text">10 647 ₽</p>
+                                        </li>
+                                        <li class="order-history__element">
+                                            <p class="order-history__text">Скидка бонусами</p>
+                                            <p class="order-history__text order-history__text--red">- 5 647 ₽</p>
+                                        </li>
+                                        <li class="order-history__element">
+                                            <p class="order-history__text">Скидка по акции</p>
+                                            <p class="order-history__text order-history__text--red">- 2750 ₽</p>
+                                        </li>
+                                        <li class="order-history__element">
+                                            <p class="order-history__text">Скидка по промокоду</p>
+                                            <p class="order-history__text order-history__text--red">- 750 ₽</p>
+                                        </li>
+                                        <li class="order-history__element">
+                                            <p class="order-history__text order-history__text--big">Итого</p>
+                                            <p class="order-history__text order-history__text--big">5 000 ₽</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-history__wrapper">
+                            <div class="order-history__detail">
+                                <picture class="order-history__picture">
+                                    <img src="https://s3-alpha-sig.figma.com/img/7668/4fe8/73c3bffe83e96fdba3b8a3be5596ebe6?Expires=1698624000&amp;Signature=CvRJUte~Jm5Po9W9hLR826rxeOvMLgO~uDjgJqcANj8UmKbSrWbfxi3Wh4lzUVNejWG-qeFWG6Un8iP46ok2CRzkNQTuVNkx3buzyVa3opD~pMHJI3LjpUSiUhOz5nnuPCvoE1tBYUlWOJaW8VpQMW2vnuMt9NgR4JJEkd9P5pTAGCC8IvyojjyfTQCwM78mUaBbY-7bM5ezDt7kt7dYK9xpl9xVPmnAbe06rzHqCHnTQWdEFpBndgYyM~hlj2x7~b9N7FRgLemq41~8E5zXUNNRFvEGinqSyzK0PjBr4sjpxiG-HuX0FA2RWQcYNmxxZiqY5qOqlDk5IuIJxBpMwA__&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+                                </picture>
+                                <div class="order-history__info">
+                                    <p class="order-history__text order-history__text--small">Артикул 88888</p>
+                                    <h2 class="order-history__title">Шерстяное пальто</h2>
+                                    <p class="order-history__text order-history__text--small">M (46/48)</p>
+                                    <p class="order-history__text order-history__text--small">Черный</p>
+                                    <div class="order-history__price product-price">
+                                        <div class="product-price__current"><span data-cart-price="">15 000</span> ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-history__detail">
+                                <picture class="order-history__picture">
+                                    <img src="https://s3-alpha-sig.figma.com/img/7668/4fe8/73c3bffe83e96fdba3b8a3be5596ebe6?Expires=1698624000&amp;Signature=CvRJUte~Jm5Po9W9hLR826rxeOvMLgO~uDjgJqcANj8UmKbSrWbfxi3Wh4lzUVNejWG-qeFWG6Un8iP46ok2CRzkNQTuVNkx3buzyVa3opD~pMHJI3LjpUSiUhOz5nnuPCvoE1tBYUlWOJaW8VpQMW2vnuMt9NgR4JJEkd9P5pTAGCC8IvyojjyfTQCwM78mUaBbY-7bM5ezDt7kt7dYK9xpl9xVPmnAbe06rzHqCHnTQWdEFpBndgYyM~hlj2x7~b9N7FRgLemq41~8E5zXUNNRFvEGinqSyzK0PjBr4sjpxiG-HuX0FA2RWQcYNmxxZiqY5qOqlDk5IuIJxBpMwA__&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="">
+                                </picture>
+                                <div class="order-history__info">
+                                    <p class="order-history__text order-history__text--small">Артикул 88888</p>
+                                    <h2 class="order-history__title">Шерстяное пальто</h2>
+                                    <p class="order-history__text order-history__text--small">M (46/48)</p>
+                                    <p class="order-history__text order-history__text--small">Черный</p>
+                                    <div class="order-history__price product-price">
+                                        <div class="product-price__current"><span data-cart-price="">15 000</span> ₽</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include r($mobile) {
+    gap: 14px;
+    overflow-x: auto;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+
+    @include r($mobile) {
+      flex-shrink: 0;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__item.active &__button {
+    background-color: $orange;
+    box-shadow: 0 20px 35px 0 rgba(193, 68, 29, 0.25);
+    color: $light;
+
+    @include r($mobile) {
+      box-shadow: none;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    width: 100%;
+    height: 214px;
+    overflow: hidden;
+    border-radius: 30px;
+
+    @include r($mobile) {
+      display: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 395px;
+    margin-top: -52px;
+    padding: 27px 70px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: normal;
+    color: $gray-light;
+    border-radius: 100px;
+    background: #FFF;
+    box-shadow: 0 20px 35px 0 rgba(167, 167, 167, 0.25);
+    cursor: pointer;
+
+    @include r($mobile) {
+      padding: 12px 9px;
+      font-size: 16px;
+      width: auto;
+      margin-top: 0;
+      box-shadow: none;
+    }
+  }
+}

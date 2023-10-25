@@ -1,11 +1,40 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 5;
+  background: rgba(251, 251, 251, 0.10);
+  backdrop-filter: blur(50px);
+
+  @include r($mobile) {
+    background-color: $light;
+    backdrop-filter: none;
+  }
+  &__group {
+    position: relative;
+    @include r($mobile) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 24px;
+      width: 100%;
+    }
+  }
   &__top {
     display: flex;
     align-items: center;
+
+    @include r($mobile) {
+      flex-direction: column;
+    }
   }
 
   &__logo {
-    margin-right: 130px;
+    margin-right: 151px;
+
+    @include r($mobile) {
+      margin-right: 0;
+    }
   }
 }

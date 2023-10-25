@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body body--gray-light">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-100 pbm-35">
+        <div class="container">
+            <div class="faq">
+                <h1 class="title title--big">Часто задаваемые вопросы</h1>
+                <div class="faq__wrapper">
+                    <div class="faq__item" data-show>
+                        <h2 class="faq__title">Как оформить доставку?</h2>
+                        <p class="faq__text" >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
+                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
+                        </p>
+                        <svg class="faq__icon">
+                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
+                        </svg>
+                    </div>
+                    <div class="faq__item" data-show>
+                        <h2 class="faq__title">Как оформить доставку?</h2>
+                        <p class="faq__text" >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
+                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
+                        </p>
+                        <svg class="faq__icon">
+                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
+                        </svg>
+                    </div>
+                    <div class="faq__item" data-show>
+                        <h2 class="faq__title">Как оформить доставку?</h2>
+                        <p class="faq__text" >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
+                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
+                        </p>
+                        <svg class="faq__icon">
+                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
+                        </svg>
+                    </div>
+                    <div class="faq__item" data-show>
+                        <h2 class="faq__title">Как оформить доставку?</h2>
+                        <p class="faq__text" >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Donec adipiscing tristique risus nec feugiat in fermentum
+                            posuere. Platea dictumst vestibulum rhoncus est pellentesque elit.
+                        </p>
+                        <svg class="faq__icon">
+                            <use xlink:href="./assets/sprite/sprite.svg#icon-plus"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section--bg pt-315 ptm-35 pb-315 pbm-100" style="background-image: url('./assets/images/faq-bg.png')">
+        <div class="container">
+            <div class="contact-us contact-us--center">
+                <form action="#" class="contact-us__form form form--center" data-form>
+                    <div class="form__info">
+                        <h2 class="form__title">
+                            Не нашли нужного ответа?
+                        </h2>
+                        <p class="form__text">
+                            Свяжитесь с нами! Оставьте ваши данные и наш менеджер перезвонит вам в ближайшее время.
+                        </p>
+                    </div>
+                    <div class="custom-input">
+                        <input data-validate type="tel" class="input" placeholder="Номер телефона" pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required>
+                        <div class="custom-input__valid hidden">
+                            <svg>
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
+                            </svg>
+                        </div>
+                        <div class="custom-input__invalid hidden">
+                            <span>Телефон введен неверно!</span>
+                        </div>
+                    </div>
+                    <button class="button" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

@@ -1,0 +1,76 @@
+.order {
+  display: flex;
+  gap: 86px;
+
+  @include r($mobile) {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  &__data {
+    @include r($mobile) {
+      padding: 0 24px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    color: $dark;
+
+    @include r($mobile) {
+      font-size: 16px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    width: 409px;
+    border-radius: 58px;
+    text-align: center;
+
+    @include r($mobile) {
+      width: 100%;
+    }
+
+    input {
+      padding: 12px 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      color: $gray-light;
+      border: 2px solid $light-button;
+    }
+  }
+
+  &__position {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__head {
+    margin-bottom: 14px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $gray;
+  }
+}

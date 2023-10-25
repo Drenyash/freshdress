@@ -1,0 +1,15 @@
+.card-color {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  input {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #eee;
+    cursor: pointer;
+  }
+}

@@ -5,6 +5,12 @@
   height: 486px;
   transition: height .2s linear;
 
+  @include r($mobile) {
+    position: static;
+    width: 241px;
+    height: 346px;
+  }
+
   &__picture {
     display: flex;
     width: 100%;
@@ -33,6 +39,13 @@
     opacity: 0;
     visibility: hidden;
     transition: .2s linear;
+
+    @include r($mobile) {
+      padding: 20px 25px 20px 15px;
+      border-radius: 10px;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &__percent {
@@ -50,6 +63,10 @@
     font-weight: 400;
     line-height: 150%;
     color: $outline;
+
+    @include r($mobile) {
+      font-size: 12px;
+    }
   }
 
   &__line {
@@ -57,6 +74,10 @@
     width: 27px;
     height: 1px;
     background-color: $outline;
+
+    @include r($mobile) {
+      width: 15px;
+    }
   }
 
   &__label {

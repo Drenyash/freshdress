@@ -3,6 +3,18 @@
   align-items: center;
   justify-content: center;
   gap: 80px;
+
+  @include r($mobile) {
+    gap: 17px;
+    overflow-y: auto;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  @include r(500) {
+    justify-content: flex-start;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -29,6 +41,11 @@
     justify-content: center;
     width: 100px;
     height: 100px;
+
+    @include r($mobile) {
+      width: 70px;
+      height: 70px;
+    }
     img {
       display: flex;
       width: 88px;
@@ -38,6 +55,10 @@
       object-position: center;
       border-radius: 50%;
       z-index: 1;
+      @include r($mobile) {
+        width: 62px;
+        height: 62px;
+      }
     }
     &::before {
       position: absolute;
@@ -50,6 +71,10 @@
       background: linear-gradient(to bottom left, #0042E5, #D22BB4, #FFCC53);
       border-radius: 50%;
       z-index: 0;
+      @include r($mobile) {
+        width: 70px;
+        height: 70px;
+      }
     }
     &::after {
       position: absolute;
@@ -62,6 +87,10 @@
       background-color: $light;
       border-radius: 50%;
       transform: translate3d(-50%, -50%, 0);
+      @include r($mobile) {
+        width: 66px;
+        height: 66px;
+      }
     }
   }
 
@@ -72,5 +101,10 @@
     line-height: 32px;
     letter-spacing: 0.72px;
     color: $gray;
+
+    @include r($mobile) {
+      font-size: 14px;
+      letter-spacing: 0;
+    }
   }
 }

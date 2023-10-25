@@ -1,0 +1,150 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: $light;
+
+  @include r($mobile) {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px 30px;
+    border-radius: 15px 15px 40px 40px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item--more &__link {
+    color: $purple-light;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &--offset {
+      gap: 8px;
+    }
+  }
+
+  &__section.active &__element {
+    background-color: $light-button;
+  }
+
+  &__section.active &__text {
+    color: $purple-light;
+  }
+
+  &__section.active &__icon {
+    fill: $purple-light;
+    transform: rotate(270deg);
+  }
+
+  &__section.active &__list {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+  }
+
+  &__icon {
+    display: flex;
+    width: 12px;
+    height: 12px;
+    transform: rotate(90deg);
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__count {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $gray-light;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+    cursor: pointer;
+
+    &:hover {
+      color: $purple-light;
+    }
+  }
+
+  &__list {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: .2s ease-in-out;
+  }
+
+  &__clear {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $gray-light;
+    cursor: pointer;
+
+    @include r($mobile) {
+      text-align: center;
+    }
+  }
+
+  &__values {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    color: $gray-light;
+
+    span {
+      color: $dark;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    cursor: pointer;
+    svg {
+      display: flex;
+      width: 27px;
+      height: 27px;
+    }
+  }
+}

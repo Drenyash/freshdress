@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-100">
+        <div class="container">
+            <div class="lk">
+                <nav class="lk-nav">
+                    <a href="lk-main.html" class="lk-nav__link">Главная</a>
+                    <a href="#" class="lk-nav__link">Личные данные</a>
+                    <a href="#" class="lk-nav__link active">История заказов</a>
+                    <a href="#" class="lk-nav__link">Бонусные баллы</a>
+                    <a href="#" class="lk-nav__link">Обратная связь</a>
+                </nav>
+                <div class="lk-body lk-body--overflow">
+                    <div class="lk-body__block">
+                        <h2 class="lk-body__text lk-body__text--bold">Текущий баланс</h2>
+                        <div class="coupon">
+                            <p class="coupon__price">2 700</p>
+                            <p class="coupon__text">бонусных баллов</p>
+                            <a href="#" class="coupon__button">Перейти к покупкам</a>
+                        </div>
+                    </div>
+                    <div class="lk-body__block">
+                        <h2 class="lk-body__text lk-body__text--bold">История бонусов</h2>
+                        <div class="lk-toolbox" data-toolbox>
+                            <button class="lk-toolbox__item active" data-filter-type="all">Все</button>
+                            <button class="lk-toolbox__item" data-filter-type="accruals">Начисления</button>
+                            <button class="lk-toolbox__item" data-filter-type="writeoff">Списания</button>
+                        </div>
+                       <div class="timeline" data-timeline>
+                           <div class="timeline__item" data-filter-type="accruals">
+                               <p class="timeline__text timeline__text--bold">30 октября, 2023</p>
+                               <div class="timeline__detail">
+                                   <div class="timeline__picture timeline__picture--orange">
+                                       <svg class="timeline__icon">
+                                           <use xlink:href="./assets/sprite/sprite.svg#icon-star-abstract"></use>
+                                       </svg>
+                                   </div>
+                                   <div class="timeline__info">
+                                       <h3 class="timeline__title">Баллы за отзыв</h3>
+                                       <p class="timeline__text">Начислено за покупку 34567098765</p>
+                                   </div>
+                                   <p class="timeline__value">+500</p>
+                               </div>
+                           </div>
+                           <div class="timeline__item" data-filter-type="accruals">
+                               <p class="timeline__text timeline__text--bold">30 октября, 2023</p>
+                               <div class="timeline__detail">
+                                   <div class="timeline__picture timeline__picture--orange">
+                                       <svg class="timeline__icon">
+                                           <use xlink:href="./assets/sprite/sprite.svg#icon-gift"></use>
+                                       </svg>
+                                   </div>
+                                   <div class="timeline__info">
+                                       <h3 class="timeline__title">Баллы за отзыв</h3>
+                                       <p class="timeline__text">Начислено за покупку 34567098765</p>
+                                   </div>
+                                   <p class="timeline__value">+2000</p>
+                               </div>
+                           </div>
+                           <div class="timeline__item" data-filter-type="writeoff">
+                               <p class="timeline__text timeline__text--bold">1 мая, 2023</p>
+                               <div class="timeline__detail">
+                                   <div class="timeline__picture timeline__picture--dark">
+                                       <svg class="timeline__icon">
+                                           <use xlink:href="./assets/sprite/sprite.svg#icon-star-abstract"></use>
+                                       </svg>
+                                   </div>
+                                   <div class="timeline__info">
+                                       <h3 class="timeline__title">Списание за покупку</h3>
+                                       <p class="timeline__text">Списано за покупку товара 34567098765</p>
+                                   </div>
+                                   <p class="timeline__value">-200</p>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

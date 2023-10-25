@@ -4,6 +4,18 @@
   justify-content: center;
   gap: 14px;
 
+  &--dark {
+    .size__item {
+      input:checked ~ span {
+        background-color: $dark;
+        color: $light;
+      }
+      span {
+        color: $dark;
+      }
+    }
+  }
+
   &__item {
     display: flex;
     cursor: pointer;
@@ -30,6 +42,7 @@
 
     &--disabled {
       pointer-events: none;
+
       span {
         border: none;
         color: $gray;

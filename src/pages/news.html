@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body body--gray-light">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-100">
+        <div class="container">
+            <div class="news">
+                <div class="news__head">
+                    <h1 class="title title--upper">Новости</h1>
+                    <p class="subtitle">Актуальные новости</p>
+                </div>
+                <div class="news__content">
+                    <div class="news__item">
+                        <picture class="news__picture">
+                            <img src="./assets/images/Photo.png" alt="">
+                        </picture>
+                        <div class="news__date">25<br> нояб</div>
+                        <div class="news__info">
+                            <h3 class="news__item-title">Журнал “Красота и спорт”, г. Краснодар</h3>
+                            <p class="news__description">Simply dummy text of the printing and typesetting industry. Lorem
+                                IpsumSimply dummy text of the printing and typesetting industry. Lorem IpsumSimply dummy
+                                text of the printing and typesetting industry. Lorem IpsumSimply dummy text of the
+                                printing and typesetting industry. Lorem Ipsum</p>
+                            <a href="#" class="button button--news">Читать</a>
+                        </div>
+                    </div>
+                    <div class="news__item">
+                        <picture class="news__picture">
+                            <img src="./assets/images/Photo.png" alt="">
+                        </picture>
+                        <div class="news__date">25<br> нояб</div>
+                        <div class="news__info">
+                            <h3 class="news__item-title">Новый способ оплаты - “Долями”</h3>
+                            <p class="news__description">Сервис для оплаты покупок частями от Тинькофф помогает вам разделить сумму покупки</p>
+                            <a href="#" class="button button--news">Читать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="news__footer">
+                    <button class="button button--light">Показать ещё</button>
+                    <div class="pagination">
+                        <a href="#" class="pagination__link">1</a>
+                        <a href="#" class="pagination__link">2</a>
+                        <a href="#" class="pagination__link">3</a>
+                        <a href="#" class="pagination__link active">4</a>
+                        <a href="#" class="pagination__link">5</a>
+                        <a href="#" class="pagination__link">6</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

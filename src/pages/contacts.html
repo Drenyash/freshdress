@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%= htmlWebpackPlugin.options.head %>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body class="body">
+<%= htmlWebpackPlugin.options.sectionHeader %>
+<main class="main">
+    <section class="section mob-hidden mb-60">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a href="#" class="breadcrumbs__link">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link breadcrumbs__link--current">Каталог</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="section pb-100">
+        <div class="container">
+            <div class="contacts-page">
+                <div class="contacts-page__element">
+                    <h1 class="title title--big mb-20">Свяжитесь с нами</h1>
+                    <p class="contacts-page__text">Вы можете связаться с нами, заполнив форму. Наш менеджер с вами
+                        свяжется.</p>
+                    <form action="#" class="contacts-page__form">
+                        <input type="text" placeholder="Имя">
+                        <input type="text" placeholder="E-mail">
+                        <input type="tel" placeholder="Телефон">
+                        <textarea placeholder="Сообщение"></textarea>
+                        <button class="button button--small">Отправить</button>
+                    </form>
+                </div>
+                <div class="contacts-page__line"></div>
+                <div class="contacts-page__element contacts-page__element--column">
+                    <div class="contacts-page__block">
+                        <h2 class="contacts-page__head">Клиентская поддержка</h2>
+                        <div class="contacts-page__item">
+                            <svg class="contacts-page__icon">
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-call"></use>
+                            </svg>
+                            <div class="contacts-page__links">
+                                <a href="#">+7 (929) 694-44-56</a>
+                                <a href="#">+7 (800) 500-48-84</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts-page__block">
+                        <h2 class="contacts-page__head">Электронная почта</h2>
+                        <div class="contacts-page__item">
+                            <svg class="contacts-page__icon">
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-mail"></use>
+                            </svg>
+                            <div class="contacts-page__links">
+                                <a href="#">info@freshdress-shop.ru</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts-page__block">
+                        <h2 class="contacts-page__head">Социальные сети</h2>
+                        <div class="contacts-page__item">
+                            <div class="contacts-page__links">
+                                <a href="#">Telegram</a>
+                                <a href="#">WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contacts-page__block">
+                        <h2 class="contacts-page__head">Адрес</h2>
+                        <div class="contacts-page__item">
+                            <svg class="contacts-page__icon">
+                                <use xlink:href="./assets/sprite/sprite.svg#icon-pin"></use>
+                            </svg>
+                            <div class="contacts-page__links">
+                                <p>Котельническая набережная 31,<br>
+                                    с 11:00 до 21:00, без выходных.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%= htmlWebpackPlugin.options.sectionFooter %>
+<%= htmlWebpackPlugin.options.temp %>
+<%= htmlWebpackPlugin.options.hidden %>
+</body>
+</html>

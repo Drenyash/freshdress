@@ -1,0 +1,148 @@
+.contacts-page {
+  display: flex;
+  gap: 186px;
+
+  @include r($mobile) {
+    gap: 30px;
+    flex-direction: column-reverse;
+    padding: 0 24px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: normal;
+    color: $dark;
+
+    @include r($mobile) {
+      margin-bottom: 16px;
+      font-size: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.64px;
+    color: $gray;
+
+    @include r($mobile) {
+      margin-bottom: 24px;
+      font-size: 14px;
+      letter-spacing: 0.56px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    @include r($mobile) {
+      align-items: flex-start;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      color: #BEBEBE;
+      border-radius: 30px;
+      border: 2px solid #F4F4F4;
+      background: $light;
+    }
+
+    textarea {
+      margin-bottom: 20px;
+      min-height: 124px;
+    }
+  }
+
+  &__line {
+    display: flex;
+    width: 2px;
+    background: #F0F0F2;
+
+    @include r($mobile) {
+      width: 100%;
+      height: 2px;
+    }
+  }
+
+  &__element {
+    max-width: 409px;
+
+    @include r($mobile) {
+      max-width: 100%;
+    }
+    &--column {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      @include r($mobile) {
+        gap: 24px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 22px;
+  }
+
+  &__icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include r($mobile) {
+      gap: 16px;
+    }
+  }
+
+  &__head {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    color: $dark;
+
+    @include r($mobile) {
+      font-size: 16px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    a,
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 150%; /* 27px */
+      letter-spacing: 0.72px;
+      color: $dark;
+
+      @include r($mobile) {
+        font-size: 14px;
+        letter-spacing: 0.56px;
+      }
+    }
+    a {
+      color: $orange;
+    }
+  }
+}

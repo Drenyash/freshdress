@@ -1,0 +1,41 @@
+.go-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &--big {
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 30px;
+    background-color: #F6F6F6;
+    cursor: pointer;
+
+    @include r($mobile) {
+      position: static;
+      margin: 0 24px 24px;
+    }
+
+    svg {
+      fill: #1C1F22;
+    }
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 113.9%;
+    color: $gray;
+  }
+
+  &__icon {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    transform: rotate(180deg);
+    fill: $gray;
+  }
+}

@@ -1,28 +1,116 @@
-# dranik
-Start template - webpack/scss
+<h1 align="center" style="text-transform: uppercase; font-size: 48px; font-weight: 700">FreshDress</h1>
+<p  align="center">Версии сайта: <b>1920px, 375px</b></p>
+<p  align="center">Используемая версия NodeJS: <b>20.2.0</b></p>
+<p  align="center">Система управления сайтом: <b>1С Битрикс</b></p>
+<p align="center"><a href="https://drenyash.github.io/freshdress/dist/" target="_blank"><b>Вёрстка проекта</b></a></p>
+<hr>
+<h3>Структура проекта</h3>
 
-## CSS
+```
+└── src
+    ├── assets
+    |   ├── fonts
+    |   ├── images
+    |   └── sprite
+    ├── components
+    |   ├── _components.scss
+    |   └── UI
+    |       └── _ui.scss
+    ├── css
+    |   ├── base
+    |   ├── helpers
+    |   └── main.scss
+    ├── includes
+    ├── js
+    |   ├── index.js
+    |   └── sprite.js
+    ├── pages
+    └── index.html
+├── .eslintrc.json
+├── .gitignore
+├── .stylelintrc.json
+├── data.json
+├── package.json
+├── package-lock.json
+├── README.md
+└── webpack.config.js
+```
+<hr>
+<h3>Методология</h3>
+<p>БЭМ</p>
 
-Все пишем в scss и в БЭМ. Стили библиотек импортируем в `src\js\index.js`;
+> Придерживаемся базовых принципов БЭМ.<br>
+> Классы именуются: **block**, **block__element**, **block__element--modifier**<br>
+> Указание модификатора без блока или элемента - **ЗАПРЕЩЕНО!**
 
-## SVG
+<hr>
+<h3>Спрайты</h3>
+<p>Спрайты подключаются в файле <code>sprite.js</code> по структуре:</p>
 
-1. Иконки для спрайта кладем в `src\assets\sprite`
-2. Импортируем их в `src\js\sprite.js`
-3. После этого они доступны по названию файла:
+```javascript
+import arrow from "../assets/sprite/icon-arrow.svg"
+import badge from "../assets/sprite/icon-badge.svg"
+import button from "../assets/sprite/icon-button.svg"
 
-`
+export default {
+    arrow,
+    badge,
+    button,
+}
+```
+
+<p>Для использования спрайта на странице используем:</p>
+
+```html
 <svg>
-    <use xlink:href="#icon-camera"></use>
+    <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
 </svg>
-`
+```
+<hr>
+<h3>Подключение стилей и скриптов</h3>
+<p>Все стили и скрипты импортируются в <code>./js/index.js</code> файле.</p>
 
-## Страницы и includes
+```javascript
+import "the-new-css-reset/css/reset.css";
+import "../css/main.scss";
 
-HTML-части лежат в папке `src\includes`  
-Они импортируются в файл `src\js\pages.js`, там же определяются новые страницы и заголовок страницы
+import "./sprite";
+import "./slider";
+import "./dropdown";
+import "./form";
+import "./phoneMask";
+```
+<p>Стили импортируются в <code>./css/main.scss</code></p>
 
-## API
+```scss
+// Helpers
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
 
-В проект включен [JSON server](https://github.com/typicode/json-server) для имитации API. Данные хранятся в файле data.json в корне проекта. Сервер доступен по адресу `http://localhost:3001/`  
-Запустить сервер: `npm run server`
+// Base
+@import "base/fonts";
+@import "base/general";
+@import "base/margins";
+@import "base/paddings";
+@import "base/temp";
+
+// Components
+@import "../components/components";
+@import "base/helpers";
+```
+<hr>
+<h3>Готовность проекта</h3>
+
+- [x] Главная страница
+- [X] Каталог
+- [ ] Карточка товара
+- [ ] Корзина
+- [ ] Избранное
+- [ ] Оформление заказа
+- [ ] Новости
+- [ ] Контакты
+- [ ] FAQ
+- [ ] О нас
+- [ ] Статичные страницы
+- [ ] Личный кабинет

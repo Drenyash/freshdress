@@ -1,0 +1,129 @@
+.total {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 490px;
+
+  @include r($mobile) {
+    width: 100%;
+  }
+
+  &__wrapper {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    transition: .2s ease-in-out;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 23px;
+    padding: 22px 40px;
+    border-radius: 15px;
+    background: $light;
+    box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.25);
+
+    @include r($mobile) {
+      padding: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 22px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $gray;
+
+    &--big {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 150%;
+      color: $dark-light;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $light-blink;
+  }
+
+  &__el {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $dark-light;
+
+    &--red {
+      color: $red;
+    }
+
+    &--big {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 150%;
+      color: $dark-light;
+    }
+  }
+
+  &__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin-bottom: 30px;
+  }
+
+  &__bonus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px;
+    width: 100%;
+    color: $gray;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    border-radius: 15px;
+    background: #F2F5F7;
+
+    @include r($mobile) {
+      padding: 17px 10px;
+      width: auto;
+      margin: 0 24px;
+    }
+  }
+
+  &__products {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  &--static &__wrapper {
+    position: static;
+  }
+
+  &--static &__body {
+    padding-top: 36px;
+  }
+}

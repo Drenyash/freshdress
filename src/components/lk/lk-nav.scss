@@ -1,0 +1,33 @@
+.lk-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include r($mobile) {
+    border-radius: 20px;
+    background: #FFF;
+    padding: 20px 14px;
+    gap: 0;
+    box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &__link {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 113.9%;
+    color: $dark;
+
+    @include r($mobile) {
+      &:not(:last-of-type) {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #F3F3F3;
+      }
+      &:not(:first-child) {
+        padding-top: 10px;
+      }
+    }
+    &.active {
+      font-weight: 700;
+    }
+  }
+}

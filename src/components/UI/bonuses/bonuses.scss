@@ -1,0 +1,87 @@
+.bonuses {
+  margin-top: 30px;
+
+  @include r($mobile) {
+    padding: 0 24px;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    color: $dark;
+
+    @include r($mobile) {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $gray;
+
+    @include r($mobile) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__toolbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 14px 12px 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $gray-light;
+    border-radius: 58px;
+    border: 2px solid #F4F4F4;
+    background: #FFF;
+
+    input {
+      display: flex;
+      flex-grow: 1;
+      flex-shrink: 0;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    padding: 2px;
+    width: 51px;
+    height: 31px;
+    border-radius: 100px;
+    background: rgba(120, 120, 128, 0.16);
+    cursor: pointer;
+    transition: .2s linear;
+
+    &.active {
+      justify-content: flex-end;
+      background: $green;
+    }
+
+    &::before {
+      content: '';
+      display: flex;
+      width: 27px;
+      height: 27px;
+      border-radius: 100px;
+      background: #FFF;
+      box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.06), 0 3px 8px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.04);
+      transition: .2s linear;
+    }
+  }
+}

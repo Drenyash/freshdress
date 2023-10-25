@@ -9,4 +9,20 @@
   &--light {
     background: linear-gradient(180deg, #FFF 0%, #FAFAFA 100%);
   }
+
+  &--relative {
+    position: relative;
+    background-color: $light;
+    z-index: 1;
+  }
+
+  &--bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include r($mobile) {
+      background-image: none !important;
+    }
+  }
 }

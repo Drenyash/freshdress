@@ -1,3 +1,6 @@
+// UI
+@import "UI/ui";
+
 @import "body/body";
 @import "columns/columns";
 @import "container/container";
@@ -15,6 +18,7 @@
 @import "showcase/showcase";
 @import "slider/slider";
 @import "card/card";
+@import "card-color/card-color";
 @import "categories/categories";
 @import "feedback/feedback";
 @import "about/about";
@@ -25,6 +29,34 @@
 @import "form-news/form-news";
 @import "stock-counter/stock-counter";
 @import "stock/stock";
+@import "dropdown/dropdown";
+@import "search/search";
+@import "all-category/all-category";
+@import "header-menu/header-menu";
+@import "validate/validate";
+@import "catalog/catalog";
+@import "filter/filter";
+@import "promo/promo";
+@import "static/static";
+@import "product-cart/product-cart";
+@import "cart/cart";
+@import "product-price/product-price";
+@import "total/total";
+@import "favorite/favorite";
+@import "about-us/about-us";
+@import "news/news";
+@import "news-picture/news-picture";
+@import "faq/faq";
+@import "contacts-page/contacts-page";
+@import "product-card/product-card";
+@import "order/order";
+@import "delivery/delivery";
+@import "order-history/order-history";
+@import "timeline/timeline";
+@import "auth/auth";
 
-// UI
-@import "UI/ui";
+@import "lk/lk";
+@import "lk/lk-body";
+@import "lk/lk-nav";
+@import "lk/lk-form";
+@import "lk/lk-toolbox";
