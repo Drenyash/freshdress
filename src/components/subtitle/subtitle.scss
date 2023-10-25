@@ -5,4 +5,8 @@
   line-height: 150%;
   letter-spacing: 0.72px;
   color: $gray;
+
+  @include r($mobile) {
+    font-size: 14px;
+  }
 }

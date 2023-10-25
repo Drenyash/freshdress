@@ -43,7 +43,7 @@ button {
   display: none !important;
   visibility: hidden;
   @include r(1529) {
-    display: block !important;
+    display: flex !important;
     visibility: visible;
   }
 }

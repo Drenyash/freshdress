@@ -122,4 +122,8 @@
   &--static &__wrapper {
     position: static;
   }
+
+  &--static &__body {
+    padding-top: 36px;
+  }
 }

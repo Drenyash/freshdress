@@ -22,3 +22,4 @@ import "./validateNumber";
 import "./show-password";
 import "./select";
 import "./filter-points";
+import "./upload-avatar";

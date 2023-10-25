@@ -35,11 +35,12 @@
                 </nav>
                 <div class="lk-body">
                     <form action="#" class="lk-form">
-                        <label class="lk-form__avatar">
-                            <svg>
+                        <label class="lk-form__avatar" data-avatar>
+                            <svg class="lk-form__icon" data-avatar-icon>
                                 <use xlink:href="./assets/sprite/sprite.svg#icon-cum"></use>
                             </svg>
                             <input type="file" class="hidden">
+                            <img class="hidden" src="" alt="" data-avatar-image>
                         </label>
                         <label class="lk-form__item">
                             <span>Имя</span>
@@ -85,7 +86,8 @@
                             <span class="password" data-password>
                                 <input class="password__input" type="password" placeholder="Старый пароль">
                                 <svg data-password-view>
-                                    <use xlink:href="./assets/sprite/sprite.svg#icon-eye"></use>
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-eye" data-eye></use>
+                                    <use class="hidden" xlink:href="./assets/sprite/sprite.svg#icon-eye-close" data-eye-close></use>
                                 </svg>
                             </span>
                         </label>
@@ -94,7 +96,8 @@
                             <span class="password" data-password>
                                 <input class="password__input" type="password" placeholder="Старый пароль">
                                 <svg data-password-view>
-                                    <use xlink:href="./assets/sprite/sprite.svg#icon-eye"></use>
+                                    <use xlink:href="./assets/sprite/sprite.svg#icon-eye" data-eye></use>
+                                    <use class="hidden" xlink:href="./assets/sprite/sprite.svg#icon-eye-close" data-eye-close></use>
                                 </svg>
                             </span>
                         </label>
