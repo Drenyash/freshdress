@@ -9991,16 +9991,34 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./src/js/addFavourite.js ***!
   \********************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 
 (function addFavourite() {
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.card');
+        const url = "/local/ajax/favorites/";
+
+        const sendData = (id) => {
+            const data = new FormData();
+            data.append('id', id)
+            axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
+                .then(response => console.log(response))
+                .catch(error => console.error(error))
+        }
+
         cards.forEach(card => {
             const addFavoriteButton = card.querySelector('.add-favourite');
             if (!addFavoriteButton) return
             addFavoriteButton.addEventListener('click', () => {
                 addFavoriteButton.classList.toggle('active');
+                const id = addFavoriteButton.dataset.id;
+                sendData(id)
             })
         })
         const addFavorite = document.querySelectorAll('.add-favourite');
@@ -10009,12 +10027,14 @@ __webpack_require__.r(__webpack_exports__);
             const text = el.querySelector('span');
             if (!text) return
             el.addEventListener('click', () => {
+                const id = el.dataset.id;
                 el.classList.toggle('active');
                 if (el.classList.contains('active')) {
                     text.textContent = 'В избранном'
                 } else {
                     text.textContent = 'В избранное'
                 }
+                sendData(id)
             })
         })
     })
@@ -24146,7 +24166,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _phoneMask__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./phoneMask */ "./src/js/phoneMask.js");
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
 /* harmony import */ var _addFavourite__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./addFavourite */ "./src/js/addFavourite.js");
-/* harmony import */ var _addFavourite__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_addFavourite__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _addBasket__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./addBasket */ "./src/js/addBasket.js");
 /* harmony import */ var _addBasket__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_addBasket__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _range__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./range */ "./src/js/range.js");
