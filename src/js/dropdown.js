@@ -37,8 +37,6 @@
         })
 
         window.addEventListener('keydown', evt => {
-            evt.preventDefault()
-            console.log(evt.keyCode)
             if (evt.keyCode === 27) {
                 elements.forEach(item => {
                     item.classList.remove('active')
