@@ -3,6 +3,8 @@ import axios from "axios";
 (function addFavourite() {
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.card');
+        const favouriteContainer = document.querySelector('.favorite__body');
+
         const url = "/local/ajax/favorites/";
 
         const sendData = (id) => {
@@ -20,6 +22,9 @@ import axios from "axios";
                 addFavoriteButton.classList.toggle('active');
                 const id = addFavoriteButton.dataset.id;
                 sendData(id)
+                if (!addFavoriteButton.classList.contains('active') && favouriteContainer.contains(addFavoriteButton)) {
+                    card.remove()
+                }
             })
         })
         const addFavorite = document.querySelectorAll('.add-favourite');
@@ -38,5 +43,7 @@ import axios from "axios";
                 sendData(id)
             })
         })
+
+
     })
 })();

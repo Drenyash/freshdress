@@ -4298,6 +4298,9 @@ button {
             transform: translateX(-50%);
   }
 }
+.slider--reviews .slider__pagination-bullet {
+  cursor: pointer;
+}
 @media only screen and (max-width: 1529px) {
   .slider--reviews .slider__pagination-bullet {
     width: 7px;
@@ -4475,6 +4478,7 @@ button {
   border: 2px solid transparent;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
+  cursor: pointer;
 }
 @media only screen and (max-width: 1529px) {
   .slider__pagination-bullet {
@@ -4633,6 +4637,9 @@ button {
     display: -ms-flexbox;
     display: flex;
   }
+}
+.slider--picture .slider__pagination-bullet {
+  cursor: pointer;
 }
 .slider--picture .swiper-pagination-bullet {
   width: 20px;

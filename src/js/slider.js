@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     modifier: 1,
                     slideShadows: true
                 },
-                loop: true,
                 watchSlidesProgress: true,
                 slideClass: 'slider__item',
                 slideActiveClass: 'slider__item--active',
@@ -95,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     el: '.slider__pagination',
                     bulletClass: 'slider__pagination-bullet',
                     bulletActiveClass: 'slider__pagination-bullet--active',
+                    clickable: true,
                 },
             })
         } else if (slider.dataset.slider === 'stock') {
@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     el: '.slider__pagination',
                     bulletClass: 'slider__pagination-bullet',
                     bulletActiveClass: 'slider__pagination-bullet--active',
+                    clickable: true,
                 },
                 breakpoints: {
                     1529: {

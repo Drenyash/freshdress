@@ -191,6 +191,7 @@
       }
 
       &-bullet {
+        cursor: pointer;
         @include r($mobile) {
           width: 7px;
           height: 7px;
@@ -338,6 +339,7 @@
       border-radius: 50%;
       border: 2px solid transparent;
       transition: .2s linear;
+      cursor: pointer;
 
       @include r($mobile) {
         width: 20px;
@@ -474,6 +476,9 @@
       transform: translateX(-50%);
       @include r($mobile) {
         display: flex;
+      }
+      &-bullet {
+        cursor: pointer;
       }
     }
 

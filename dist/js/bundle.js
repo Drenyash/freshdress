@@ -10002,6 +10002,8 @@ __webpack_require__.r(__webpack_exports__);
 (function addFavourite() {
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.card');
+        const favouriteContainer = document.querySelector('.favorite__body');
+
         const url = "/local/ajax/favorites/";
 
         const sendData = (id) => {
@@ -10019,6 +10021,9 @@ __webpack_require__.r(__webpack_exports__);
                 addFavoriteButton.classList.toggle('active');
                 const id = addFavoriteButton.dataset.id;
                 sendData(id)
+                if (!addFavoriteButton.classList.contains('active') && favouriteContainer.contains(addFavoriteButton)) {
+                    card.remove()
+                }
             })
         })
         const addFavorite = document.querySelectorAll('.add-favourite');
@@ -10037,6 +10042,8 @@ __webpack_require__.r(__webpack_exports__);
                 sendData(id)
             })
         })
+
+
     })
 })();
 
@@ -10570,7 +10577,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     modifier: 1,
                     slideShadows: true
                 },
-                loop: true,
                 watchSlidesProgress: true,
                 slideClass: 'slider__item',
                 slideActiveClass: 'slider__item--active',
@@ -10644,6 +10650,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     el: '.slider__pagination',
                     bulletClass: 'slider__pagination-bullet',
                     bulletActiveClass: 'slider__pagination-bullet--active',
+                    clickable: true,
                 },
             })
         } else if (slider.dataset.slider === 'stock') {
@@ -10677,6 +10684,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     el: '.slider__pagination',
                     bulletClass: 'slider__pagination-bullet',
                     bulletActiveClass: 'slider__pagination-bullet--active',
+                    clickable: true,
                 },
                 breakpoints: {
                     1529: {
