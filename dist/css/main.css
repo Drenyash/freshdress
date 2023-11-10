@@ -6247,6 +6247,7 @@ button {
   color: #181818;
 }
 .search__top {
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -6256,11 +6257,12 @@ button {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 14px;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 14px;
+  width: 100%;
 }
 .search__content {
   display: -webkit-box;
@@ -6299,6 +6301,20 @@ button {
   display: flex;
   width: 25px;
   height: 25px;
+  cursor: pointer;
+}
+.search__close {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   cursor: pointer;
 }
 

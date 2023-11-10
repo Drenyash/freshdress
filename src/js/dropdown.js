@@ -1,8 +1,10 @@
+import axios from "axios";
+
 (function dropdown() {
     document.addEventListener('DOMContentLoaded', () => {
         const links = document.querySelectorAll('[data-open]')
         const elements = document.querySelectorAll('[data-dropdown]')
-
+        const url = ''
 
         links.forEach((el, idx) => {
             el.addEventListener('click', (evt) => {
@@ -23,17 +25,43 @@
             })
         })
 
-        elements.forEach(el => {
-            const search = el.querySelector('.search__top')
-            const body = el.querySelector('.search__content')
-            const footer = el.querySelector('.search__footer')
-            el.addEventListener('click', (evt) => {
-                el.classList.remove('active')
+        const sendData = (value) => {
+            const data = new FormData();
+            data.append('value', value);
+            axios.post(url, data)
+                .then(response => console.log(response))
+                .catch(error => console.error(error));
+        }
+
+        const clearInputValue = (el) => {
+            const input = el.querySelector('[data-search-input]')
+            const clear = el.querySelector('[data-search-clear]')
+
+            if (!input || !clear) return
+
+            clear.addEventListener('click', () => {
+                if (input.value.length > 0) {
+                    input.value = ''
+                }
             })
-            if (!search || !body || !footer) return
-            search.addEventListener('click', evt => evt.stopPropagation())
-            body.addEventListener('click', evt => evt.stopPropagation())
-            footer.addEventListener('click', evt => evt.stopPropagation())
+        }
+
+        elements.forEach(el => {
+            clearInputValue(el)
+            const close = el.querySelector('.search__close')
+            const input = el.querySelector('[data-search-input]')
+            if (input) {
+                input.addEventListener('input', () => {
+                    if (input.value.length > 3) {
+                        sendData(input.value)
+                    }
+                })
+            }
+            if (!close) return
+            close.addEventListener('click', () => {
+                el.classList.remove('active')
+                links.forEach(el => el.classList.remove('active'))
+            })
         })
 
         window.addEventListener('keydown', evt => {
