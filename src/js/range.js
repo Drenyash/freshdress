@@ -12,11 +12,11 @@ import noUiSlider from "nouislider/dist/nouislider";
 
 
             noUiSlider.create(rangeSlider, {
-                start: [2000, 100000],
+                start: [parseInt(hiddenValue[0].value), parseInt(hiddenValue[1].value)],
                 connect: [false, true, false],
                 range: {
-                    "min": [2000],
-                    "max": [100000]
+                    "min": [parseInt(hiddenValue[0].value)],
+                    "max": [parseInt(hiddenValue[1].value)]
                 }
             });
             rangeSlider.noUiSlider.on("update", (values, handle) => {

@@ -10496,11 +10496,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
             nouislider_dist_nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(rangeSlider, {
-                start: [2000, 100000],
+                start: [parseInt(hiddenValue[0].value), parseInt(hiddenValue[1].value)],
                 connect: [false, true, false],
                 range: {
-                    "min": [2000],
-                    "max": [100000]
+                    "min": [parseInt(hiddenValue[0].value)],
+                    "max": [parseInt(hiddenValue[1].value)]
                 }
             });
             rangeSlider.noUiSlider.on("update", (values, handle) => {
