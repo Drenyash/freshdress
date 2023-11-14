@@ -12,6 +12,8 @@ import axios from "axios";
             els.forEach(element => {
                 if (element.type === 'file') {
                     data.append(element.name, element.value);
+                } else if (element.dataset.validate.length) {
+                    data.append('id', element.dataset.validate)
                 } else {
                     data.append(element.name, element.value);
                     element.value = '';

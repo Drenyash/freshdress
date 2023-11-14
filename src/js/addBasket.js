@@ -1,6 +1,21 @@
+import axios from "axios";
+
 (function addBasket() {
-    const cards = document.querySelectorAll('.card')
+    const cards = document.querySelectorAll('[data-product]')
     const buyMessage = document.querySelector('[data-message-buy]')
+    const url = '/local/ajax/basket/addProduct/';
+
+    const sendData = (data) => {
+        axios.post(url, data)
+            .then(response => {
+                console.log(response)
+                buyMessage.classList.add('active')
+                setTimeout(() => {
+                    buyMessage.classList.remove('active')
+                }, 3000)
+            })
+            .catch(error => console.error(error))
+    }
 
     cards.forEach(card => {
         const size = card.querySelector('.size');
@@ -16,11 +31,9 @@
         })
 
         addButton.addEventListener('click', () => {
-            //     Сбор данных для отправки
-            buyMessage.classList.add('active')
-            setTimeout(() => {
-                buyMessage.classList.remove('active')
-            }, 3000)
+            const data = new FormData();
+            data.append('id', card.dataset.product)
+            sendData(data)
         })
     })
 })()

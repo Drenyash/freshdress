@@ -1,3 +1,5 @@
+import axios from "axios";
+
 (function updateBasket() {
     document.addEventListener('DOMContentLoaded', () => {
         const carts = document.querySelectorAll('[data-cart]');
@@ -15,6 +17,15 @@
         const cartBody = document.querySelector('.cart__body')
         const cartTotal = document.querySelector('.total')
         const cartEmpty = document.querySelector('[data-empty]')
+        const url = '/local/ajax/basket/deleteProduct/';
+
+        const sendData = (data) => {
+            axios.post(url, data)
+                .then(response => {
+                    console.log(response)
+                })
+                .catch(error => console.error(error));
+        }
 
         carts.forEach(cart => {
             const plusBtn = cart.querySelector('[data-counter-plus]')
@@ -36,6 +47,9 @@
             })
             removeBtn.addEventListener('click', () => {
                 cart.remove()
+                const data = new FormData();
+                data.append('id', cart.dataset.cart)
+                sendData(data)
                 updateValues(carts)
                 removePositions(carts)
             })
@@ -108,6 +122,14 @@
                 const selectInput = selectAll.querySelector('input');
                 let checked = document.querySelectorAll('[data-cart-check]:checked');
                 let checkedItems = document.querySelectorAll('[data-cart-check]');
+                const data = new FormData();
+                const cartId = []
+
+                for (let i = 0; i < checked.length; i++) {
+                    cartId.push(parseInt(checked[i].parentNode.dataset.cart))
+                }
+                data.append('id', JSON.stringify(cartId))
+                sendData(data);
 
                 checked.forEach(el => {
                     el.closest('[data-cart]').remove();

@@ -9955,11 +9955,30 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************!*\
   !*** ./src/js/addBasket.js ***!
   \*****************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 
 (function addBasket() {
-    const cards = document.querySelectorAll('.card')
+    const cards = document.querySelectorAll('[data-product]')
     const buyMessage = document.querySelector('[data-message-buy]')
+    const url = '/local/ajax/basket/addProduct/';
+
+    const sendData = (data) => {
+        axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
+            .then(response => {
+                console.log(response)
+                buyMessage.classList.add('active')
+                setTimeout(() => {
+                    buyMessage.classList.remove('active')
+                }, 3000)
+            })
+            .catch(error => console.error(error))
+    }
 
     cards.forEach(card => {
         const size = card.querySelector('.size');
@@ -9975,11 +9994,9 @@ __webpack_require__.r(__webpack_exports__);
         })
 
         addButton.addEventListener('click', () => {
-            //     Сбор данных для отправки
-            buyMessage.classList.add('active')
-            setTimeout(() => {
-                buyMessage.classList.remove('active')
-            }, 3000)
+            const data = new FormData();
+            data.append('id', card.dataset.product)
+            sendData(data)
         })
     })
 })()
@@ -10286,6 +10303,8 @@ __webpack_require__.r(__webpack_exports__);
             els.forEach(element => {
                 if (element.type === 'file') {
                     data.append(element.name, element.value);
+                } else if (element.dataset.validate.length) {
+                    data.append('id', element.dataset.validate)
                 } else {
                     data.append(element.name, element.value);
                     element.value = '';
@@ -10473,6 +10492,8 @@ __webpack_require__.r(__webpack_exports__);
         slider.forEach(range => {
             const rangeSlider = range.querySelector('#range')
             const snapValues = range.querySelectorAll('[data-snap-value]')
+            const hiddenValue = range.querySelectorAll('[data-range-value]')
+
 
             nouislider_dist_nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(rangeSlider, {
                 start: [2000, 100000],
@@ -10484,6 +10505,7 @@ __webpack_require__.r(__webpack_exports__);
             });
             rangeSlider.noUiSlider.on("update", (values, handle) => {
                 snapValues[handle].textContent = Math.floor(values[handle]);
+                hiddenValue[handle].value = Math.floor(values[handle]);
             });
         })
     })
@@ -10504,7 +10526,10 @@ __webpack_require__.r(__webpack_exports__);
         if (!select) return;
 
         const selectCurrent = select.querySelector('[data-select-current]')
+        const correntTitle = selectCurrent.querySelector('.select__title');
+        const correntText = selectCurrent.querySelector('.select__text');
         const selectDropdown = select.querySelector('[data-select-dropdown]')
+        const selectItems = select.querySelectorAll('.select__item')
 
         selectCurrent.addEventListener('click', () => {
             selectDropdown.classList.toggle('active')
@@ -10513,6 +10538,22 @@ __webpack_require__.r(__webpack_exports__);
         window.addEventListener('click', evt => {
             const currentItem = evt.target;
             if (!select.contains(currentItem) && currentItem !== selectCurrent) selectDropdown.classList.remove('active')
+        })
+
+        const update = (title, text, el) => {
+            selectItems.forEach(element => element.classList.remove('select__item--current'))
+            correntTitle.textContent = title;
+            correntText.textContent = text;
+            selectCurrent.dataset.validate = el.dataset.selectItem;
+            el.classList.add('select__item--current')
+        }
+
+        selectItems.forEach(el => {
+            const title = el.querySelector('.select__title')
+            const text = el.querySelector('.select__text')
+            el.addEventListener('click', () => {
+                update(title.textContent, text.textContent, el)
+            })
         })
     })
 })();
@@ -10597,7 +10638,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 watchOverflow: true,
                 effect: 'coverflow',
                 slidesPerView: 'auto',
-                initialSlide: 2,
+                initialSlide: 1,
                 spaceBetween: 90,
                 observer: true,
                 coverflowEffect: {
@@ -11014,7 +11055,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************!*\
   !*** ./src/js/updateBasket.js ***!
   \********************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
 
 (function updateBasket() {
     document.addEventListener('DOMContentLoaded', () => {
@@ -11033,6 +11080,15 @@ __webpack_require__.r(__webpack_exports__);
         const cartBody = document.querySelector('.cart__body')
         const cartTotal = document.querySelector('.total')
         const cartEmpty = document.querySelector('[data-empty]')
+        const url = '/local/ajax/basket/deleteProduct/';
+
+        const sendData = (data) => {
+            axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
+                .then(response => {
+                    console.log(response)
+                })
+                .catch(error => console.error(error));
+        }
 
         carts.forEach(cart => {
             const plusBtn = cart.querySelector('[data-counter-plus]')
@@ -11054,6 +11110,9 @@ __webpack_require__.r(__webpack_exports__);
             })
             removeBtn.addEventListener('click', () => {
                 cart.remove()
+                const data = new FormData();
+                data.append('id', cart.dataset.cart)
+                sendData(data)
                 updateValues(carts)
                 removePositions(carts)
             })
@@ -11126,6 +11185,14 @@ __webpack_require__.r(__webpack_exports__);
                 const selectInput = selectAll.querySelector('input');
                 let checked = document.querySelectorAll('[data-cart-check]:checked');
                 let checkedItems = document.querySelectorAll('[data-cart-check]');
+                const data = new FormData();
+                const cartId = []
+
+                for (let i = 0; i < checked.length; i++) {
+                    cartId.push(parseInt(checked[i].parentNode.dataset.cart))
+                }
+                data.append('id', JSON.stringify(cartId))
+                sendData(data);
 
                 checked.forEach(el => {
                     el.closest('[data-cart]').remove();
@@ -24204,7 +24271,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _form__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./form */ "./src/js/form.js");
 /* harmony import */ var _addFavourite__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./addFavourite */ "./src/js/addFavourite.js");
 /* harmony import */ var _addBasket__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./addBasket */ "./src/js/addBasket.js");
-/* harmony import */ var _addBasket__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_addBasket__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _range__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./range */ "./src/js/range.js");
 /* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./filter */ "./src/js/filter.js");
 /* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_filter__WEBPACK_IMPORTED_MODULE_11__);
@@ -24215,7 +24281,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./counter */ "./src/js/counter.js");
 /* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_counter__WEBPACK_IMPORTED_MODULE_14__);
 /* harmony import */ var _updateBasket__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./updateBasket */ "./src/js/updateBasket.js");
-/* harmony import */ var _updateBasket__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_updateBasket__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./show */ "./src/js/show.js");
 /* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_show__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var _delivery__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./delivery */ "./src/js/delivery.js");

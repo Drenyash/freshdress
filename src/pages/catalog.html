@@ -343,8 +343,14 @@
                                 <div class="range" data-range>
                                     <div id="range"></div>
                                     <div class="filter__values">
-                                        <p>от <span data-snap-value>2000</span> <span>₽</span></p>
-                                        <p>до <span data-snap-value>100 000</span> <span>₽</span></p>
+                                        <p>
+                                            <input type="number" class="hidden" value="" data-range-value>
+                                            от <span data-snap-value>2000</span> <span>₽</span>
+                                        </p>
+                                        <p>
+                                            <input type="number" class="hidden" value="" data-range-value>
+                                            до <span data-snap-value>100 000</span> <span>₽</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -497,7 +503,7 @@
                                                 <span>XS</span>
                                             </label>
                                             <label class="size__item">
-                                                <input class="checkbox" type="radio" name="size">
+                                                <input class="checkbox" type="radio" checked name="size">
                                                 <span>S</span>
                                             </label>
                                             <label class="size__item">

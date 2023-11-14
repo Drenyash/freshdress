@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 watchOverflow: true,
                 effect: 'coverflow',
                 slidesPerView: 'auto',
-                initialSlide: 2,
+                initialSlide: 1,
                 spaceBetween: 90,
                 observer: true,
                 coverflowEffect: {

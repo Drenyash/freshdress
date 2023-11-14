@@ -1695,11 +1695,11 @@
                     <a href="#" class="lk-nav__link">Обратная связь</a>
                 </nav>
                 <div class="lk-body">
-                    <form action="#" class="lk-form lk-form--single">
+                    <form action="#" class="lk-form lk-form--single" data-form>
                         <div class="lk-form__item">
                             <span>Выберите заказ</span>
                             <div class="select" data-select>
-                                <div class="select__current" data-select-current>
+                                <div class="select__current" data-select-current data-validate="10">
                                     <h2 class="select__title">№ 456789334</h2>
                                     <p class="select__text">Заказ от 10.10.2023</p>
                                     <svg class="select__icon">
@@ -1708,31 +1708,31 @@
                                 </div>
                                 <div class="select__dropdown" data-select-dropdown>
                                     <div class="select__list">
-                                        <div class="select__item">
+                                        <div class="select__item select__item--current" data-select-item="1">
                                             <h2 class="select__title">№ 456789334</h2>
                                             <p class="select__text">Заказ от 10.10.2023</p>
                                         </div>
-                                        <div class="select__item select__item--current">
+                                        <div class="select__item" data-select-item="2">
+                                            <h2 class="select__title">№ 56</h2>
+                                            <p class="select__text">Заказ от 10.10.2023</p>
+                                        </div>
+                                        <div class="select__item" data-select-item="3">
                                             <h2 class="select__title">№ 456789334</h2>
                                             <p class="select__text">Заказ от 10.10.2023</p>
                                         </div>
-                                        <div class="select__item">
+                                        <div class="select__item" data-select-item="4">
                                             <h2 class="select__title">№ 456789334</h2>
                                             <p class="select__text">Заказ от 10.10.2023</p>
                                         </div>
-                                        <div class="select__item">
+                                        <div class="select__item" data-select-item="5">
                                             <h2 class="select__title">№ 456789334</h2>
                                             <p class="select__text">Заказ от 10.10.2023</p>
                                         </div>
-                                        <div class="select__item">
+                                        <div class="select__item" data-select-item="6">
                                             <h2 class="select__title">№ 456789334</h2>
                                             <p class="select__text">Заказ от 10.10.2023</p>
                                         </div>
-                                        <div class="select__item">
-                                            <h2 class="select__title">№ 456789334</h2>
-                                            <p class="select__text">Заказ от 10.10.2023</p>
-                                        </div>
-                                        <div class="select__item">
+                                        <div class="select__item" data-select-item="7">
                                             <h2 class="select__title">№ 456789334</h2>
                                             <p class="select__text">Заказ от 10.10.2023</p>
                                         </div>
@@ -1742,15 +1742,15 @@
                         </div>
                         <label class="lk-form__item">
                             <span>Телефон</span>
-                            <input class="lk-form__input" type="tel" placeholder="Номер телефона">
+                            <input class="lk-form__input" type="tel" name="tel" placeholder="Номер телефона" data-validate>
                         </label>
                         <label class="lk-form__item">
                             <span>E-mail</span>
-                            <input class="lk-form__input" type="text" placeholder="info@mail.ru">
+                            <input class="lk-form__input" type="text" name="mail" placeholder="info@mail.ru" data-validate>
                         </label>
                         <label class="lk-form__item">
                             <span>Опишите свою проблему</span>
-                            <textarea class="lk-form__input lk-form__input--area" placeholder="Сообщение"></textarea>
+                            <textarea class="lk-form__input lk-form__input--area" name="message" placeholder="Сообщение" data-validate></textarea>
                         </label>
                         <button type="submit" class="button">Отправить</button>
                     </form>
