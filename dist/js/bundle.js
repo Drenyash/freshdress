@@ -10493,8 +10493,7 @@ __webpack_require__.r(__webpack_exports__);
             const rangeSlider = range.querySelector('#range')
             const snapValues = range.querySelectorAll('[data-snap-value]')
             const hiddenValue = range.querySelectorAll('[data-range-value]')
-
-
+            if (hiddenValue.length === 0) return
             nouislider_dist_nouislider__WEBPACK_IMPORTED_MODULE_0___default().create(rangeSlider, {
                 start: [parseInt(hiddenValue[0].value), parseInt(hiddenValue[1].value)],
                 connect: [false, true, false],

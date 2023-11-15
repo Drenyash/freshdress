@@ -9,8 +9,7 @@ import noUiSlider from "nouislider/dist/nouislider";
             const rangeSlider = range.querySelector('#range')
             const snapValues = range.querySelectorAll('[data-snap-value]')
             const hiddenValue = range.querySelectorAll('[data-range-value]')
-
-
+            if (hiddenValue.length === 0) return
             noUiSlider.create(rangeSlider, {
                 start: [parseInt(hiddenValue[0].value), parseInt(hiddenValue[1].value)],
                 connect: [false, true, false],
