@@ -5043,6 +5043,7 @@ button {
           justify-content: center;
   width: 130px;
   height: 160px;
+  overflow: hidden;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
