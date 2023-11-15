@@ -17,9 +17,10 @@ import axios from "axios";
         const cartBody = document.querySelector('.cart__body')
         const cartTotal = document.querySelector('.total')
         const cartEmpty = document.querySelector('[data-empty]')
-        const url = '/local/ajax/basket/deleteProduct/';
+        const removeUrl = '/local/ajax/basket/deleteProduct/';
+        const updateUrl = '/local/ajax/basket/updateProductCount/'
 
-        const sendData = (data) => {
+        const sendData = (data, url = removeUrl) => {
             axios.post(url, data)
                 .then(response => {
                     console.log(response)
@@ -36,18 +37,26 @@ import axios from "axios";
             let checked = false;
 
             plusBtn.addEventListener('click', () => {
+                const data = new FormData();
                 currentCount++;
                 updateValues(carts)
+                data.append('id', cart.dataset.cart)
+                data.append('count', currentCount)
+                sendData(data, updateUrl);
             })
             minusBtn.addEventListener('click', () => {
+                const data = new FormData();
                 if (currentCount > 1) {
                     currentCount--;
                     updateValues(carts)
                 }
+                data.append('id', cart.dataset.cart)
+                data.append('count', currentCount)
+                sendData(data, updateUrl);
             })
             removeBtn.addEventListener('click', () => {
-                cart.remove()
                 const data = new FormData();
+                cart.remove()
                 data.append('id', cart.dataset.cart)
                 sendData(data)
                 updateValues(carts)
