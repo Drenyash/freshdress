@@ -10081,7 +10081,7 @@ __webpack_require__.r(__webpack_exports__);
             const plus = counter.querySelector('[data-counter-plus]');
             const minus = counter.querySelector('[data-counter-minus]');
             const input = counter.querySelector('[data-counter-input]');
-            let value = 1;
+            let value = input.value > 1 ? input.value : 1;
 
             plus.addEventListener('click', () => {
                 value++
@@ -11028,6 +11028,53 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/time.js":
+/*!************************!*\
+  !*** ./src/js/time.js ***!
+  \************************/
+/***/ (function() {
+
+document.addEventListener('DOMContentLoaded', () => {
+    const timeToDate = new Date(document.querySelector('[data-unix]').dataset.unix);
+
+    let timerId = null;
+
+    function declensionNum(num, words) {
+        return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+    }
+
+    const dayItems = document.querySelectorAll('.stock-counter__item');
+
+    console.log(dayItems)
+    function countdownTimer() {
+        const diff = timeToDate - new Date();
+        if (diff <= 0) {
+            clearInterval(timerId);
+        }
+        const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+        const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+        const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+        const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+
+        dayItems[0].querySelector('.stock-counter__number').textContent = days < 10 ? '0' + days : days;
+        dayItems[1].querySelector('.stock-counter__number').textContent = hours < 10 ? '0' + hours : hours;
+        dayItems[2].querySelector('.stock-counter__number').textContent = minutes < 10 ? '0' + minutes : minutes;
+        dayItems[3].querySelector('.stock-counter__number').textContent = seconds < 10 ? '0' + seconds : seconds;
+
+        dayItems[0].querySelector('.stock-counter__text').textContent = declensionNum(days, ['день', 'дня', 'дней']);
+        dayItems[1].querySelector('.stock-counter__text').textContent = declensionNum(hours, ['час', 'часа', 'часов']);
+        dayItems[2].querySelector('.stock-counter__text').textContent = declensionNum(minutes, ['минута', 'минуты', 'минут']);
+        dayItems[3].querySelector('.stock-counter__text').textContent = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+    }
+
+    countdownTimer();
+
+    timerId = setInterval(countdownTimer, 1000);
+})
+
+
+/***/ }),
+
 /***/ "./src/js/toggle.js":
 /*!**************************!*\
   !*** ./src/js/toggle.js ***!
@@ -11095,6 +11142,7 @@ __webpack_require__.r(__webpack_exports__);
             const minusBtn = cart.querySelector('[data-counter-minus]')
             const removeBtn = cart.querySelector('[data-cart-remove]')
             const check = cart.querySelector('[data-cart-check]')
+            const input = cart.querySelector('[data-counter-input]')
             let currentCount = 1;
             let checked = false;
 
@@ -11108,6 +11156,7 @@ __webpack_require__.r(__webpack_exports__);
             })
             minusBtn.addEventListener('click', () => {
                 const data = new FormData();
+                console.log(currentCount)
                 if (currentCount > 1) {
                     currentCount--;
                     updateValues(carts)
@@ -24309,6 +24358,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _filter_points__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_filter_points__WEBPACK_IMPORTED_MODULE_22__);
 /* harmony import */ var _upload_avatar__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./upload-avatar */ "./src/js/upload-avatar.js");
 /* harmony import */ var _upload_avatar__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_upload_avatar__WEBPACK_IMPORTED_MODULE_23__);
+/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./time */ "./src/js/time.js");
+/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_time__WEBPACK_IMPORTED_MODULE_24__);
+
 
 
 

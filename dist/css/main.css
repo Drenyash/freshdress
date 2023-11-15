@@ -5853,7 +5853,6 @@ button {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
 }
 @media only screen and (max-width: 1529px) {
   .stock-counter__list {
@@ -5875,6 +5874,7 @@ button {
       -ms-flex-align: center;
           align-items: center;
   gap: 15px;
+  min-width: 97px;
 }
 .stock-counter__number {
   display: -webkit-box;

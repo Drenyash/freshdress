@@ -33,6 +33,7 @@ import axios from "axios";
             const minusBtn = cart.querySelector('[data-counter-minus]')
             const removeBtn = cart.querySelector('[data-cart-remove]')
             const check = cart.querySelector('[data-cart-check]')
+            const input = cart.querySelector('[data-counter-input]')
             let currentCount = 1;
             let checked = false;
 
@@ -46,6 +47,7 @@ import axios from "axios";
             })
             minusBtn.addEventListener('click', () => {
                 const data = new FormData();
+                console.log(currentCount)
                 if (currentCount > 1) {
                     currentCount--;
                     updateValues(carts)

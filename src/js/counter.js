@@ -6,7 +6,7 @@
             const plus = counter.querySelector('[data-counter-plus]');
             const minus = counter.querySelector('[data-counter-minus]');
             const input = counter.querySelector('[data-counter-input]');
-            let value = 1;
+            let value = input.value > 1 ? input.value : 1;
 
             plus.addEventListener('click', () => {
                 value++

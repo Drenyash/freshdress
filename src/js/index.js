@@ -23,3 +23,4 @@ import "./show-password";
 import "./select";
 import "./filter-points";
 import "./upload-avatar";
+import "./time";
