@@ -102,7 +102,11 @@ import axios from "axios";
             })
             price.textContent = currentPrice;
             cartCount.textContent = `${count}`
-            total.textContent = `${currentPrice - discount.textContent.replace(" ", '')}`
+            if (discount) {
+                total.textContent = `${currentPrice - discount.textContent.replace(" ", '')}`
+            } else {
+                total.textContent = `${currentPrice}`
+            }
             positions.textContent = carts.length;
         }
         updateValues(carts)

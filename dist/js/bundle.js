@@ -11164,7 +11164,11 @@ __webpack_require__.r(__webpack_exports__);
             })
             price.textContent = currentPrice;
             cartCount.textContent = `${count}`
-            total.textContent = `${currentPrice - discount.textContent.replace(" ", '')}`
+            if (discount) {
+                total.textContent = `${currentPrice - discount.textContent.replace(" ", '')}`
+            } else {
+                total.textContent = `${currentPrice}`
+            }
             positions.textContent = carts.length;
         }
         updateValues(carts)
