@@ -10409,6 +10409,9 @@ __webpack_require__.r(__webpack_exports__);
                 }
                 el.classList.remove('valid')
                 el.classList.remove('invalid')
+                if (!el.parentNode.querySelector('.validate__valid')
+                    ||
+                    !el.parentNode.querySelector('.validate__invalid')) return
                 el.parentNode.querySelector('.validate__valid').classList.add('hidden')
                 el.parentNode.querySelector('.validate__invalid').classList.add('hidden')
             })
