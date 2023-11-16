@@ -9964,39 +9964,41 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function addBasket() {
-    const cards = document.querySelectorAll('[data-product]')
-    const buyMessage = document.querySelector('[data-message-buy]')
-    const url = '/local/ajax/basket/addProduct/';
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('[data-product]')
+        const buyMessage = document.querySelector('[data-message-buy]')
+        const url = '/local/ajax/basket/addProduct/';
 
-    const sendData = (data) => {
-        axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
-            .then(response => {
-                console.log(response)
-                buyMessage.classList.add('active')
-                setTimeout(() => {
-                    buyMessage.classList.remove('active')
-                }, 3000)
+        const sendData = (data) => {
+            axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
+                .then(response => {
+                    console.log(response)
+                    buyMessage.classList.add('active')
+                    setTimeout(() => {
+                        buyMessage.classList.remove('active')
+                    }, 3000)
+                })
+                .catch(error => console.error(error))
+        }
+
+        cards.forEach(card => {
+            const size = card.querySelector('.size');
+            if (!size) return
+            const sizeItems = size.querySelectorAll('.size__item');
+            const addButton = card.querySelector('.card__button');
+
+
+            sizeItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    addButton.classList.add('active')
+                })
             })
-            .catch(error => console.error(error))
-    }
 
-    cards.forEach(card => {
-        const size = card.querySelector('.size');
-        if (!size) return
-        const sizeItems = size.querySelectorAll('.size__item');
-        const addButton = card.querySelector('.card__button');
-
-
-        sizeItems.forEach(item => {
-            item.addEventListener('click', () => {
-                addButton.classList.add('active')
+            addButton.addEventListener('click', () => {
+                const data = new FormData();
+                data.append('id', card.dataset.product)
+                sendData(data)
             })
-        })
-
-        addButton.addEventListener('click', () => {
-            const data = new FormData();
-            data.append('id', card.dataset.product)
-            sendData(data)
         })
     })
 })()
@@ -10296,6 +10298,7 @@ __webpack_require__.r(__webpack_exports__);
         const form = document.querySelectorAll('[data-form]')
         const els = [...document.querySelectorAll('[data-validate]')];
         const customInput = document.querySelectorAll('.validate');
+        const bonuses = document.querySelector('[data-bonuses]')
 
         const getData = () => {
             const data = new FormData;
@@ -10303,13 +10306,23 @@ __webpack_require__.r(__webpack_exports__);
             els.forEach(element => {
                 if (element.type === 'file') {
                     data.append(element.name, element.value);
+                } else if (element.type === 'radio' && element.checked) {
+                    data.append(element.name, element.value)
                 } else if (element.dataset.validate.length) {
                     data.append('id', element.dataset.validate)
-                } else {
+                } else if (element.type !== 'radio' && element.type !== 'file') {
                     data.append(element.name, element.value);
                     element.value = '';
                 }
             })
+
+            if (bonuses) {
+                const bonusesCount = bonuses.querySelector('[data-bonuses-count]')
+                const bonusesToggle = bonuses.querySelector('[data-bonuses-toggle]')
+                if (bonusesToggle.checked) {
+                    data.append('bonuses', bonusesCount.value)
+                }
+            }
 
             return data;
         }
@@ -10349,7 +10362,13 @@ __webpack_require__.r(__webpack_exports__);
 
             const formEls = form.querySelectorAll('input');
             formEls.forEach(el => {
-                el.value = '';
+                if (el.type !== 'radio') {
+                    el.value = '';
+                }
+                el.classList.remove('valid')
+                el.classList.remove('invalid')
+                el.parentNode.querySelector('.validate__valid').classList.add('hidden')
+                el.parentNode.querySelector('.validate__invalid').classList.add('hidden')
             })
         }
 
@@ -10358,6 +10377,15 @@ __webpack_require__.r(__webpack_exports__);
                 evt.preventDefault();
                 const action = formItem.getAttribute('action')
                 sendData(action, formItem)
+            })
+        })
+        const orderButton = document.querySelector('[data-order]')
+        if (!orderButton) return
+        orderButton.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            form.forEach(formItem => {
+                const action = formItem.getAttribute('action')
+                if (!formItem.classList.contains('form-news')) sendData(action, formItem)
             })
         })
     })
@@ -11035,7 +11063,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function() {
 
 document.addEventListener('DOMContentLoaded', () => {
-    const timeToDate = new Date(document.querySelector('[data-unix]').dataset.unix);
+    const timeToDate = document.querySelector('[data-unix]');
+    if (!timeToDate) return
+    const deadline = new Date(timeToDate.dataset.unix)
 
     let timerId = null;
 
@@ -11045,9 +11075,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dayItems = document.querySelectorAll('.stock-counter__item');
 
-    console.log(dayItems)
     function countdownTimer() {
-        const diff = timeToDate - new Date();
+        const diff = deadline - new Date();
         if (diff <= 0) {
             clearInterval(timerId);
         }

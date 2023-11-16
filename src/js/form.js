@@ -5,6 +5,7 @@ import axios from "axios";
         const form = document.querySelectorAll('[data-form]')
         const els = [...document.querySelectorAll('[data-validate]')];
         const customInput = document.querySelectorAll('.validate');
+        const bonuses = document.querySelector('[data-bonuses]')
 
         const getData = () => {
             const data = new FormData;
@@ -12,13 +13,23 @@ import axios from "axios";
             els.forEach(element => {
                 if (element.type === 'file') {
                     data.append(element.name, element.value);
+                } else if (element.type === 'radio' && element.checked) {
+                    data.append(element.name, element.value)
                 } else if (element.dataset.validate.length) {
                     data.append('id', element.dataset.validate)
-                } else {
+                } else if (element.type !== 'radio' && element.type !== 'file') {
                     data.append(element.name, element.value);
                     element.value = '';
                 }
             })
+
+            if (bonuses) {
+                const bonusesCount = bonuses.querySelector('[data-bonuses-count]')
+                const bonusesToggle = bonuses.querySelector('[data-bonuses-toggle]')
+                if (bonusesToggle.checked) {
+                    data.append('bonuses', bonusesCount.value)
+                }
+            }
 
             return data;
         }
@@ -58,7 +69,13 @@ import axios from "axios";
 
             const formEls = form.querySelectorAll('input');
             formEls.forEach(el => {
-                el.value = '';
+                if (el.type !== 'radio') {
+                    el.value = '';
+                }
+                el.classList.remove('valid')
+                el.classList.remove('invalid')
+                el.parentNode.querySelector('.validate__valid').classList.add('hidden')
+                el.parentNode.querySelector('.validate__invalid').classList.add('hidden')
             })
         }
 
@@ -67,6 +84,15 @@ import axios from "axios";
                 evt.preventDefault();
                 const action = formItem.getAttribute('action')
                 sendData(action, formItem)
+            })
+        })
+        const orderButton = document.querySelector('[data-order]')
+        if (!orderButton) return
+        orderButton.addEventListener('click', (evt) => {
+            evt.preventDefault();
+            form.forEach(formItem => {
+                const action = formItem.getAttribute('action')
+                if (!formItem.classList.contains('form-news')) sendData(action, formItem)
             })
         })
     })

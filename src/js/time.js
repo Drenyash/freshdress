@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const timeToDate = new Date(document.querySelector('[data-unix]').dataset.unix);
+    const timeToDate = document.querySelector('[data-unix]');
+    if (!timeToDate) return
+    const deadline = new Date(timeToDate.dataset.unix)
 
     let timerId = null;
 
@@ -9,9 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dayItems = document.querySelectorAll('.stock-counter__item');
 
-    console.log(dayItems)
     function countdownTimer() {
-        const diff = timeToDate - new Date();
+        const diff = deadline - new Date();
         if (diff <= 0) {
             clearInterval(timerId);
         }

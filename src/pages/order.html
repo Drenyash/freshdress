@@ -28,11 +28,11 @@
             <div class="order">
                 <div class="order__data">
                     <h1 class="title title--upper mb-30">Оформление заказа</h1>
-                    <form class="order__form">
+                    <form class="order__form" action="/local/ajax/order.php" data-form>
                         <fieldset class="order__wrapper">
                             <h2 class="order__title">Населенный пункт</h2>
                             <label class="order__item validate">
-                                <input data-validate type="text" placeholder="Город" required minlength="5">
+                                <input data-validate type="text" placeholder="Город" name="CITY" required minlength="5">
                                 <span class="validate__valid hidden">
                                     <svg>
                                         <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
@@ -43,7 +43,7 @@
                                 </span>
                             </label>
                             <label class="order__item validate">
-                                <input data-validate type="text" placeholder="Улица, номер дома" required minlength="5">
+                                <input data-validate type="text" placeholder="Улица, номер дома" name="INFO" required minlength="5">
                                 <span class="validate__valid hidden">
                                     <svg>
                                         <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
@@ -54,7 +54,7 @@
                                 </span>
                             </label>
                             <label class="order__item validate">
-                                <input data-validate type="text" placeholder="Подъезд, этаж, квартира" required
+                                <input data-validate type="text" placeholder="Подъезд, этаж, квартира" name="PLACE" required
                                        minlength="5">
                                 <span class="validate__valid hidden">
                                     <svg>
@@ -66,7 +66,7 @@
                                 </span>
                             </label>
                             <label class="order__item validate">
-                                <input data-validate type="text" placeholder="Индекс" required minlength="5">
+                                <input data-validate type="text" placeholder="Индекс" name="INDEX" required minlength="5">
                                 <span class="validate__valid hidden">
                                     <svg>
                                         <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
@@ -80,7 +80,7 @@
                         <fieldset class="order__wrapper">
                             <h2 class="order__title">Кто заберет заказ?</h2>
                             <label class="order__item validate">
-                                <input data-validate type="text" placeholder="Имя Фамилия" required minlength="9">
+                                <input data-validate type="text" placeholder="Имя Фамилия" name="NAME" required minlength="9">
                                 <span class="validate__valid hidden">
                                     <svg>
                                         <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
@@ -91,8 +91,8 @@
                                 </span>
                             </label>
                             <label class="order__item validate">
-                                <input data-validate type="tel" placeholder="Номер телефона"
-                                       pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required inputmode="text">
+                                <input data-validate type="tel" placeholder="Номер телефона" name="PHONE"
+                                       pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required  inputmode="text">
                                 <span class="validate__valid hidden">
                                     <svg>
                                         <use xlink:href="./assets/sprite/sprite.svg#icon-check"></use>
@@ -108,7 +108,7 @@
                             <div class="delivery">
                                 <label class="delivery__item active">
                                     <span class="delivery__title">
-                                        <input class="input-button" type="radio" name="DELIVERY_TYPE" value="SDEK"
+                                        <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE" value="SDEK"
                                                checked>
                                         Доставка СДЭК
                                     </span>
@@ -119,7 +119,7 @@
                                 </label>
                                 <label class="delivery__item">
                                     <span class="delivery__title">
-                                        <input class="input-button" type="radio" name="DELIVERY_TYPE" value="Kurier">
+                                        <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE" value="Kurier">
                                         Доставка курьером
                                     </span>
                                     <span class="delivery__text">
@@ -129,7 +129,7 @@
                                 </label>
                                 <label class="delivery__item">
                                     <span class="delivery__title">
-                                        <input class="input-button" type="radio" name="DELIVERY_TYPE"
+                                        <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE"
                                                value="PochtaRossii">
                                         Доставка Почта России
                                     </span>
@@ -143,15 +143,15 @@
                         <fieldset class="order__wrapper">
                             <h2 class="order__title">Способ оплаты</h2>
                             <label class="order__position">
-                                <input class="input-button" type="radio" checked name="PAYMENT_TYPE" value="ukassa">
+                                <input class="input-button" data-validate type="radio" checked name="PAYMENT_TYPE" value="ukassa">
                                 <span>Оплата картой через Юкассу</span>
                             </label>
                             <label class="order__position">
-                                <input class="input-button" type="radio" name="PAYMENT_TYPE" value="prodamus">
+                                <input class="input-button" data-validate type="radio" name="PAYMENT_TYPE" value="prodamus">
                                 <span>Prodamus</span>
                             </label>
                             <label class="order__position">
-                                <input class="input-button" type="radio" name="PAYMENT_TYPE" value="tinkoff">
+                                <input class="input-button" data-validate type="radio" name="PAYMENT_TYPE" value="tinkoff">
                                 <span>Долями от Тинькофф</span>
                             </label>
                         </fieldset>
@@ -229,16 +229,16 @@
                             <div class="code">
                                 <input type="text" placeholder="Ввести промокод">
                             </div>
-                            <button class="button button--orange">Оформить заказ</button>
+                            <button class="button button--orange" data-order>Оформить заказ</button>
                         </div>
                         <div class="total__bonus">2000 ₽ бонусных после первого заказа</div>
                         <div class="bonuses">
                             <h2 class="bonuses__title">Потратить бонусы</h2>
                             <p class="bonuses__text">На данный момент у вас нет бонусов для списания</p>
-                            <label class="bonuses__toolbox">
+                            <label class="bonuses__toolbox" data-bonuses>
                                 <span>Списать:</span>
-                                <input type="number" placeholder="0" max="100" min="0">
-                                <input type="checkbox" class="bonuses__check" name="BONUSES">
+                                <input type="number" placeholder="0" max="100" min="0" data-bonuses-count>
+                                <input type="checkbox" class="bonuses__check" name="BONUSES" data-bonuses-toggle>
                                 <button class="bonuses__toggle" data-toggle></button>
                             </label>
                         </div>
