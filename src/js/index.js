@@ -24,3 +24,4 @@ import "./select";
 import "./filter-points";
 import "./upload-avatar";
 import "./time";
+import "./addBasketFromPersonal";

@@ -10006,6 +10006,48 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/addBasketFromPersonal.js":
+/*!*****************************************!*\
+  !*** ./src/js/addBasketFromPersonal.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cardToolbox = document.querySelector('.product-card__toolbox');
+    if (!cardToolbox) return
+    const buttonAddBasket = cardToolbox.querySelector('[data-product-id]')
+    const buttonAddFavourite = cardToolbox.querySelector('[data-id]');
+
+    const url = '/local/ajax/basket/addProduct/'
+    const urlFavourite = '/local/ajax/favorites/'
+
+    buttonAddBasket.addEventListener('click', () => {
+        const data = new FormData();
+        data.append('id', buttonAddBasket.dataset.productId);
+        axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
+            .then(response => console.log(response))
+            .catch(error => console.error(error))
+    })
+
+    buttonAddFavourite.addEventListener('click', () => {
+        const data = new FormData();
+        data.append('id', buttonAddFavourite.dataset.id);
+        axios__WEBPACK_IMPORTED_MODULE_0___default().post(urlFavourite, data)
+            .then(response => console.log(response))
+            .catch(error => console.error(error))
+    })
+
+})
+
+
+/***/ }),
+
 /***/ "./src/js/addFavourite.js":
 /*!********************************!*\
   !*** ./src/js/addFavourite.js ***!
@@ -24389,6 +24431,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _upload_avatar__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_upload_avatar__WEBPACK_IMPORTED_MODULE_23__);
 /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./time */ "./src/js/time.js");
 /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_time__WEBPACK_IMPORTED_MODULE_24__);
+/* harmony import */ var _addBasketFromPersonal__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./addBasketFromPersonal */ "./src/js/addBasketFromPersonal.js");
+
 
 
 
