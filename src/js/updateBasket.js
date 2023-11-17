@@ -43,7 +43,7 @@ import axios from "axios";
             const removeBtn = cart.querySelector('[data-cart-remove]')
             const check = cart.querySelector('[data-cart-check]')
             const input = cart.querySelector('[data-counter-input]')
-            let currentCount = 1;
+            let currentCount = input.value > 1 ? input.value : 1;
             let checked = false;
 
             plusBtn.addEventListener('click', () => {

@@ -3,14 +3,14 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="42b54007-4581-487c-889f-5093c57376f9" name="bust" url="http://bust-club.ru">
-        <fileTransfer accessType="SFTP" host="bust-club.ru" port="22" sshConfigId="96698c22-eeff-40ad-b1ea-de7400654373" sshConfig="root@bust-club.ru:22 password">
+        <fileTransfer accessType="SFTP" host="109.248.133.230" port="22" sshConfigId="96698c22-eeff-40ad-b1ea-de7400654373" sshConfig="root@109.248.133.230:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>
-      <webServer id="98bd25a1-c009-4951-8cd5-833fd464ddbf" name="fresh">
-        <fileTransfer accessType="SFTP" host="bust-club.ru" port="22" sshConfigId="96698c22-eeff-40ad-b1ea-de7400654373" sshConfig="root@bust-club.ru:22 password">
+      <webServer id="6d59e063-40f0-42ba-a263-d039a4799ae6" name="fresh">
+        <fileTransfer accessType="SFTP" host="109.248.133.230" port="22" sshConfigId="96698c22-eeff-40ad-b1ea-de7400654373" sshConfig="root@109.248.133.230:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

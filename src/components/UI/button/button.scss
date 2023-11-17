@@ -19,6 +19,11 @@
     padding: 13px 35px;
   }
 
+  &[disabled] {
+    opacity: .6;
+    pointer-events: none;
+  }
+
   &--purple {
     background-color: $purple-dark;
   }

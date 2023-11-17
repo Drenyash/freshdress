@@ -10517,6 +10517,16 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         form.forEach(formItem => {
+            const checked = formItem.querySelector('[data-checked]');
+            const submitBtn = formItem.querySelector('button[type="submit"]');
+            checked.addEventListener('click', () => {
+                checked.toggleAttribute('checked')
+                if (checked.checked) {
+                    submitBtn.removeAttribute('disabled');
+                } else {
+                    submitBtn.setAttribute('disabled', true);
+                }
+            })
             formItem.addEventListener('submit', (evt) => {
                 evt.preventDefault();
                 const action = formItem.getAttribute('action')
@@ -10681,6 +10691,20 @@ __webpack_require__.r(__webpack_exports__);
         })
     })
 })()
+
+
+/***/ }),
+
+/***/ "./src/js/register.js":
+/*!****************************!*\
+  !*** ./src/js/register.js ***!
+  \****************************/
+/***/ (function() {
+
+document.addEventListener('DOMContentLoaded', () => {
+    const url = '/local/ajax/authorization/registration.php';
+
+})
 
 
 /***/ }),
@@ -11325,7 +11349,7 @@ __webpack_require__.r(__webpack_exports__);
             const removeBtn = cart.querySelector('[data-cart-remove]')
             const check = cart.querySelector('[data-cart-check]')
             const input = cart.querySelector('[data-counter-input]')
-            let currentCount = 1;
+            let currentCount = input.value > 1 ? input.value : 1;
             let checked = false;
 
             plusBtn.addEventListener('click', () => {
@@ -24551,6 +24575,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./time */ "./src/js/time.js");
 /* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_time__WEBPACK_IMPORTED_MODULE_24__);
 /* harmony import */ var _addBasketFromPersonal__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./addBasketFromPersonal */ "./src/js/addBasketFromPersonal.js");
+/* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./register */ "./src/js/register.js");
+/* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_register__WEBPACK_IMPORTED_MODULE_26__);
+
 
 
 

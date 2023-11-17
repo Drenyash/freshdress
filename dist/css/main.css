@@ -1605,6 +1605,10 @@ button {
     padding: 13px 35px;
   }
 }
+.button[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
 .button--purple {
   background-color: #23207C;
 }

@@ -85,6 +85,16 @@ import axios from "axios";
         }
 
         form.forEach(formItem => {
+            const checked = formItem.querySelector('[data-checked]');
+            const submitBtn = formItem.querySelector('button[type="submit"]');
+            checked.addEventListener('click', () => {
+                checked.toggleAttribute('checked')
+                if (checked.checked) {
+                    submitBtn.removeAttribute('disabled');
+                } else {
+                    submitBtn.setAttribute('disabled', true);
+                }
+            })
             formItem.addEventListener('submit', (evt) => {
                 evt.preventDefault();
                 const action = formItem.getAttribute('action')

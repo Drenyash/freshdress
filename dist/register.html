@@ -1679,19 +1679,19 @@
             </button>
             <div class="auth">
                 <h1 class="auth__title">Регистрация</h1>
-                <form action="#" class="auth__form">
+                <form action="/local/ajax/authorization/registration.php" data-form class="auth__form">
                     <label class="auth__item">
-                        <input class="auth__input" type="email" placeholder="Введите E-mail">
+                        <input class="auth__input" data-validate name="e-mail" type="email" placeholder="Введите E-mail">
                     </label>
                     <label class="auth__item">
-                        <input class="auth__input" type="password" placeholder="Введите пароль">
+                        <input class="auth__input" data-validate name="password" type="password" placeholder="Введите пароль">
                     </label>
                     <label class="auth__item">
-                        <input class="auth__input" type="password" placeholder="Подтвердите пароль">
+                        <input class="auth__input" data-validate name="password-accept" type="password" placeholder="Подтвердите пароль">
                     </label>
-                    <button class="auth__button button" type="submit">Войти</button>
+                    <button class="auth__button button" type="submit" disabled>Войти</button>
                     <label class="auth__item auth__item--small">
-                        <input type="checkbox" class="check">
+                        <input type="checkbox" class="check" data-validate data-checked>
                         <span>
                             Я согласен с политикой конфиденциальности <br> и с обработкой персональных данных
                         </span>
