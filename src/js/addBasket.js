@@ -4,7 +4,18 @@ import axios from "axios";
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('[data-product]')
         const buyMessage = document.querySelector('[data-message-buy]')
+        const cartCount = document.querySelector('[data-user-basket-count]');
         const url = '/local/ajax/basket/addProduct/';
+
+        const checkBasketCount = () => {
+            if (cartCount.textContent === '0') {
+                cartCount.classList.add('hidden')
+            } else {
+                cartCount.classList.remove('hidden')
+            }
+        }
+
+        checkBasketCount()
 
         const sendData = (data) => {
             axios.post(url, data)
@@ -24,7 +35,6 @@ import axios from "axios";
             const sizeItems = size.querySelectorAll('.size__item');
             const addButton = card.querySelector('.card__button');
 
-
             sizeItems.forEach(item => {
                 item.addEventListener('click', () => {
                     addButton.classList.add('active')
@@ -35,6 +45,8 @@ import axios from "axios";
                 const data = new FormData();
                 data.append('id', card.dataset.product)
                 sendData(data)
+                cartCount.textContent = `${parseInt(cartCount.textContent) + 1}`;
+                checkBasketCount()
             })
         })
     })

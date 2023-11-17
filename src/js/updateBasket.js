@@ -17,6 +17,7 @@ import axios from "axios";
         const cartBody = document.querySelector('.cart__body')
         const cartTotal = document.querySelector('.total')
         const cartEmpty = document.querySelector('[data-empty]')
+        const cartTotalCount = document.querySelector('[data-user-basket-count]');
         const removeUrl = '/local/ajax/basket/deleteProduct/';
         const updateUrl = '/local/ajax/basket/updateProductCount/'
 
@@ -26,6 +27,14 @@ import axios from "axios";
                     console.log(response)
                 })
                 .catch(error => console.error(error));
+        }
+
+        const checkBasketCount = () => {
+            if (cartTotalCount.textContent === '0') {
+                cartTotalCount.classList.add('hidden')
+            } else {
+                cartTotalCount.classList.remove('hidden')
+            }
         }
 
         carts.forEach(cart => {
@@ -43,6 +52,7 @@ import axios from "axios";
                 updateValues(carts)
                 data.append('id', cart.dataset.cart)
                 data.append('count', currentCount)
+                cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) + 1}`;
                 sendData(data, updateUrl);
             })
             minusBtn.addEventListener('click', () => {
@@ -51,6 +61,8 @@ import axios from "axios";
                 if (currentCount > 1) {
                     currentCount--;
                     updateValues(carts)
+                    cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) - 1}`;
+                    checkBasketCount()
                 }
                 data.append('id', cart.dataset.cart)
                 data.append('count', currentCount)
@@ -63,6 +75,8 @@ import axios from "axios";
                 sendData(data)
                 updateValues(carts)
                 removePositions(carts)
+                cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) - 1}`;
+                checkBasketCount()
             })
             check.addEventListener('click', () => {
                 checked = !checked
@@ -145,6 +159,9 @@ import axios from "axios";
                 }
                 data.append('id', JSON.stringify(cartId))
                 sendData(data);
+
+                cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) - checked.length}`;
+                checkBasketCount()
 
                 checked.forEach(el => {
                     el.closest('[data-cart]').remove();

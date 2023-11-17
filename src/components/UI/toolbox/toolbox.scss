@@ -5,15 +5,17 @@
   border-radius: 30px 30px 0px 0px;
   background: #FFF;
   display: none;
-  padding: 20px 24px 30px;
+  padding: 20px 24px 20px;
   width: 100%;
-  height: 95px;
+  height: auto;
   box-shadow: 0px 4px 52px 0px rgba(11, 11, 11, 0.32);
   z-index: 10;
 
   .button {
     min-width: auto;
-    padding: 11px 30px;
+    padding: 11px 14px;
+    font-size: 12px;
+    white-space: unset;
     svg {
       flex-shrink: 0;
     }

@@ -899,7 +899,7 @@ meter {
 @font-face {
   font-display: swap;
   font-family: "DigitalNumbers";
-  src: url("../assets/fonts/DigitalNumbers-Regular.ttf") format("truetype"), url("../assets/fonts/DigitalNumbers-Regular.woff") format("woff"), url("../assets/fonts/DigitalNumbers-Regular.woff2") format("woff2");
+  src: url("./assets/fonts/DigitalNumbers-Regular.ttf") format("truetype"), url("./assets/fonts/DigitalNumbers-Regular.woff") format("woff"), url("./assets/fonts/DigitalNumbers-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
@@ -2649,16 +2649,18 @@ button {
   border-radius: 30px 30px 0px 0px;
   background: #FFF;
   display: none;
-  padding: 20px 24px 30px;
+  padding: 20px 24px 20px;
   width: 100%;
-  height: 95px;
+  height: auto;
   -webkit-box-shadow: 0px 4px 52px 0px rgba(11, 11, 11, 0.32);
           box-shadow: 0px 4px 52px 0px rgba(11, 11, 11, 0.32);
   z-index: 10;
 }
 .toolbox .button {
   min-width: auto;
-  padding: 11px 30px;
+  padding: 11px 14px;
+  font-size: 12px;
+  white-space: unset;
 }
 .toolbox .button svg {
   -webkit-flex-shrink: 0;
@@ -4768,6 +4770,12 @@ button {
     visibility: visible;
     height: auto;
   }
+  .card:hover .card__price {
+    opacity: 1;
+  }
+  .card:hover .card__title {
+    opacity: 1;
+  }
 }
 .card__picture {
   position: relative;
@@ -5857,7 +5865,11 @@ button {
 }
 @media only screen and (max-width: 1529px) {
   .stock-counter__list {
-    gap: 16px;
+    gap: 0;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 .stock-counter__item {
@@ -5876,6 +5888,11 @@ button {
           align-items: center;
   gap: 15px;
   min-width: 97px;
+}
+@media only screen and (max-width: 1529px) {
+  .stock-counter__item {
+    min-width: auto;
+  }
 }
 .stock-counter__number {
   display: -webkit-box;
@@ -5904,9 +5921,9 @@ button {
 }
 @media only screen and (max-width: 1529px) {
   .stock-counter__number {
-    width: 70px;
-    height: 62px;
-    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
   }
 }
 .stock-counter__text {
@@ -8580,6 +8597,11 @@ button {
   font-weight: 700;
   line-height: 150%;
   color: #181818;
+}
+@media only screen and (max-width: 1529px) {
+  .product-card__title {
+    font-size: 24px;
+  }
 }
 .product-card__article {
   text-shadow: 0 4px 9px rgba(31, 39, 83, 0.1);

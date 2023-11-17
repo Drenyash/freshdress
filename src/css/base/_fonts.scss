@@ -3,9 +3,9 @@
 @font-face {
   font-display: swap;
   font-family: 'DigitalNumbers';
-  src: url('../assets/fonts/DigitalNumbers-Regular.ttf') format('truetype'),
-  url('../assets/fonts/DigitalNumbers-Regular.woff') format('woff'),
-  url('../assets/fonts/DigitalNumbers-Regular.woff2') format('woff2');
+  src: url('./assets/fonts/DigitalNumbers-Regular.ttf') format('truetype'),
+  url('./assets/fonts/DigitalNumbers-Regular.woff') format('woff'),
+  url('./assets/fonts/DigitalNumbers-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
 }

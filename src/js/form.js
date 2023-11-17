@@ -62,7 +62,9 @@ import axios from "axios";
         const sendData = (url, form) => {
             axios.post(url, getData())
                 .then(response => {
-                    console.log(response)
+                    if (response.data.success) {
+                        window.location.href = response.data.url;
+                    }
                     form.querySelectorAll('input').value = '';
                 })
                 .catch(error => console.error(error))

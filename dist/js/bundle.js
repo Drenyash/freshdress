@@ -9967,7 +9967,18 @@ __webpack_require__.r(__webpack_exports__);
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('[data-product]')
         const buyMessage = document.querySelector('[data-message-buy]')
+        const cartCount = document.querySelector('[data-user-basket-count]');
         const url = '/local/ajax/basket/addProduct/';
+
+        const checkBasketCount = () => {
+            if (cartCount.textContent === '0') {
+                cartCount.classList.add('hidden')
+            } else {
+                cartCount.classList.remove('hidden')
+            }
+        }
+
+        checkBasketCount()
 
         const sendData = (data) => {
             axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
@@ -9987,7 +9998,6 @@ __webpack_require__.r(__webpack_exports__);
             const sizeItems = size.querySelectorAll('.size__item');
             const addButton = card.querySelector('.card__button');
 
-
             sizeItems.forEach(item => {
                 item.addEventListener('click', () => {
                     addButton.classList.add('active')
@@ -9998,6 +10008,8 @@ __webpack_require__.r(__webpack_exports__);
                 const data = new FormData();
                 data.append('id', card.dataset.product)
                 sendData(data)
+                cartCount.textContent = `${parseInt(cartCount.textContent) + 1}`;
+                checkBasketCount()
             })
         })
     })
@@ -10019,30 +10031,94 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const cardToolbox = document.querySelector('.product-card__toolbox');
-    if (!cardToolbox) return
-    const buttonAddBasket = cardToolbox.querySelector('[data-product-id]')
-    const buttonAddFavourite = cardToolbox.querySelector('[data-id]');
+    const buttonAddBasket = document.querySelectorAll('[data-personal-button][data-product-id]')
+    const buttonAddFavourite = document.querySelectorAll('[data-personal-button][data-id]');
+    const alert = document.querySelector('[data-message-buy]')
+    const favouriteCount = document.querySelector('[data-user-favorite-count]');
+    const cartCount = document.querySelector('[data-user-basket-count]');
+    let timeout = null;
 
     const url = '/local/ajax/basket/addProduct/'
     const urlFavourite = '/local/ajax/favorites/'
 
-    buttonAddBasket.addEventListener('click', () => {
-        const data = new FormData();
-        data.append('id', buttonAddBasket.dataset.productId);
+    const checkBasketCount = () => {
+        if (cartCount.textContent === '0') {
+            cartCount.classList.add('hidden')
+        } else {
+            cartCount.classList.remove('hidden')
+        }
+    }
+
+    const checkFavouriteCount = () => {
+        if (favouriteCount.textContent === '0') {
+            favouriteCount.classList.add('hidden')
+        } else {
+            favouriteCount.classList.remove('hidden')
+        }
+    }
+
+    checkBasketCount()
+    checkFavouriteCount()
+
+    const sendData = (url, data) => {
         axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
-            .then(response => console.log(response))
+            .then(response => {
+            })
             .catch(error => console.error(error))
-    })
+    }
 
-    buttonAddFavourite.addEventListener('click', () => {
+    buttonAddBasket.forEach(el => {
         const data = new FormData();
-        data.append('id', buttonAddFavourite.dataset.id);
-        axios__WEBPACK_IMPORTED_MODULE_0___default().post(urlFavourite, data)
-            .then(response => console.log(response))
-            .catch(error => console.error(error))
+        data.append('id', el.dataset.productId);
+        el.addEventListener('click', () => {
+            sendData(url, data);
+            timeout = null;
+            alert.classList.add('active');
+            timeout = setTimeout(() => {
+                alert.classList.remove('active')
+            }, 3000)
+            cartCount.textContent = `${parseInt(cartCount.textContent) + 1}`;
+            checkBasketCount()
+        })
     })
 
+    const defaultSVGTemplate = () => {
+        return `
+            <svg class="button__icon">
+                <use xlink:href="/assets/sprite/sprite.svg#icon-heart"></use>
+            </svg>
+        `
+    }
+
+    const activeSVGTemplate = () => {
+        return `
+            <svg class="button__icon">
+                <use xlink:href="/assets/sprite/sprite.svg#icon-heart-fill"></use>
+            </svg>
+        `
+    }
+
+    buttonAddFavourite.forEach(el => {
+        const data = new FormData();
+        data.append('id', el.dataset.id);
+        el.addEventListener('click', () => {
+            sendData(urlFavourite, data);
+            const currentText = el.querySelector('span');
+            if (currentText.textContent === 'В избранное') {
+                currentText.textContent = 'В избранном'
+                el.querySelector('svg').remove();
+                el.insertAdjacentHTML('beforeend', activeSVGTemplate())
+                favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
+                checkFavouriteCount()
+            } else {
+                currentText.textContent = 'В избранное'
+                el.querySelector('svg').remove();
+                el.insertAdjacentHTML('beforeend', defaultSVGTemplate())
+                favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
+                checkFavouriteCount()
+            }
+        })
+    })
 })
 
 
@@ -10064,8 +10140,19 @@ __webpack_require__.r(__webpack_exports__);
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.card');
         const favouriteContainer = document.querySelector('.favorite__body');
+        const favouriteCount = document.querySelector('[data-user-favorite-count]');
 
         const url = "/local/ajax/favorites/";
+
+        const checkFavouriteCount = () => {
+            if (favouriteCount.textContent === '0') {
+                favouriteCount.classList.add('hidden')
+            } else {
+                favouriteCount.classList.remove('hidden')
+            }
+        }
+
+        checkFavouriteCount()
 
         const sendData = (id) => {
             const data = new FormData();
@@ -10082,6 +10169,14 @@ __webpack_require__.r(__webpack_exports__);
                 addFavoriteButton.classList.toggle('active');
                 const id = addFavoriteButton.dataset.id;
                 sendData(id)
+                if (addFavoriteButton.classList.contains('active')) {
+                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
+                    checkFavouriteCount()
+                }
+                if (!addFavoriteButton.classList.contains('active')) {
+                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
+                    checkFavouriteCount()
+                }
                 if (!addFavoriteButton.classList.contains('active') && favouriteContainer.contains(addFavoriteButton)) {
                     card.remove()
                 }
@@ -10097,14 +10192,16 @@ __webpack_require__.r(__webpack_exports__);
                 el.classList.toggle('active');
                 if (el.classList.contains('active')) {
                     text.textContent = 'В избранном'
+                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
+                    checkFavouriteCount()
                 } else {
                     text.textContent = 'В избранное'
+                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
+                    checkFavouriteCount()
                 }
                 sendData(id)
             })
         })
-
-
     })
 })();
 
@@ -10397,7 +10494,9 @@ __webpack_require__.r(__webpack_exports__);
         const sendData = (url, form) => {
             axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, getData())
                 .then(response => {
-                    console.log(response)
+                    if (response.data.success) {
+                        window.location.href = response.data.url;
+                    }
                     form.querySelectorAll('input').value = '';
                 })
                 .catch(error => console.error(error))
@@ -10571,7 +10670,7 @@ __webpack_require__.r(__webpack_exports__);
                 start: [parseInt(hiddenValue[0].value), parseInt(hiddenValue[1].value)],
                 connect: [false, true, false],
                 range: {
-                    "min": [parseInt(hiddenValue[0].value)],
+                    "min": [0],
                     "max": [parseInt(hiddenValue[1].value)]
                 }
             });
@@ -11200,6 +11299,7 @@ __webpack_require__.r(__webpack_exports__);
         const cartBody = document.querySelector('.cart__body')
         const cartTotal = document.querySelector('.total')
         const cartEmpty = document.querySelector('[data-empty]')
+        const cartTotalCount = document.querySelector('[data-user-basket-count]');
         const removeUrl = '/local/ajax/basket/deleteProduct/';
         const updateUrl = '/local/ajax/basket/updateProductCount/'
 
@@ -11209,6 +11309,14 @@ __webpack_require__.r(__webpack_exports__);
                     console.log(response)
                 })
                 .catch(error => console.error(error));
+        }
+
+        const checkBasketCount = () => {
+            if (cartTotalCount.textContent === '0') {
+                cartTotalCount.classList.add('hidden')
+            } else {
+                cartTotalCount.classList.remove('hidden')
+            }
         }
 
         carts.forEach(cart => {
@@ -11226,6 +11334,7 @@ __webpack_require__.r(__webpack_exports__);
                 updateValues(carts)
                 data.append('id', cart.dataset.cart)
                 data.append('count', currentCount)
+                cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) + 1}`;
                 sendData(data, updateUrl);
             })
             minusBtn.addEventListener('click', () => {
@@ -11234,6 +11343,8 @@ __webpack_require__.r(__webpack_exports__);
                 if (currentCount > 1) {
                     currentCount--;
                     updateValues(carts)
+                    cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) - 1}`;
+                    checkBasketCount()
                 }
                 data.append('id', cart.dataset.cart)
                 data.append('count', currentCount)
@@ -11246,6 +11357,8 @@ __webpack_require__.r(__webpack_exports__);
                 sendData(data)
                 updateValues(carts)
                 removePositions(carts)
+                cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) - 1}`;
+                checkBasketCount()
             })
             check.addEventListener('click', () => {
                 checked = !checked
@@ -11328,6 +11441,9 @@ __webpack_require__.r(__webpack_exports__);
                 }
                 data.append('id', JSON.stringify(cartId))
                 sendData(data);
+
+                cartTotalCount.textContent = `${parseInt(cartTotalCount.textContent) - checked.length}`;
+                checkBasketCount()
 
                 checked.forEach(el => {
                     el.closest('[data-cart]').remove();

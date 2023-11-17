@@ -57,6 +57,9 @@
     font-weight: 700;
     line-height: 150%;
     color: $dark;
+    @include r($mobile) {
+      font-size: 24px;
+    }
   }
 
   &__article {

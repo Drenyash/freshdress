@@ -18,7 +18,8 @@
     display: flex;
 
     @include r($mobile) {
-      gap: 16px;
+      gap: 0;
+      justify-content: space-between;
     }
   }
 
@@ -28,6 +29,10 @@
     align-items: center;
     gap: 15px;
     min-width: 97px;
+
+    @include r($mobile) {
+      min-width: auto;
+    }
   }
 
   &__number {
@@ -46,9 +51,9 @@
     color: $gray;
 
     @include r($mobile) {
-      width: 70px;
-      height: 62px;
-      font-size: 24px;
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
     }
   }
 

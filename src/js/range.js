@@ -14,7 +14,7 @@ import noUiSlider from "nouislider/dist/nouislider";
                 start: [parseInt(hiddenValue[0].value), parseInt(hiddenValue[1].value)],
                 connect: [false, true, false],
                 range: {
-                    "min": [parseInt(hiddenValue[0].value)],
+                    "min": [0],
                     "max": [parseInt(hiddenValue[1].value)]
                 }
             });
