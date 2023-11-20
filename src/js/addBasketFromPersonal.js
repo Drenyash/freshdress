@@ -1,31 +1,14 @@
 import axios from "axios";
+import {checkBasketCount, checkFavouriteCount} from "./helpers/updateUserValues";
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonAddBasket = document.querySelectorAll('[data-personal-button][data-product-id]')
     const buttonAddFavourite = document.querySelectorAll('[data-personal-button][data-id]');
     const alert = document.querySelector('[data-message-buy]')
-    const favouriteCount = document.querySelector('[data-user-favorite-count]');
-    const cartCount = document.querySelector('[data-user-basket-count]');
     let timeout = null;
 
     const url = '/local/ajax/basket/addProduct/'
     const urlFavourite = '/local/ajax/favorites/'
-
-    const checkBasketCount = () => {
-        if (cartCount.textContent === '0') {
-            cartCount.classList.add('hidden')
-        } else {
-            cartCount.classList.remove('hidden')
-        }
-    }
-
-    const checkFavouriteCount = () => {
-        if (favouriteCount.textContent === '0') {
-            favouriteCount.classList.add('hidden')
-        } else {
-            favouriteCount.classList.remove('hidden')
-        }
-    }
 
     checkBasketCount()
     checkFavouriteCount()
@@ -47,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timeout = setTimeout(() => {
                 alert.classList.remove('active')
             }, 3000)
-            cartCount.textContent = `${parseInt(cartCount.textContent) + 1}`;
-            checkBasketCount()
+            checkBasketCount('increment')
         })
     })
 
@@ -78,14 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentText.textContent = 'В избранном'
                 el.querySelector('svg').remove();
                 el.insertAdjacentHTML('beforeend', activeSVGTemplate())
-                favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
-                checkFavouriteCount()
+                checkFavouriteCount('increment')
             } else {
                 currentText.textContent = 'В избранное'
                 el.querySelector('svg').remove();
                 el.insertAdjacentHTML('beforeend', defaultSVGTemplate())
-                favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
-                checkFavouriteCount()
+                checkFavouriteCount('decrement')
             }
         })
     })

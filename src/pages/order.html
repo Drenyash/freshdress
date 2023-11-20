@@ -77,7 +77,7 @@
                                 </span>
                             </label>
                         </fieldset>
-                        <fieldset class="order__wrapper">
+                        <fieldset class="order__wrapper" data-pickup>
                             <h2 class="order__title">Кто заберет заказ?</h2>
                             <label class="order__item validate">
                                 <input data-validate type="text" placeholder="Имя Фамилия" name="NAME" required minlength="9">
@@ -106,10 +106,10 @@
                         <fieldset class="order__wrapper">
                             <h2 class="order__title">Способ доставки</h2>
                             <div class="delivery">
-                                <label class="delivery__item active">
+                                <label class="delivery__item active" data-show="remove">
                                     <span class="delivery__title">
-                                        <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE" value="SDEK"
-                                               checked>
+                                        <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE" value="2"
+                                               checked data-target="pickup">
                                         Доставка СДЭК
                                     </span>
                                     <span class="delivery__text">
@@ -117,9 +117,9 @@
                                         Стоимость доставки: от 986 р
                                     </span>
                                 </label>
-                                <label class="delivery__item">
+                                <label class="delivery__item" data-show="remove">
                                     <span class="delivery__title">
-                                        <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE" value="Kurier">
+                                        <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE" value="3" data-target="delivery">
                                         Доставка курьером
                                     </span>
                                     <span class="delivery__text">
@@ -127,10 +127,10 @@
                                         Стоимость доставки: от 986 р
                                     </span>
                                 </label>
-                                <label class="delivery__item">
+                                <label class="delivery__item" data-show="remove">
                                     <span class="delivery__title">
                                         <input class="input-button" data-validate type="radio" name="DELIVERY_TYPE"
-                                               value="PochtaRossii">
+                                               value="4" data-target="delivery">
                                         Доставка Почта России
                                     </span>
                                     <span class="delivery__text">

@@ -2,10 +2,12 @@ import axios from "axios";
 
 (function form() {
     document.addEventListener('DOMContentLoaded', () => {
-        const form = document.querySelectorAll('[data-form]')
+        const form = document.querySelectorAll('[data-form]');
         const els = [...document.querySelectorAll('[data-validate]')];
         const customInput = document.querySelectorAll('.validate');
-        const bonuses = document.querySelector('[data-bonuses]')
+        const bonuses = document.querySelector('[data-bonuses]');
+        const pickup = document.querySelector('[data-pickup]');
+        const targetType = document.querySelectorAll('[data-target]')
 
         const getData = () => {
             const data = new FormData;
@@ -110,6 +112,22 @@ import axios from "axios";
             form.forEach(formItem => {
                 const action = formItem.getAttribute('action')
                 if (!formItem.classList.contains('form-news')) sendData(action, formItem)
+            })
+        })
+
+        const changeStatus = (target, element) => {
+            if (target.dataset.target === 'pickup') {
+                element.classList.remove('hidden')
+            } else {
+                element.classList.add('hidden')
+            }
+        }
+
+        targetType.forEach(target => {
+            changeStatus(targetType[0], pickup)
+
+            target.addEventListener('click', () => {
+                changeStatus(target, pickup)
             })
         })
     })

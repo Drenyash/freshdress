@@ -141,7 +141,7 @@
                             <svg class="user-nav__icon">
                                 <use xlink:href="./assets/sprite/sprite.svg#icon-heart"></use>
                             </svg>
-                            <span class="user-nav__count">
+                            <span class="user-nav__count" data-user-favorite-count>
                                 10
                             </span>
                         </a>
@@ -151,7 +151,7 @@
                             <svg class="user-nav__icon">
                                 <use xlink:href="./assets/sprite/sprite.svg#icon-cart"></use>
                             </svg>
-                            <span class="user-nav__count">
+                            <span class="user-nav__count" data-user-basket-count>
                                 10
                             </span>
                         </a>
@@ -2033,7 +2033,7 @@
         </button>
         <div class="filter__item">
             <h3 class="filter__title">Категория</h3>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="filter__element">
                     <svg class="filter__icon">
                         <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
@@ -2080,7 +2080,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="filter__element">
                     <svg class="filter__icon">
                         <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
@@ -2089,7 +2089,7 @@
                     <p class="filter__count">24</p>
                 </div>
             </div>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="filter__element">
                     <svg class="filter__icon">
                         <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
@@ -2098,7 +2098,7 @@
                     <p class="filter__count">200</p>
                 </div>
             </div>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="filter__element">
                     <svg class="filter__icon">
                         <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
@@ -2107,7 +2107,7 @@
                     <p class="filter__count">200</p>
                 </div>
             </div>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="filter__element">
                     <svg class="filter__icon">
                         <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
@@ -2116,7 +2116,7 @@
                     <p class="filter__count">62</p>
                 </div>
             </div>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="filter__element">
                     <svg class="filter__icon">
                         <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
@@ -2125,7 +2125,7 @@
                     <p class="filter__count">62</p>
                 </div>
             </div>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="filter__element">
                     <svg class="filter__icon">
                         <use xlink:href="./assets/sprite/sprite.svg#icon-arrow"></use>
@@ -2205,7 +2205,7 @@
         </div>
         <div class="filter__item">
             <h3 class="filter__title">Размер</h3>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="size">
                     <label class="size__item size__item--disabled">
                         <input disabled type="checkbox" name="size">
@@ -2232,7 +2232,7 @@
         </div>
         <div class="filter__item">
             <h3 class="filter__title">Цвет</h3>
-            <div class="filter__section">
+            <div class="filter__section" data-show>
                 <div class="colors">
                     <label class="color active">
                         <input type="checkbox" style="background-color: #333333" name="color" value="1">

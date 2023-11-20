@@ -1,20 +1,12 @@
 import axios from "axios";
+import {checkFavouriteCount} from "./helpers/updateUserValues";
 
 (function addFavourite() {
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.card');
         const favouriteContainer = document.querySelector('.favorite__body');
-        const favouriteCount = document.querySelector('[data-user-favorite-count]');
 
         const url = "/local/ajax/favorites/";
-
-        const checkFavouriteCount = () => {
-            if (favouriteCount.textContent === '0') {
-                favouriteCount.classList.add('hidden')
-            } else {
-                favouriteCount.classList.remove('hidden')
-            }
-        }
 
         checkFavouriteCount()
 
@@ -34,18 +26,15 @@ import axios from "axios";
                 const id = addFavoriteButton.dataset.id;
                 sendData(id)
                 if (addFavoriteButton.classList.contains('active')) {
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
-                    checkFavouriteCount()
-                }
-                if (!addFavoriteButton.classList.contains('active')) {
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
-                    checkFavouriteCount()
-                }
-                if (!addFavoriteButton.classList.contains('active') && favouriteContainer.contains(addFavoriteButton)) {
+                    checkFavouriteCount('increment')
+                } else if (!addFavoriteButton.classList.contains('active')) {
+                    checkFavouriteCount('decrement')
+                } else if (!addFavoriteButton.classList.contains('active') && favouriteContainer.contains(addFavoriteButton)) {
                     card.remove()
                 }
             })
         })
+
         const addFavorite = document.querySelectorAll('.add-favourite');
 
         addFavorite.forEach(el => {
@@ -56,12 +45,10 @@ import axios from "axios";
                 el.classList.toggle('active');
                 if (el.classList.contains('active')) {
                     text.textContent = 'В избранном'
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
-                    checkFavouriteCount()
+                    checkFavouriteCount('increment')
                 } else {
                     text.textContent = 'В избранное'
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
-                    checkFavouriteCount()
+                    checkFavouriteCount('decrement')
                 }
                 sendData(id)
             })

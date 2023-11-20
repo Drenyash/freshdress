@@ -9961,24 +9961,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers/updateUserValues */ "./src/js/helpers/updateUserValues.js");
+
 
 
 (function addBasket() {
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('[data-product]')
         const buyMessage = document.querySelector('[data-message-buy]')
-        const cartCount = document.querySelector('[data-user-basket-count]');
         const url = '/local/ajax/basket/addProduct/';
 
-        const checkBasketCount = () => {
-            if (cartCount.textContent === '0') {
-                cartCount.classList.add('hidden')
-            } else {
-                cartCount.classList.remove('hidden')
-            }
-        }
-
-        checkBasketCount()
+        (0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkBasketCount)()
 
         const sendData = (data) => {
             axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
@@ -10008,8 +10001,7 @@ __webpack_require__.r(__webpack_exports__);
                 const data = new FormData();
                 data.append('id', card.dataset.product)
                 sendData(data)
-                cartCount.textContent = `${parseInt(cartCount.textContent) + 1}`;
-                checkBasketCount()
+                ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkBasketCount)('increment')
             })
         })
     })
@@ -10028,37 +10020,21 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers/updateUserValues */ "./src/js/helpers/updateUserValues.js");
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
     const buttonAddBasket = document.querySelectorAll('[data-personal-button][data-product-id]')
     const buttonAddFavourite = document.querySelectorAll('[data-personal-button][data-id]');
     const alert = document.querySelector('[data-message-buy]')
-    const favouriteCount = document.querySelector('[data-user-favorite-count]');
-    const cartCount = document.querySelector('[data-user-basket-count]');
     let timeout = null;
 
     const url = '/local/ajax/basket/addProduct/'
     const urlFavourite = '/local/ajax/favorites/'
 
-    const checkBasketCount = () => {
-        if (cartCount.textContent === '0') {
-            cartCount.classList.add('hidden')
-        } else {
-            cartCount.classList.remove('hidden')
-        }
-    }
-
-    const checkFavouriteCount = () => {
-        if (favouriteCount.textContent === '0') {
-            favouriteCount.classList.add('hidden')
-        } else {
-            favouriteCount.classList.remove('hidden')
-        }
-    }
-
-    checkBasketCount()
-    checkFavouriteCount()
+    ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkBasketCount)()
+    ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)()
 
     const sendData = (url, data) => {
         axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, data)
@@ -10077,8 +10053,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timeout = setTimeout(() => {
                 alert.classList.remove('active')
             }, 3000)
-            cartCount.textContent = `${parseInt(cartCount.textContent) + 1}`;
-            checkBasketCount()
+            ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkBasketCount)('increment')
         })
     })
 
@@ -10108,14 +10083,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentText.textContent = 'В избранном'
                 el.querySelector('svg').remove();
                 el.insertAdjacentHTML('beforeend', activeSVGTemplate())
-                favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
-                checkFavouriteCount()
+                ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)('increment')
             } else {
                 currentText.textContent = 'В избранное'
                 el.querySelector('svg').remove();
                 el.insertAdjacentHTML('beforeend', defaultSVGTemplate())
-                favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
-                checkFavouriteCount()
+                ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)('decrement')
             }
         })
     })
@@ -10134,25 +10107,18 @@ document.addEventListener('DOMContentLoaded', () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helpers/updateUserValues */ "./src/js/helpers/updateUserValues.js");
+
 
 
 (function addFavourite() {
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('.card');
         const favouriteContainer = document.querySelector('.favorite__body');
-        const favouriteCount = document.querySelector('[data-user-favorite-count]');
 
         const url = "/local/ajax/favorites/";
 
-        const checkFavouriteCount = () => {
-            if (favouriteCount.textContent === '0') {
-                favouriteCount.classList.add('hidden')
-            } else {
-                favouriteCount.classList.remove('hidden')
-            }
-        }
-
-        checkFavouriteCount()
+        (0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)()
 
         const sendData = (id) => {
             const data = new FormData();
@@ -10170,18 +10136,15 @@ __webpack_require__.r(__webpack_exports__);
                 const id = addFavoriteButton.dataset.id;
                 sendData(id)
                 if (addFavoriteButton.classList.contains('active')) {
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
-                    checkFavouriteCount()
-                }
-                if (!addFavoriteButton.classList.contains('active')) {
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
-                    checkFavouriteCount()
-                }
-                if (!addFavoriteButton.classList.contains('active') && favouriteContainer.contains(addFavoriteButton)) {
+                    (0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)('increment')
+                } else if (!addFavoriteButton.classList.contains('active')) {
+                    (0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)('decrement')
+                } else if (!addFavoriteButton.classList.contains('active') && favouriteContainer.contains(addFavoriteButton)) {
                     card.remove()
                 }
             })
         })
+
         const addFavorite = document.querySelectorAll('.add-favourite');
 
         addFavorite.forEach(el => {
@@ -10192,12 +10155,10 @@ __webpack_require__.r(__webpack_exports__);
                 el.classList.toggle('active');
                 if (el.classList.contains('active')) {
                     text.textContent = 'В избранном'
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) + 1}`;
-                    checkFavouriteCount()
+                    ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)('increment')
                 } else {
                     text.textContent = 'В избранное'
-                    favouriteCount.textContent = `${parseInt(favouriteCount.textContent) - 1}`;
-                    checkFavouriteCount()
+                    ;(0,_helpers_updateUserValues__WEBPACK_IMPORTED_MODULE_1__.checkFavouriteCount)('decrement')
                 }
                 sendData(id)
             })
@@ -10245,28 +10206,6 @@ __webpack_require__.r(__webpack_exports__);
         })
    })
 })()
-
-
-/***/ }),
-
-/***/ "./src/js/delivery.js":
-/*!****************************!*\
-  !*** ./src/js/delivery.js ***!
-  \****************************/
-/***/ (function() {
-
-(function delivery(){
-    document.addEventListener('DOMContentLoaded', () => {
-        const deliveryItems = document.querySelectorAll('.delivery__item')
-
-        deliveryItems.forEach(el => {
-            el.addEventListener('click', () => {
-                deliveryItems.forEach(item => item.classList.remove('active'))
-                el.classList.add('active')
-            })
-        })
-    })
-})();
 
 
 /***/ }),
@@ -10400,26 +10339,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/filter.js":
-/*!**************************!*\
-  !*** ./src/js/filter.js ***!
-  \**************************/
-/***/ (function() {
-
-(function filter() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const filterElement = document.querySelectorAll('.filter__section');
-        filterElement.forEach(element => {
-            element.addEventListener('click', function(evt) {
-                this.classList.toggle('active')
-            })
-        })
-    })
-})();
-
-
-/***/ }),
-
 /***/ "./src/js/form.js":
 /*!************************!*\
   !*** ./src/js/form.js ***!
@@ -10434,10 +10353,12 @@ __webpack_require__.r(__webpack_exports__);
 
 (function form() {
     document.addEventListener('DOMContentLoaded', () => {
-        const form = document.querySelectorAll('[data-form]')
+        const form = document.querySelectorAll('[data-form]');
         const els = [...document.querySelectorAll('[data-validate]')];
         const customInput = document.querySelectorAll('.validate');
-        const bonuses = document.querySelector('[data-bonuses]')
+        const bonuses = document.querySelector('[data-bonuses]');
+        const pickup = document.querySelector('[data-pickup]');
+        const targetType = document.querySelectorAll('[data-target]')
 
         const getData = () => {
             const data = new FormData;
@@ -10544,8 +10465,70 @@ __webpack_require__.r(__webpack_exports__);
                 if (!formItem.classList.contains('form-news')) sendData(action, formItem)
             })
         })
+
+        const changeStatus = (target, element) => {
+            if (target.dataset.target === 'pickup') {
+                element.classList.remove('hidden')
+            } else {
+                element.classList.add('hidden')
+            }
+        }
+
+        targetType.forEach(target => {
+            changeStatus(targetType[0], pickup)
+
+            target.addEventListener('click', () => {
+                changeStatus(target, pickup)
+            })
+        })
     })
 })();
+
+
+/***/ }),
+
+/***/ "./src/js/helpers/updateUserValues.js":
+/*!********************************************!*\
+  !*** ./src/js/helpers/updateUserValues.js ***!
+  \********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "checkBasketCount": function() { return /* binding */ checkBasketCount; },
+/* harmony export */   "checkFavouriteCount": function() { return /* binding */ checkFavouriteCount; }
+/* harmony export */ });
+const favouriteCount = document.querySelector('[data-user-favorite-count]');
+const cartCount = document.querySelector('[data-user-basket-count]');
+
+const checkBasketCount = (change) => {
+    if (!cartCount) return
+    if (cartCount && cartCount.textContent === '0') {
+        cartCount.classList.add('hidden')
+    } else {
+        cartCount.classList.remove('hidden')
+    }
+    updateLocalValues(change, cartCount)
+}
+
+const checkFavouriteCount = (change) => {
+    if (!favouriteCount) return
+    if (favouriteCount.textContent === '0') {
+        favouriteCount.classList.add('hidden')
+    } else {
+        favouriteCount.classList.remove('hidden')
+    }
+    updateLocalValues(change, favouriteCount)
+}
+
+const updateLocalValues = (change, element) => {
+    if (change === 'increment') {
+        element.textContent = `${parseInt(element.textContent) + 1}`;
+    } else if (change === 'decrement') {
+        element.textContent = `${parseInt(element.textContent) - 1}`;
+    }
+}
 
 
 /***/ }),
@@ -10697,20 +10680,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/js/register.js":
-/*!****************************!*\
-  !*** ./src/js/register.js ***!
-  \****************************/
-/***/ (function() {
-
-document.addEventListener('DOMContentLoaded', () => {
-    const url = '/local/ajax/authorization/registration.php';
-
-})
-
-
-/***/ }),
-
 /***/ "./src/js/select.js":
 /*!**************************!*\
   !*** ./src/js/select.js ***!
@@ -10800,14 +10769,20 @@ document.addEventListener('DOMContentLoaded', () => {
 /***/ (function() {
 
 (function show() {
-   document.addEventListener('DOMContentLoaded', () => {
-       const showBlock = document.querySelectorAll('[data-show]')
-       showBlock.forEach(el => {
-           el.addEventListener('click', () => {
-               el.classList.toggle('active');
-           })
-       })
-   })
+    document.addEventListener('DOMContentLoaded', () => {
+        const showBlock = document.querySelectorAll('[data-show]')
+
+        showBlock.forEach(el => {
+            el.addEventListener('click', (evt) => {
+                evt.preventDefault()
+                // Если присутствует remove, тогда закрываем все выпадашки / активные кроме текущего по которому кликнули
+                if (el.dataset.show === 'remove') {
+                    showBlock.forEach(item => item.classList.remove('active'))
+                }
+                el.classList.toggle('active')
+            })
+        })
+    })
 })()
 
 
@@ -24549,39 +24524,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _addFavourite__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./addFavourite */ "./src/js/addFavourite.js");
 /* harmony import */ var _addBasket__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./addBasket */ "./src/js/addBasket.js");
 /* harmony import */ var _range__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./range */ "./src/js/range.js");
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./filter */ "./src/js/filter.js");
-/* harmony import */ var _filter__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_filter__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./tabs */ "./src/js/tabs.js");
-/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_tabs__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _open__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./open */ "./src/js/open.js");
-/* harmony import */ var _open__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_open__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./counter */ "./src/js/counter.js");
-/* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_counter__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _updateBasket__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./updateBasket */ "./src/js/updateBasket.js");
-/* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./show */ "./src/js/show.js");
-/* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_show__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _delivery__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./delivery */ "./src/js/delivery.js");
-/* harmony import */ var _delivery__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_delivery__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _toggle__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./toggle */ "./src/js/toggle.js");
-/* harmony import */ var _toggle__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_toggle__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var _validateNumber__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./validateNumber */ "./src/js/validateNumber.js");
-/* harmony import */ var _validateNumber__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_validateNumber__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _show_password__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./show-password */ "./src/js/show-password.js");
-/* harmony import */ var _show_password__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_show_password__WEBPACK_IMPORTED_MODULE_20__);
-/* harmony import */ var _select__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./select */ "./src/js/select.js");
-/* harmony import */ var _select__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_select__WEBPACK_IMPORTED_MODULE_21__);
-/* harmony import */ var _filter_points__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./filter-points */ "./src/js/filter-points.js");
-/* harmony import */ var _filter_points__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_filter_points__WEBPACK_IMPORTED_MODULE_22__);
-/* harmony import */ var _upload_avatar__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./upload-avatar */ "./src/js/upload-avatar.js");
-/* harmony import */ var _upload_avatar__WEBPACK_IMPORTED_MODULE_23___default = /*#__PURE__*/__webpack_require__.n(_upload_avatar__WEBPACK_IMPORTED_MODULE_23__);
-/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./time */ "./src/js/time.js");
-/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_24___default = /*#__PURE__*/__webpack_require__.n(_time__WEBPACK_IMPORTED_MODULE_24__);
-/* harmony import */ var _addBasketFromPersonal__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./addBasketFromPersonal */ "./src/js/addBasketFromPersonal.js");
-/* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./register */ "./src/js/register.js");
-/* harmony import */ var _register__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(_register__WEBPACK_IMPORTED_MODULE_26__);
-
-
-
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./tabs */ "./src/js/tabs.js");
+/* harmony import */ var _tabs__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_tabs__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _open__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./open */ "./src/js/open.js");
+/* harmony import */ var _open__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_open__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./counter */ "./src/js/counter.js");
+/* harmony import */ var _counter__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_counter__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _updateBasket__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./updateBasket */ "./src/js/updateBasket.js");
+/* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./show */ "./src/js/show.js");
+/* harmony import */ var _show__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_show__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _toggle__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./toggle */ "./src/js/toggle.js");
+/* harmony import */ var _toggle__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_toggle__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _validateNumber__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./validateNumber */ "./src/js/validateNumber.js");
+/* harmony import */ var _validateNumber__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_validateNumber__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _show_password__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./show-password */ "./src/js/show-password.js");
+/* harmony import */ var _show_password__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_show_password__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _select__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./select */ "./src/js/select.js");
+/* harmony import */ var _select__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_select__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var _filter_points__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./filter-points */ "./src/js/filter-points.js");
+/* harmony import */ var _filter_points__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_filter_points__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _upload_avatar__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./upload-avatar */ "./src/js/upload-avatar.js");
+/* harmony import */ var _upload_avatar__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(_upload_avatar__WEBPACK_IMPORTED_MODULE_21__);
+/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./time */ "./src/js/time.js");
+/* harmony import */ var _time__WEBPACK_IMPORTED_MODULE_22___default = /*#__PURE__*/__webpack_require__.n(_time__WEBPACK_IMPORTED_MODULE_22__);
+/* harmony import */ var _addBasketFromPersonal__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./addBasketFromPersonal */ "./src/js/addBasketFromPersonal.js");
 
 
 

@@ -1,19 +1,11 @@
 import axios from "axios";
+import {checkBasketCount} from "./helpers/updateUserValues";
 
 (function addBasket() {
     document.addEventListener('DOMContentLoaded', () => {
         const cards = document.querySelectorAll('[data-product]')
         const buyMessage = document.querySelector('[data-message-buy]')
-        const cartCount = document.querySelector('[data-user-basket-count]');
         const url = '/local/ajax/basket/addProduct/';
-
-        const checkBasketCount = () => {
-            if (cartCount.textContent === '0') {
-                cartCount.classList.add('hidden')
-            } else {
-                cartCount.classList.remove('hidden')
-            }
-        }
 
         checkBasketCount()
 
@@ -45,8 +37,7 @@ import axios from "axios";
                 const data = new FormData();
                 data.append('id', card.dataset.product)
                 sendData(data)
-                cartCount.textContent = `${parseInt(cartCount.textContent) + 1}`;
-                checkBasketCount()
+                checkBasketCount('increment')
             })
         })
     })
