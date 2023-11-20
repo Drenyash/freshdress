@@ -10477,8 +10477,9 @@ __webpack_require__.r(__webpack_exports__);
         targetType.forEach(target => {
             changeStatus(targetType[0], pickup)
 
-            target.addEventListener('click', () => {
+            target.closest('[data-show]').addEventListener('click', () => {
                 changeStatus(target, pickup)
+                target.checked = true;
             })
         })
     })

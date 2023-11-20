@@ -126,8 +126,9 @@ import axios from "axios";
         targetType.forEach(target => {
             changeStatus(targetType[0], pickup)
 
-            target.addEventListener('click', () => {
+            target.closest('[data-show]').addEventListener('click', () => {
                 changeStatus(target, pickup)
+                target.checked = true;
             })
         })
     })
