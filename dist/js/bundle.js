@@ -11302,6 +11302,7 @@ __webpack_require__.r(__webpack_exports__);
         const cartTotal = document.querySelector('.total')
         const cartEmpty = document.querySelector('[data-empty]')
         const cartTotalCount = document.querySelector('[data-user-basket-count]');
+        const cartTotalText = document.querySelector('[data-total-text]')
         const removeUrl = '/local/ajax/basket/deleteProduct/';
         const updateUrl = '/local/ajax/basket/updateProductCount/'
 
@@ -11318,6 +11319,16 @@ __webpack_require__.r(__webpack_exports__);
                 cartTotalCount.classList.add('hidden')
             } else {
                 cartTotalCount.classList.remove('hidden')
+            }
+        }
+
+        const fixWords = (count) => {
+            if (count % 10 === 1 && count % 100 !== 11) {
+                cartTotalText.textContent = ' товар на сумму'
+            } else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) {
+                cartTotalText.textContent = ' товара на сумму'
+            } else {
+                cartTotalText.textContent = ' товаров на сумму'
             }
         }
 
@@ -11399,6 +11410,7 @@ __webpack_require__.r(__webpack_exports__);
                 const elPrice = el.querySelector('[data-cart-price]')
                 count += parseInt(input.value);
                 currentPrice += parseInt(input.value) * parseInt(elPrice.textContent.replace(" ", ''))
+                fixWords(count)
             })
             price.textContent = currentPrice;
             cartCount.textContent = `${count}`
