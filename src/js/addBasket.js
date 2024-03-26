@@ -3,7 +3,7 @@ import {checkBasketCount} from "./helpers/updateUserValues";
 
 (function addBasket() {
     document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('[data-product]')
+        const cards = document.querySelectorAll('article.card')
         const buyMessage = document.querySelector('[data-message-buy]')
         const url = '/local/ajax/basket/addProduct/';
 
@@ -22,23 +22,24 @@ import {checkBasketCount} from "./helpers/updateUserValues";
         }
 
         cards.forEach(card => {
-            const size = card.querySelector('.size');
-            if (!size) return
-            const sizeItems = size.querySelectorAll('.size__item');
+            const sizeItems = card.querySelectorAll('.size__item');
             const addButton = card.querySelector('.card__button');
 
             sizeItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    addButton.classList.add('active')
+                    addButton.dataset.product = item.dataset.product;
+                    card.querySelector('.card__current-price').innerHTML = item.dataset.price;
+                    card.querySelector('.card__previous-price').innerHTML = item.dataset.oldprice ? item.dataset.oldprice : '';
+                });
+            });
+            if (addButton) {
+                addButton.addEventListener('click', () => {
+                    const data = new FormData();
+                    data.append('id', addButton.dataset.product)
+                    sendData(data)
+                    checkBasketCount('increment')
                 })
-            })
-
-            addButton.addEventListener('click', () => {
-                const data = new FormData();
-                data.append('id', card.dataset.product)
-                sendData(data)
-                checkBasketCount('increment')
-            })
+            }
         })
     })
 })()

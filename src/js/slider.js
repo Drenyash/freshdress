@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         } else if (slider.dataset.slider === 'categories') {
-            const swiper = new Swiper(slider, {
+            let swiper = new Swiper(slider, {
                 modules: [Navigation, Pagination],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
@@ -163,6 +163,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             })
+            window.addEventListener('update-page', () => {
+                slider = document.querySelector('[data-slider="categories"]')
+                swiper = new Swiper(slider, {
+                    modules: [Navigation, Pagination],
+                    slidesPerView: 'auto',
+                    spaceBetween: 16,
+                    centeredSlides: false,
+                    watchSlidesProgress: false,
+                    slideClass: 'slider__item',
+                    slideActiveClass: 'slider__item--active',
+                    slideNextClass: 'slider__item--next',
+                    slidePrevClass: 'slider__item--prev',
+                    slideVisibleClass: 'slider__item--visible',
+                    wrapperClass: 'slider__wrapper',
+                    keyboard: {enabled: false, onlyInViewport: false,}, mousewheel: {invert: true,},
+                    edgeSwipeDetection: true,
+                    nested: true,
+                    breakpoints: {
+                        1529: {
+                            spaceBetween: 44,
+                        }
+                    }
+                })
+            });
         } else if (slider.dataset.slider === 'features') {
             const swiper = new Swiper(slider, {
                 modules: [Navigation, Pagination],

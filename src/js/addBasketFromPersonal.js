@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttonAddBasket = document.querySelectorAll('[data-personal-button][data-product-id]')
     const buttonAddFavourite = document.querySelectorAll('[data-personal-button][data-id]');
     const alert = document.querySelector('[data-message-buy]')
+    const sizes = document.querySelectorAll('.product-card__size .size__item')
     let timeout = null;
 
     const url = '/local/ajax/basket/addProduct/'
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultSVGTemplate = () => {
         return `
             <svg class="button__icon">
-                <use xlink:href="/assets/sprite/sprite.svg#icon-heart"></use>
+                <use xlink:href="/local/templates/diez_template/assets/sprite/sprite.svg#icon-heart"></use>
             </svg>
         `
     }
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeSVGTemplate = () => {
         return `
             <svg class="button__icon">
-                <use xlink:href="/assets/sprite/sprite.svg#icon-heart-fill"></use>
+                <use xlink:href="/local/templates/diez_template/assets/sprite/sprite.svg#icon-heart-fill"></use>
             </svg>
         `
     }
@@ -67,6 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.insertAdjacentHTML('beforeend', defaultSVGTemplate())
                 checkFavouriteCount('decrement')
             }
+        })
+    })
+
+    sizes.forEach(el => {
+        el.addEventListener('click', (e) => {
+            document.querySelector('.js-price').dataset.productId = el.dataset.product;
+            document.querySelector('.js-price').innerHTML = el.dataset.price;
+            document.querySelector('.js-price-old').innerHTML = el.dataset.oldprice ? el.dataset.oldprice : '';
+            document.querySelector('.js-count').innerHTML = el.dataset.count;
         })
     })
 })
