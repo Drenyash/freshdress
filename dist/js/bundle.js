@@ -9966,8 +9966,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function addBasket() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('article.card')
+    function initAddBasket(){
+        const cards = document.querySelectorAll('article.card:not(.basketactiv)')
         const buyMessage = document.querySelector('[data-message-buy]')
         const url = '/local/ajax/basket/addProduct/';
 
@@ -9986,6 +9986,7 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         cards.forEach(card => {
+            card.classList.add('basketactiv')
             const sizeItems = card.querySelectorAll('.size__item');
             const addButton = card.querySelector('.card__button');
 
@@ -10005,7 +10006,10 @@ __webpack_require__.r(__webpack_exports__);
                 })
             }
         })
-    })
+    }
+
+    document.addEventListener('DOMContentLoaded', initAddBasket)
+    window.addEventListener('update-page', initAddBasket)
 })()
 
 
@@ -10123,8 +10127,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function addFavourite() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.card');
+    function initAddFavorite(){
+        const cards = document.querySelectorAll('.card:not(.favactive)');
         const favouriteContainer = document.querySelector('.favorite__body');
 
         const url = "/local/ajax/favorites/";
@@ -10140,6 +10144,7 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         cards.forEach(card => {
+            card.classList.add('favactive');
             const addFavoriteButton = card.querySelector('.add-favourite');
             if (!addFavoriteButton) return
             addFavoriteButton.addEventListener('click', () => {
@@ -10174,7 +10179,10 @@ __webpack_require__.r(__webpack_exports__);
                 sendData(id)
             })
         })
-    })
+    }
+
+    document.addEventListener('DOMContentLoaded', () => initAddFavorite)
+    window.addEventListener('update-page', initAddFavorite)
 })();
 
 

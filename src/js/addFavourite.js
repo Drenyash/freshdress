@@ -2,8 +2,8 @@ import axios from "axios";
 import {checkFavouriteCount} from "./helpers/updateUserValues";
 
 (function addFavourite() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.card');
+    function initAddFavorite(){
+        const cards = document.querySelectorAll('.card:not(.favactive)');
         const favouriteContainer = document.querySelector('.favorite__body');
 
         const url = "/local/ajax/favorites/";
@@ -19,6 +19,7 @@ import {checkFavouriteCount} from "./helpers/updateUserValues";
         }
 
         cards.forEach(card => {
+            card.classList.add('favactive');
             const addFavoriteButton = card.querySelector('.add-favourite');
             if (!addFavoriteButton) return
             addFavoriteButton.addEventListener('click', () => {
@@ -53,5 +54,8 @@ import {checkFavouriteCount} from "./helpers/updateUserValues";
                 sendData(id)
             })
         })
-    })
+    }
+
+    document.addEventListener('DOMContentLoaded', () => initAddFavorite)
+    window.addEventListener('update-page', initAddFavorite)
 })();

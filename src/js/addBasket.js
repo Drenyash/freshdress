@@ -2,8 +2,8 @@ import axios from "axios";
 import {checkBasketCount} from "./helpers/updateUserValues";
 
 (function addBasket() {
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('article.card')
+    function initAddBasket(){
+        const cards = document.querySelectorAll('article.card:not(.basketactiv)')
         const buyMessage = document.querySelector('[data-message-buy]')
         const url = '/local/ajax/basket/addProduct/';
 
@@ -22,6 +22,7 @@ import {checkBasketCount} from "./helpers/updateUserValues";
         }
 
         cards.forEach(card => {
+            card.classList.add('basketactiv')
             const sizeItems = card.querySelectorAll('.size__item');
             const addButton = card.querySelector('.card__button');
 
@@ -41,5 +42,8 @@ import {checkBasketCount} from "./helpers/updateUserValues";
                 })
             }
         })
-    })
+    }
+
+    document.addEventListener('DOMContentLoaded', initAddBasket)
+    window.addEventListener('update-page', initAddBasket)
 })()

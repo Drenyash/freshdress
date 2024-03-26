@@ -2,7 +2,7 @@ import axios from "axios";
 
 (function catalogfilter() {
     let isFirstStart = true;
-    function handleNavigation(route, update) {
+    function handleNavigation(route, mode) {
         fetch(route).then(response => {
             if(!response.ok) {
                 throw new Error('Not Found');
@@ -18,34 +18,15 @@ import axios from "axios";
             main = main[0].split('<main class="main">');
             main = typeof(main[1]) != 'undefined' ? main[1] : '';
 
-            if (update) {
-                document.querySelector('.main').innerHTML = main;
-                
-                // +Популярные категории
-                // +Все категории
-                // +Цены
-                // +Инпуты
-                // +Кнопки
-                // +Добавить в избранное
-                // +Добавить в корзину
-                // +Изменение размера
-                // Клик по показать еще 
-                // Клик по страницам
+            if (mode == 'add' || mode == 'product') {
+                // Получаем товары
+                // Добавляем или заменяем товары
+                // Получаем загрузить еще
+                // Получаем страницы
             } else {
-                //console.log(data.querySelector('body'))
-                // Добавляем / изменяем товары
-                // +Добавить в избранное
-                // +Добавить в корзину
-                // +Изменение размера
-                // Заменяем показать еще
-                // Заменяем клик по страницам
+                document.querySelector('.main').innerHTML = main;
             }
-            ;
-            window.dispatchEvent((new CustomEvent("update-page", {
-                detail: {
-                  name: "dog",
-                },
-            })));
+            window.dispatchEvent((new CustomEvent("update-page")));
             // Хлебные крошки Первая секция
             // Фильтр filter__item
             // Товары catalog__products
