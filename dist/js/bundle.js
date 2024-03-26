@@ -10202,7 +10202,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function catalogfilter() {
     let isFirstStart = true;
-    function handleNavigation(route, update) {
+    function handleNavigation(route, mode) {
         fetch(route).then(response => {
             if(!response.ok) {
                 throw new Error('Not Found');
@@ -10218,34 +10218,34 @@ __webpack_require__.r(__webpack_exports__);
             main = main[0].split('<main class="main">');
             main = typeof(main[1]) != 'undefined' ? main[1] : '';
 
-            if (update) {
-                document.querySelector('.main').innerHTML = main;
+            if (mode == 'add' || mode == 'change') {
+                let wrapProducts = document.querySelector('.catalog__products');
+                let products = data.split('<!--#PRODUCTS-->');
+                products = products[0].split('<!--PRODUCTS-->');
+                products = typeof(products[1]) != 'undefined' ? products[1] : '';
+                if (products) {
+                    if (mode == 'add') {
+                        wrapProducts.insertAdjacentHTML('beforeend', products);
+                    } else {
+                        wrapProducts.innerHTML = products;
+                    }
+                }
+                let nav = data.split('<!--#NAV-->');
+                nav = nav[0].split('<!--NAV-->');
+                nav = typeof(nav[1]) != 'undefined' ? nav[1] : '';
                 
-                // +Популярные категории
-                // +Все категории
-                // +Цены
-                // +Инпуты
-                // +Кнопки
-                // +Добавить в избранное
-                // +Добавить в корзину
-                // +Изменение размера
-                // Клик по показать еще 
-                // Клик по страницам
+                let oldButton = document.querySelector('.catalog__button');
+                let oldPages = document.querySelector('.catalog__pagination');
+
+                if(oldButton) oldButton.remove();
+                if(oldPages) oldPages.remove();
+
+                wrapProducts.insertAdjacentHTML('afterEnd', nav);
+                
             } else {
-                //console.log(data.querySelector('body'))
-                // Добавляем / изменяем товары
-                // +Добавить в избранное
-                // +Добавить в корзину
-                // +Изменение размера
-                // Заменяем показать еще
-                // Заменяем клик по страницам
+                document.querySelector('.main').innerHTML = main;
             }
-            ;
-            window.dispatchEvent((new CustomEvent("update-page", {
-                detail: {
-                  name: "dog",
-                },
-            })));
+            window.dispatchEvent((new CustomEvent("update-page")));
             // Хлебные крошки Первая секция
             // Фильтр filter__item
             // Товары catalog__products
@@ -10266,7 +10266,7 @@ __webpack_require__.r(__webpack_exports__);
         if (isFirstStart) {
             isFirstStart = false;
             window.addEventListener('popstate', () => {
-                handleNavigation(window.location.pathname, true);
+                handleNavigation(window.location.pathname, 'all');
             });
         }
         const items = form.querySelectorAll('.filter__item');
@@ -10295,22 +10295,22 @@ __webpack_require__.r(__webpack_exports__);
 
         function clickLoadMore(e) {
             e.preventDefault();
-            changePage(e.target.href, false)
+            changePage(e.target.href, 'add')
         }
 
         function clickPage(e) {
             e.preventDefault();
-            changePage(e.target.href, false)
+            changePage(e.target.href, 'change')
         }
 
         function clearForm(e) {
             e.preventDefault();
-            changePage('', true)
+            changePage('', 'all')
         }
 
         function submitForm(e) {
             e.preventDefault();
-            changePage(form.action, true);
+            changePage(form.action, 'all');
         }
 
         function changeForm(){

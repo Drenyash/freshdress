@@ -18,22 +18,34 @@ import axios from "axios";
             main = main[0].split('<main class="main">');
             main = typeof(main[1]) != 'undefined' ? main[1] : '';
 
-            if (mode == 'add' || mode == 'product') {
-                // Получаем товары
-                // Добавляем или заменяем товары
-                // Получаем загрузить еще
-                // Получаем страницы
+            if (mode == 'add' || mode == 'change') {
+                let wrapProducts = document.querySelector('.catalog__products');
+                let products = data.split('<!--#PRODUCTS-->');
+                products = products[0].split('<!--PRODUCTS-->');
+                products = typeof(products[1]) != 'undefined' ? products[1] : '';
+                if (products) {
+                    if (mode == 'add') {
+                        wrapProducts.insertAdjacentHTML('beforeend', products);
+                    } else {
+                        wrapProducts.innerHTML = products;
+                    }
+                }
+                let nav = data.split('<!--#NAV-->');
+                nav = nav[0].split('<!--NAV-->');
+                nav = typeof(nav[1]) != 'undefined' ? nav[1] : '';
+                
+                let oldButton = document.querySelector('.catalog__button');
+                let oldPages = document.querySelector('.catalog__pagination');
+
+                if(oldButton) oldButton.remove();
+                if(oldPages) oldPages.remove();
+
+                wrapProducts.insertAdjacentHTML('afterEnd', nav);
+                
             } else {
                 document.querySelector('.main').innerHTML = main;
             }
             window.dispatchEvent((new CustomEvent("update-page")));
-            // Хлебные крошки Первая секция
-            // Фильтр filter__item
-            // Товары catalog__products
-            // Кнопка еще catalog__button 
-            // Страницы catalog__pagination
-            // Баннер
-            //contentDiv.innerHTML = data;
         })
         .catch(error => {
             console.error('Error:', error);
@@ -47,7 +59,7 @@ import axios from "axios";
         if (isFirstStart) {
             isFirstStart = false;
             window.addEventListener('popstate', () => {
-                handleNavigation(window.location.pathname, true);
+                handleNavigation(window.location.pathname, 'all');
             });
         }
         const items = form.querySelectorAll('.filter__item');
@@ -76,22 +88,22 @@ import axios from "axios";
 
         function clickLoadMore(e) {
             e.preventDefault();
-            changePage(e.target.href, false)
+            changePage(e.target.href, 'add')
         }
 
         function clickPage(e) {
             e.preventDefault();
-            changePage(e.target.href, false)
+            changePage(e.target.href, 'change')
         }
 
         function clearForm(e) {
             e.preventDefault();
-            changePage('', true)
+            changePage('', 'all')
         }
 
         function submitForm(e) {
             e.preventDefault();
-            changePage(form.action, true);
+            changePage(form.action, 'all');
         }
 
         function changeForm(){
