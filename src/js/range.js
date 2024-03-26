@@ -2,7 +2,7 @@ import noUiSlider from "nouislider/dist/nouislider";
 
 (function range() {
 
-    document.addEventListener('DOMContentLoaded', () => {
+    const initRange = function(){
         const slider = document.querySelectorAll('[data-range]')
 
         slider.forEach(range => {
@@ -23,5 +23,8 @@ import noUiSlider from "nouislider/dist/nouislider";
                 hiddenValue[handle].value = Math.floor(values[handle]);
             });
         })
-    })
+    };
+
+    document.addEventListener('DOMContentLoaded', initRange)
+    window.addEventListener('update-page', initRange)
 })()

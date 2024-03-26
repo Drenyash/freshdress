@@ -1,5 +1,5 @@
 (function showmore() {
-    document.addEventListener('DOMContentLoaded', () => {
+    const initShowmore = function(){
         const openButtons = document.querySelectorAll('.js-more-show');
         const hideButtons = document.querySelectorAll('.js-more-hide');
 
@@ -31,5 +31,8 @@
                 }
             })
         })
-    })
+    }
+
+    document.addEventListener('DOMContentLoaded', initShowmore)
+    window.addEventListener('update-page', initShowmore);
 })()

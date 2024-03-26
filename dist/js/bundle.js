@@ -10193,9 +10193,74 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function catalogfilter() {
-    document.addEventListener('DOMContentLoaded', () => {
+    let isFirstStart = true;
+    function handleNavigation(route, update) {
+        fetch(route).then(response => {
+            if(!response.ok) {
+                throw new Error('Not Found');
+            }	
+            return response.text();
+        }).then(data => {
+            let title = data.split('</title>');
+            title = title[0].split('<title>');
+            title = typeof(title[1]) != 'undefined' ? title[1] : '';
+            document.title = title;
+
+            let main = data.split('</main>');
+            main = main[0].split('<main class="main">');
+            main = typeof(main[1]) != 'undefined' ? main[1] : '';
+
+            if (update) {
+                document.querySelector('.main').innerHTML = main;
+                
+                // +Популярные категории
+                // +Все категории
+                // +Цены
+                // +Инпуты
+                // +Кнопки
+                // +Добавить в избранное
+                // +Добавить в корзину
+                // +Изменение размера
+                // Клик по показать еще 
+                // Клик по страницам
+            } else {
+                //console.log(data.querySelector('body'))
+                // Добавляем / изменяем товары
+                // +Добавить в избранное
+                // +Добавить в корзину
+                // +Изменение размера
+                // Заменяем показать еще
+                // Заменяем клик по страницам
+            }
+            ;
+            window.dispatchEvent((new CustomEvent("update-page", {
+                detail: {
+                  name: "dog",
+                },
+            })));
+            // Хлебные крошки Первая секция
+            // Фильтр filter__item
+            // Товары catalog__products
+            // Кнопка еще catalog__button 
+            // Страницы catalog__pagination
+            // Баннер
+            //contentDiv.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    function initCatalogFilter(){
         const form = document.querySelector('.smartfilter');
         if (!form) return;
+
+        if (isFirstStart) {
+            isFirstStart = false;
+            window.addEventListener('popstate', () => {
+                handleNavigation(window.location.pathname, true);
+            });
+        }
         const items = form.querySelectorAll('.filter__item');
         const inps = form.querySelectorAll('input');
         const clearBtn = form.querySelector('#del_filter');
@@ -10214,67 +10279,6 @@ __webpack_require__.r(__webpack_exports__);
         pages.forEach(page => {
             page.addEventListener('click', clickPage);
         });
-
-        window.addEventListener('popstate', () => {
-            handleNavigation(window.location.pathname, true);
-        });
-
-        function handleNavigation(route, update) {
-            fetch(route).then(response => {
-                if(!response.ok) {
-                    throw new Error('Not Found');
-                }	
-                return response.text();
-            }).then(data => {
-                let title = data.split('</title>');
-                title = title[0].split('<title>');
-                title = typeof(title[1]) != 'undefined' ? title[1] : '';
-                document.title = title;
-
-                let main = data.split('</main>');
-                main = main[0].split('<main class="main">');
-                main = typeof(main[1]) != 'undefined' ? main[1] : '';
-
-                if (update) {
-                    document.querySelector('.main').innerHTML = main;
-                    
-                    // +Популярные категории
-                    // +Все категории
-                    // +Цены
-                    // +Инпуты
-                    // +Кнопки
-                    // +Добавить в избранное
-                    // +Добавить в корзину
-                    // +Изменение размера
-                    // Клик по показать еще 
-                    // Клик по страницам
-                } else {
-                    //console.log(data.querySelector('body'))
-                    // Добавляем / изменяем товары
-                    // +Добавить в избранное
-                    // +Добавить в корзину
-                    // +Изменение размера
-                    // Заменяем показать еще
-                    // Заменяем клик по страницам
-                }
-                ;
-                window.dispatchEvent((new CustomEvent("update-page", {
-                    detail: {
-                      name: "dog",
-                    },
-                })));
-                // Хлебные крошки Первая секция
-                // Фильтр filter__item
-                // Товары catalog__products
-                // Кнопка еще catalog__button 
-                // Страницы catalog__pagination
-                // Баннер
-                //contentDiv.innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
 
         function changePage(url, full) {
             handleNavigation(url, full);
@@ -10317,7 +10321,10 @@ __webpack_require__.r(__webpack_exports__);
             })
             .catch(error => console.error(error))
         }
-    })
+    }
+
+    document.addEventListener('DOMContentLoaded', initCatalogFilter)
+    window.addEventListener('update-page', initCatalogFilter)
 })()
 
 /***/ }),
@@ -10807,7 +10814,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function range() {
 
-    document.addEventListener('DOMContentLoaded', () => {
+    const initRange = function(){
         const slider = document.querySelectorAll('[data-range]')
 
         slider.forEach(range => {
@@ -10828,7 +10835,10 @@ __webpack_require__.r(__webpack_exports__);
                 hiddenValue[handle].value = Math.floor(values[handle]);
             });
         })
-    })
+    };
+
+    document.addEventListener('DOMContentLoaded', initRange)
+    window.addEventListener('update-page', initRange)
 })()
 
 
@@ -10971,7 +10981,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function() {
 
 (function showmore() {
-    document.addEventListener('DOMContentLoaded', () => {
+    const initShowmore = function(){
         const openButtons = document.querySelectorAll('.js-more-show');
         const hideButtons = document.querySelectorAll('.js-more-hide');
 
@@ -11003,7 +11013,10 @@ __webpack_require__.r(__webpack_exports__);
                 }
             })
         })
-    })
+    }
+
+    document.addEventListener('DOMContentLoaded', initShowmore)
+    window.addEventListener('update-page', initShowmore);
 })()
 
 /***/ }),
