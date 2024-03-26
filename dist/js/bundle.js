@@ -10209,6 +10209,7 @@ __webpack_require__.r(__webpack_exports__);
             }	
             return response.text();
         }).then(data => {
+            document.querySelector('.main').classList.remove('loading');
             let title = data.split('</title>');
             title = title[0].split('<title>');
             title = typeof(title[1]) != 'undefined' ? title[1] : '';
@@ -10246,13 +10247,6 @@ __webpack_require__.r(__webpack_exports__);
                 document.querySelector('.main').innerHTML = main;
             }
             window.dispatchEvent((new CustomEvent("update-page")));
-            // Хлебные крошки Первая секция
-            // Фильтр filter__item
-            // Товары catalog__products
-            // Кнопка еще catalog__button 
-            // Страницы catalog__pagination
-            // Баннер
-            //contentDiv.innerHTML = data;
         })
         .catch(error => {
             console.error('Error:', error);
@@ -10274,6 +10268,9 @@ __webpack_require__.r(__webpack_exports__);
         const clearBtn = form.querySelector('#del_filter');
         const moreBtn = document.querySelector('.catalog__wrapper .catalog__button');
         const pages = document.querySelectorAll('.catalog__pagination a');
+        const catsLinks = document.querySelectorAll('.categories__item[href]');
+        const filterLinks = document.querySelectorAll('.filter__link[href]');
+        const filterElements = document.querySelectorAll('.filter__element[href]');
 
         inps.forEach(inp => {
             inp.addEventListener('change', changeForm);
@@ -10288,8 +10285,29 @@ __webpack_require__.r(__webpack_exports__);
             page.addEventListener('click', clickPage);
         });
 
+        
+        catsLinks.forEach(link => {
+            link.addEventListener('click', (e)=>{
+                e.preventDefault();
+                changePage(link.href, 'all')
+            });
+        });
+        filterLinks.forEach(link => {
+            link.addEventListener('click', (e)=>{
+                e.preventDefault();
+                changePage(link.href, 'all')
+            });
+        });
+        filterElements.forEach(link => {
+            link.addEventListener('click', (e)=>{
+                e.preventDefault();
+                changePage(link.href, 'all')
+            });
+        });
+
         function changePage(url, full) {
             handleNavigation(url, full);
+            document.querySelector('.main').classList.add('loading');
             history.pushState({}, '', url); 
         }
 
@@ -10305,7 +10323,7 @@ __webpack_require__.r(__webpack_exports__);
 
         function clearForm(e) {
             e.preventDefault();
-            changePage('', 'all')
+            changePage(window.location.pathname.split('filter')[0], 'all')
         }
 
         function submitForm(e) {
@@ -10763,16 +10781,20 @@ const updateLocalValues = (change, element) => {
         openButtons.forEach(button => {
             const domArray = Array.from(modals);
             const currentModal = domArray.find(el => el.dataset.modal === button.dataset.buttonOpen);
-            const closeModal = currentModal.querySelector('[data-close]')
-
+            
             button.addEventListener('click', () => {
                 currentModal.classList.add('active')
                 document.querySelector('body').classList.add('fixed-size')
             })
-            closeModal.addEventListener('click', () => {
-                currentModal.classList.remove('active')
-                document.querySelector('body').classList.remove('fixed-size')
-            })
+            
+            if(currentModal) {
+                const closeModal = currentModal.querySelector('[data-close]')
+
+                closeModal.addEventListener('click', () => {
+                    currentModal.classList.remove('active')
+                    document.querySelector('body').classList.remove('fixed-size')
+                })
+            }
         })
     })
 })()

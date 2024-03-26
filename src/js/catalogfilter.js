@@ -9,6 +9,7 @@ import axios from "axios";
             }	
             return response.text();
         }).then(data => {
+            document.querySelector('.main').classList.remove('loading');
             let title = data.split('</title>');
             title = title[0].split('<title>');
             title = typeof(title[1]) != 'undefined' ? title[1] : '';
@@ -67,6 +68,9 @@ import axios from "axios";
         const clearBtn = form.querySelector('#del_filter');
         const moreBtn = document.querySelector('.catalog__wrapper .catalog__button');
         const pages = document.querySelectorAll('.catalog__pagination a');
+        const catsLinks = document.querySelectorAll('.categories__item[href]');
+        const filterLinks = document.querySelectorAll('.filter__link[href]');
+        const filterElements = document.querySelectorAll('.filter__element[href]');
 
         inps.forEach(inp => {
             inp.addEventListener('change', changeForm);
@@ -81,8 +85,29 @@ import axios from "axios";
             page.addEventListener('click', clickPage);
         });
 
+        
+        catsLinks.forEach(link => {
+            link.addEventListener('click', (e)=>{
+                e.preventDefault();
+                changePage(link.href, 'all')
+            });
+        });
+        filterLinks.forEach(link => {
+            link.addEventListener('click', (e)=>{
+                e.preventDefault();
+                changePage(link.href, 'all')
+            });
+        });
+        filterElements.forEach(link => {
+            link.addEventListener('click', (e)=>{
+                e.preventDefault();
+                changePage(link.href, 'all')
+            });
+        });
+
         function changePage(url, full) {
             handleNavigation(url, full);
+            document.querySelector('.main').classList.add('loading');
             history.pushState({}, '', url); 
         }
 
@@ -98,7 +123,7 @@ import axios from "axios";
 
         function clearForm(e) {
             e.preventDefault();
-            changePage('', 'all')
+            changePage(window.location.pathname.split('filter')[0], 'all')
         }
 
         function submitForm(e) {
