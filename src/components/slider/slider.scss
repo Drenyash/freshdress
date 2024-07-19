@@ -566,3 +566,7 @@
     transform-style: preserve-3d;
   }
 }
+
+.swiper-slide {
+  touch-action: none;
+}

@@ -4738,6 +4738,11 @@ button {
           transform-style: preserve-3d;
 }
 
+.swiper-slide {
+  -ms-touch-action: none;
+      touch-action: none;
+}
+
 .card {
   display: -webkit-box;
   display: -webkit-flex;
