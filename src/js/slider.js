@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     1529: {
                         spaceBetween: 140,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'slider') {
             const swiper = new Swiper(slider, {
@@ -61,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         slidesPerView: 6,
                         spaceBetween: 30,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'cards') {
             const swiper = new Swiper(slider, {
@@ -96,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     bulletActiveClass: 'slider__pagination-bullet--active',
                     clickable: true,
                 },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'stock') {
             const swiperThumbs = new Swiper('.slider--info', {
@@ -106,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
+                zoom: true,
             })
             const swiper = new Swiper(slider, {
                 modules: [Navigation, Pagination, Thumbs],
@@ -139,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 thumbs: {
                     swiper: swiperThumbs,
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'categories') {
             const swiper = new Swiper(slider, {
@@ -161,7 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     1529: {
                         spaceBetween: 44,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'features') {
             const swiper = new Swiper(slider, {
@@ -181,7 +187,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     1529: {
                         slidesPerView: 3,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'news') {
             const swiper = new Swiper(slider, {
@@ -198,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     prevEl: '.slider__button--prev',
                     disabledClass: 'slider__button--disabled'
                 },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'picture') {
             const swiperThumbs = new Swiper('.slider--thumbs-pictures', {
@@ -214,7 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 wrapperClass: 'slider__wrapper',
                 navigation: {
                     nextEl: '.slider__button--next',
-                }
+                },
+                zoom: true,
             })
             const swiper = new Swiper(slider, {
                 modules: [Thumbs, Pagination],
@@ -233,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     el: '.slider__pagination',
                     type: 'bullets',
                 },
+                zoom: true,
             })
         }
     })

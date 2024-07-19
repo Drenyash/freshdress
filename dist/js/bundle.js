@@ -10838,7 +10838,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     1529: {
                         spaceBetween: 140,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'slider') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
@@ -10861,7 +10862,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         slidesPerView: 6,
                         spaceBetween: 30,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'cards') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
@@ -10896,6 +10898,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     bulletActiveClass: 'slider__pagination-bullet--active',
                     clickable: true,
                 },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'stock') {
             const swiperThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider--info', {
@@ -10906,6 +10909,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 slidePrevClass: 'slider__item--prev',
                 slideVisibleClass: 'slider__item--visible',
                 wrapperClass: 'slider__wrapper',
+                zoom: true,
             })
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
                 modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs],
@@ -10939,7 +10943,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 thumbs: {
                     swiper: swiperThumbs,
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'categories') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
@@ -10961,7 +10966,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     1529: {
                         spaceBetween: 44,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'features') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
@@ -10981,7 +10987,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     1529: {
                         slidesPerView: 3,
                     }
-                }
+                },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'news') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
@@ -10998,6 +11005,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     prevEl: '.slider__button--prev',
                     disabledClass: 'slider__button--disabled'
                 },
+                zoom: true,
             })
         } else if (slider.dataset.slider === 'picture') {
             const swiperThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider--thumbs-pictures', {
@@ -11014,7 +11022,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 wrapperClass: 'slider__wrapper',
                 navigation: {
                     nextEl: '.slider__button--next',
-                }
+                },
+                zoom: true,
             })
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
                 modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
@@ -11033,6 +11042,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     el: '.slider__pagination',
                     type: 'bullets',
                 },
+                zoom: true,
             })
         }
     })
