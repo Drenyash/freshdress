@@ -10806,7 +10806,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sliders.forEach(slider => {
         if (slider.dataset.slider === 'showcase') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCoverflow],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCoverflow, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 centeredSlides: true,
                 watchOverflow: true,
                 effect: 'coverflow',
@@ -10843,7 +10843,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'slider') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 slideClass: 'slider__item',
@@ -10867,7 +10867,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'cards') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCoverflow],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.EffectCoverflow, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 effect: "coverflow",
                 centeredSlides: true,
                 slidesPerView: 'auto',
@@ -10912,7 +10912,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 zoom: true,
             })
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 centeredSlides: false,
@@ -10948,7 +10948,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'categories') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 centeredSlides: false,
@@ -10971,7 +10971,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'features') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 30,
                 slideClass: 'slider__item',
@@ -10992,7 +10992,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'news') {
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 slidesPerView: 1,
                 slideClass: 'slider__item',
                 slideActiveClass: 'slider__item--active',
@@ -11009,7 +11009,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'picture') {
             const swiperThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider--thumbs-pictures', {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Mousewheel, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Mousewheel, swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 slidesPerView: 4,
                 spaceBetween: 14,
                 mousewheel: true,
@@ -11026,7 +11026,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 zoom: true,
             })
             const swiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](slider, {
-                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination],
+                modules: [swiper__WEBPACK_IMPORTED_MODULE_0__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_0__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_0__.Zoom],
                 slidesPerView: 1,
                 slideClass: 'slider__item',
                 slideActiveClass: 'slider__item--active',

@@ -1,4 +1,4 @@
-import Swiper, {EffectCoverflow, EffectFade, Mousewheel, Navigation, Pagination, Thumbs} from "swiper";
+import Swiper, {EffectCoverflow, EffectFade, Mousewheel, Navigation, Pagination, Thumbs, Zoom} from "swiper";
 
 document.addEventListener('DOMContentLoaded', () => {
     const sliders = document.querySelectorAll('[data-slider]');
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sliders.forEach(slider => {
         if (slider.dataset.slider === 'showcase') {
             const swiper = new Swiper(slider, {
-                modules: [Navigation, EffectCoverflow],
+                modules: [Navigation, EffectCoverflow, Zoom],
                 centeredSlides: true,
                 watchOverflow: true,
                 effect: 'coverflow',
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'slider') {
             const swiper = new Swiper(slider, {
-                modules: [Navigation],
+                modules: [Navigation, Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 slideClass: 'slider__item',
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'cards') {
             const swiper = new Swiper(slider, {
-                modules: [Navigation, Pagination, EffectCoverflow],
+                modules: [Navigation, Pagination, EffectCoverflow, Zoom],
                 effect: "coverflow",
                 centeredSlides: true,
                 slidesPerView: 'auto',
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 zoom: true,
             })
             const swiper = new Swiper(slider, {
-                modules: [Navigation, Pagination, Thumbs],
+                modules: [Navigation, Pagination, Thumbs, Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 centeredSlides: false,
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'categories') {
             const swiper = new Swiper(slider, {
-                modules: [Navigation, Pagination],
+                modules: [Navigation, Pagination, Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 16,
                 centeredSlides: false,
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'features') {
             const swiper = new Swiper(slider, {
-                modules: [Navigation, Pagination],
+                modules: [Navigation, Pagination, Zoom],
                 slidesPerView: 'auto',
                 spaceBetween: 30,
                 slideClass: 'slider__item',
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'news') {
             const swiper = new Swiper(slider, {
-                modules: [Navigation],
+                modules: [Navigation, Zoom],
                 slidesPerView: 1,
                 slideClass: 'slider__item',
                 slideActiveClass: 'slider__item--active',
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         } else if (slider.dataset.slider === 'picture') {
             const swiperThumbs = new Swiper('.slider--thumbs-pictures', {
-                modules: [Mousewheel, Navigation],
+                modules: [Mousewheel, Navigation, Zoom],
                 slidesPerView: 4,
                 spaceBetween: 14,
                 mousewheel: true,
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 zoom: true,
             })
             const swiper = new Swiper(slider, {
-                modules: [Thumbs, Pagination],
+                modules: [Thumbs, Pagination, Zoom],
                 slidesPerView: 1,
                 slideClass: 'slider__item',
                 slideActiveClass: 'slider__item--active',
